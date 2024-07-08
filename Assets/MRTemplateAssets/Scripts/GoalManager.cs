@@ -9,20 +9,22 @@ using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
 using TMPro;
 using LazyFollow = UnityEngine.XR.Interaction.Toolkit.UI.LazyFollow;
 
+// Goal 구조체 정의
 public struct Goal
 {
-    public GoalManager.OnboardingGoals CurrentGoal;
-    public bool Completed;
+    public GoalManager.OnboardingGoals CurrentGoal; // 현재 목표
+    public bool Completed; // 완료 여부
 
     public Goal(GoalManager.OnboardingGoals goal)
     {
         CurrentGoal = goal;
-        Completed = false;
+        Completed = false; // 초기 상태는 완료되지 않음
     }
 }
 
 public class GoalManager : MonoBehaviour
 {
+    // 온보딩 목표를 정의하는 열거형
     public enum OnboardingGoals
     {
         Empty,
@@ -30,74 +32,75 @@ public class GoalManager : MonoBehaviour
         TapSurface,
     }
 
-    Queue<Goal> m_OnboardingGoals;
-    Goal m_CurrentGoal;
-    bool m_AllGoalsFinished;
-    int m_SurfacesTapped;
-    int m_CurrentGoalIndex = 0;
+    Queue<Goal> m_OnboardingGoals; // 온보딩 목표를 담는 큐
+    Goal m_CurrentGoal; // 현재 목표
+    bool m_AllGoalsFinished; // 모든 목표가 완료되었는지 여부
+    int m_SurfacesTapped; // 탭된 표면의 수
+    int m_CurrentGoalIndex = 0; // 현재 목표 인덱스
 
     [Serializable]
     class Step
     {
         [SerializeField]
-        public GameObject stepObject;
+        public GameObject stepObject; // 단계 객체
 
         [SerializeField]
-        public string buttonText;
+        public string buttonText; // 버튼 텍스트
 
-        public bool includeSkipButton;
+        public bool includeSkipButton; // 건너뛰기 버튼 포함 여부
     }
 
     [SerializeField]
-    List<Step> m_StepList = new List<Step>();
+    List<Step> m_StepList = new List<Step>(); // 단계 리스트
 
     [SerializeField]
-    public TextMeshProUGUI m_StepButtonTextField;
+    public TextMeshProUGUI m_StepButtonTextField; // 단계 버튼 텍스트 필드
 
     [SerializeField]
-    public GameObject m_SkipButton;
+    public GameObject m_SkipButton; // 건너뛰기 버튼
 
     [SerializeField]
-    GameObject m_LearnButton;
+    GameObject m_LearnButton; // 학습 버튼
 
     [SerializeField]
-    GameObject m_LearnModal;
+    GameObject m_LearnModal; // 학습 모달
 
     [SerializeField]
-    Button m_LearnModalButton;
+    Button m_LearnModalButton; // 학습 모달 버튼
 
     [SerializeField]
-    GameObject m_CoachingUIParent;
+    GameObject m_CoachingUIParent; // 코칭 UI 부모 객체
 
     [SerializeField]
-    FadeMaterial m_FadeMaterial;
+    FadeMaterial m_FadeMaterial; // 페이드 소재
 
     [SerializeField]
-    Toggle m_PassthroughToggle;
+    Toggle m_PassthroughToggle; // 패스스루 토글
 
     [SerializeField]
-    LazyFollow m_GoalPanelLazyFollow;
+    LazyFollow m_GoalPanelLazyFollow; // 목표 패널 LazyFollow
 
     [SerializeField]
-    GameObject m_TapTooltip;
+    GameObject m_TapTooltip; // 탭 툴팁
 
     [SerializeField]
-    GameObject m_VideoPlayer;
+    GameObject m_VideoPlayer; // 비디오 플레이어
 
     [SerializeField]
-    Toggle m_VideoPlayerToggle;
+    Toggle m_VideoPlayerToggle; // 비디오 플레이어 토글
 
     [SerializeField]
-    ARPlaneManager m_ARPlaneManager;
+    ARPlaneManager m_ARPlaneManager; // AR 평면 관리자
 
     [SerializeField]
-    ObjectSpawner m_ObjectSpawner;
+    ObjectSpawner m_ObjectSpawner; // 객체 생성기
 
-    const int k_NumberOfSurfacesTappedToCompleteGoal = 1;
-    Vector3 m_TargetOffset = new Vector3(-.5f, -.25f, 1.5f);
+    const int k_NumberOfSurfacesTappedToCompleteGoal = 1; // 목표 완료를 위한 탭 횟수
+    Vector3 m_TargetOffset = new Vector3(-.5f, -.25f, 1.5f); // 목표 오프셋
 
     void Start()
     {
+        // 온보딩 목표 초기화
         m_OnboardingGoals = new Queue<Goal>();
         var welcomeGoal = new Goal(OnboardingGoals.Empty);
         var findSurfaceGoal = new Goal(OnboardingGoals.FindSurfaces);
@@ -155,6 +158,7 @@ public class GoalManager : MonoBehaviour
         }
     }
 
+    // 모달 열기
     void OpenModal()
     {
         if (m_LearnModal != null)
@@ -163,6 +167,7 @@ public class GoalManager : MonoBehaviour
         }
     }
 
+    // 모달 닫기
     void CloseModal()
     {
         if (m_LearnModal != null)
@@ -171,8 +176,6 @@ public class GoalManager : MonoBehaviour
         }
     }
 
-
-
     void Update()
     {
         if (!m_AllGoalsFinished)
@@ -180,7 +183,7 @@ public class GoalManager : MonoBehaviour
             ProcessGoals();
         }
 
-        // Debug Input
+        // 디버그 입력 (유니티 에디터)
 #if UNITY_EDITOR
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
@@ -189,6 +192,7 @@ public class GoalManager : MonoBehaviour
 #endif
     }
 
+    // 목표 처리
     void ProcessGoals()
     {
         if (!m_CurrentGoal.Completed)
@@ -212,12 +216,13 @@ public class GoalManager : MonoBehaviour
         }
     }
 
+    // 목표 완료
     void CompleteGoal()
     {
         if (m_CurrentGoal.CurrentGoal == OnboardingGoals.TapSurface)
             m_ObjectSpawner.objectSpawned -= OnObjectSpawned;
 
-        // disable tooltips before setting next goal
+        // 다음 목표 설정 전에 툴팁 비활성화
         DisableTooltips();
 
         m_CurrentGoal.Completed = true;
@@ -262,12 +267,14 @@ public class GoalManager : MonoBehaviour
         }
     }
 
+    // 평면 활성화 코루틴
     public IEnumerator TurnOnPlanes()
     {
         yield return new WaitForSeconds(1f);
         m_ARPlaneManager.enabled = true;
     }
 
+    // 툴팁 비활성화
     void DisableTooltips()
     {
         if (m_CurrentGoal.CurrentGoal == OnboardingGoals.TapSurface)
@@ -279,11 +286,13 @@ public class GoalManager : MonoBehaviour
         }
     }
 
+    // 목표 강제 완료
     public void ForceCompleteGoal()
     {
         CompleteGoal();
     }
 
+    // 모든 목표 강제 종료
     public void ForceEndAllGoals()
     {
         m_CoachingUIParent.transform.localScale = Vector3.zero;
@@ -292,7 +301,6 @@ public class GoalManager : MonoBehaviour
 
         if (m_VideoPlayerToggle != null)
             m_VideoPlayerToggle.isOn = true;
-
 
         if (m_FadeMaterial != null)
         {
@@ -315,6 +323,7 @@ public class GoalManager : MonoBehaviour
         StartCoroutine(TurnOnPlanes());
     }
 
+    // 코칭 리셋
     public void ResetCoaching()
     {
         m_CoachingUIParent.transform.localScale = Vector3.one;
@@ -364,6 +373,7 @@ public class GoalManager : MonoBehaviour
         m_CurrentGoalIndex = 0;
     }
 
+    // 객체 생성 시 호출되는 이벤트 핸들러
     void OnObjectSpawned(GameObject spawnedObject)
     {
         m_SurfacesTapped++;
@@ -374,6 +384,7 @@ public class GoalManager : MonoBehaviour
         }
     }
 
+    // 비디오 플레이어 토글
     public void TooglePlayer(bool visibility)
     {
         if (visibility)
@@ -391,6 +402,7 @@ public class GoalManager : MonoBehaviour
         }
     }
 
+    // 비디오 플레이어 활성화
     void TurnOnVideoPlayer()
     {
         if (m_VideoPlayer.activeSelf)
@@ -415,7 +427,6 @@ public class GoalManager : MonoBehaviour
         newTransform.rotation = targetRotation;
         var targetPosition = target.position + newTransform.TransformVector(m_TargetOffset);
         m_VideoPlayer.transform.position = targetPosition;
-
 
         var forward = target.position - m_VideoPlayer.transform.position;
         var targetPlayerRotation = forward.sqrMagnitude > float.Epsilon ? Quaternion.LookRotation(forward, Vector3.up) : Quaternion.identity;
