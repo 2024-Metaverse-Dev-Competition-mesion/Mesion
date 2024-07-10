@@ -289,6 +289,7 @@ public class GoalManager : MonoBehaviour
     // 목표 강제 완료
     public void ForceCompleteGoal()
     {
+        //Debug.Log("test");
         CompleteGoal();
     }
 
