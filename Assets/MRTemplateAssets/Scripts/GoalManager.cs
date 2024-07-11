@@ -27,9 +27,11 @@ public class GoalManager : MonoBehaviour
     // 온보딩 목표를 정의하는 열거형
     public enum OnboardingGoals
     {
-        Empty,
+        Empty
         FindSurfaces,
-        TapSurface,
+        SelectWorld,
+        EnterWorld,
+        //TapSurface,
     }
 
     Queue<Goal> m_OnboardingGoals; // 온보딩 목표를 담는 큐
@@ -58,6 +60,15 @@ public class GoalManager : MonoBehaviour
 
     [SerializeField]
     public GameObject m_SkipButton; // 건너뛰기 버튼
+
+    [SerializeField]
+    public GameObject m_StartNewButton; // 새출발 버튼
+
+    [SerializeField]
+    public GameObject m_LoadButton; // 불러오기 버튼
+
+    [SerializeField]
+    public GameObject m_ExitButton; // 종료 버튼
 
     [SerializeField]
     GameObject m_LearnButton; // 학습 버튼
@@ -92,10 +103,10 @@ public class GoalManager : MonoBehaviour
     [SerializeField]
     ARPlaneManager m_ARPlaneManager; // AR 평면 관리자
 
-    [SerializeField]
-    ObjectSpawner m_ObjectSpawner; // 객체 생성기
+    //[SerializeField]
+    //ObjectSpawner m_ObjectSpawner; // 객체 생성기
 
-    const int k_NumberOfSurfacesTappedToCompleteGoal = 1; // 목표 완료를 위한 탭 횟수
+    //const int k_NumberOfSurfacesTappedToCompleteGoal = 1; // 목표 완료를 위한 탭 횟수
     Vector3 m_TargetOffset = new Vector3(-.5f, -.25f, 1.5f); // 목표 오프셋
 
     void Start()
@@ -104,15 +115,19 @@ public class GoalManager : MonoBehaviour
         m_OnboardingGoals = new Queue<Goal>();
         var welcomeGoal = new Goal(OnboardingGoals.Empty);
         var findSurfaceGoal = new Goal(OnboardingGoals.FindSurfaces);
-        var tapSurfaceGoal = new Goal(OnboardingGoals.TapSurface);
-        var endGoal = new Goal(OnboardingGoals.Empty);
+        var SelectWorldGoal = new Goal(OnboardingGoals.SelectWorld);
+        //var tapSurfaceGoal = new Goal(OnboardingGoals.TapSurface);
+        var EnterWorldGoal = new Goal(OnboardingGoals.EnterWorld);
 
         m_OnboardingGoals.Enqueue(welcomeGoal);
         m_OnboardingGoals.Enqueue(findSurfaceGoal);
-        m_OnboardingGoals.Enqueue(tapSurfaceGoal);
-        m_OnboardingGoals.Enqueue(endGoal);
+        //m_OnboardingGoals.Enqueue(tapSurfaceGoal);
+        m_OnboardingGoals.Enqueue(SelectWorldGoal);
+        m_OnboardingGoals.Enqueue(EnterWorldGoal);
 
+        //목표 하나 빼기
         m_CurrentGoal = m_OnboardingGoals.Dequeue();
+        //초기화
         if (m_TapTooltip != null)
             m_TapTooltip.SetActive(false);
 
@@ -148,14 +163,14 @@ public class GoalManager : MonoBehaviour
             m_LearnModalButton.onClick.AddListener(CloseModal);
         }
 
-        if (m_ObjectSpawner == null)
-        {
-#if UNITY_2023_1_OR_NEWER
-            m_ObjectSpawner = FindAnyObjectByType<ObjectSpawner>();
-#else
-            m_ObjectSpawner = FindObjectOfType<ObjectSpawner>();
-#endif
-        }
+//        if (m_ObjectSpawner == null)
+//        {
+//#if UNITY_2023_1_OR_NEWER
+//            m_ObjectSpawner = FindAnyObjectByType<ObjectSpawner>();
+//#else
+//            m_ObjectSpawner = FindObjectOfType<ObjectSpawner>();
+//#endif
+//        }
     }
 
     // 모달 열기
@@ -205,11 +220,14 @@ public class GoalManager : MonoBehaviour
                 case OnboardingGoals.FindSurfaces:
                     m_GoalPanelLazyFollow.positionFollowMode = LazyFollow.PositionFollowMode.Follow;
                     break;
-                case OnboardingGoals.TapSurface:
-                    if (m_TapTooltip != null)
-                    {
-                        m_TapTooltip.SetActive(true);
-                    }
+                case OnboardingGoals.SelectWorld:
+                    //if (m_TapTooltip != null)
+                    //{
+                    //    m_TapTooltip.SetActive(true);
+                    //}
+                    m_GoalPanelLazyFollow.positionFollowMode = LazyFollow.PositionFollowMode.Follow;
+                    break;
+                case OnboardingGoals.EnterWorld:
                     m_GoalPanelLazyFollow.positionFollowMode = LazyFollow.PositionFollowMode.None;
                     break;
             }
@@ -219,28 +237,39 @@ public class GoalManager : MonoBehaviour
     // 목표 완료
     void CompleteGoal()
     {
-        if (m_CurrentGoal.CurrentGoal == OnboardingGoals.TapSurface)
-            m_ObjectSpawner.objectSpawned -= OnObjectSpawned;
+        if (m_CurrentGoal.CurrentGoal == OnboardingGoals.EnterWorld)
+            //m_ObjectSpawner.objectSpawned -= OnObjectSpawned;
 
         // 다음 목표 설정 전에 툴팁 비활성화
-        DisableTooltips();
+        //DisableTooltips();
 
         m_CurrentGoal.Completed = true;
         m_CurrentGoalIndex++;
         if (m_OnboardingGoals.Count > 0)
         {
+            // 큐에서 다음 목표를 가져옴
             m_CurrentGoal = m_OnboardingGoals.Dequeue();
+
+            // 이전 단계의 객체를 비활성화
             m_StepList[m_CurrentGoalIndex - 1].stepObject.SetActive(false);
+
+            // 현재 단계의 객체를 활성화
             m_StepList[m_CurrentGoalIndex].stepObject.SetActive(true);
+
+            // 버튼 텍스트를 현재 단계의 버튼 텍스트로 설정
             m_StepButtonTextField.text = m_StepList[m_CurrentGoalIndex].buttonText;
+
+            // 현재 단계에 스킵 버튼을 포함하는지 여부에 따라 스킵 버튼을 활성화 또는 비활성화
             m_SkipButton.SetActive(m_StepList[m_CurrentGoalIndex].includeSkipButton);
         }
         else
         {
+            // 모든 목표가 완료된 경우
             m_AllGoalsFinished = true;
             ForceEndAllGoals();
         }
 
+        // 현재 목표가 OnboardingGoals.FindSurfaces인 경우
         if (m_CurrentGoal.CurrentGoal == OnboardingGoals.FindSurfaces)
         {
             if (m_FadeMaterial != null)
@@ -256,15 +285,15 @@ public class GoalManager : MonoBehaviour
 
             StartCoroutine(TurnOnPlanes());
         }
-        else if (m_CurrentGoal.CurrentGoal == OnboardingGoals.TapSurface)
-        {
-            if (m_LearnButton != null)
-            {
-                m_LearnButton.SetActive(false);
-            }
-            m_SurfacesTapped = 0;
-            m_ObjectSpawner.objectSpawned += OnObjectSpawned;
-        }
+        //else if (m_CurrentGoal.CurrentGoal == OnboardingGoals.TapSurface)
+        //{
+        //    if (m_LearnButton != null)
+        //    {
+        //        m_LearnButton.SetActive(false);
+        //    }
+        //    m_SurfacesTapped = 0;
+        //    //m_ObjectSpawner.objectSpawned += OnObjectSpawned;
+        //}
     }
 
     // 평면 활성화 코루틴
@@ -274,22 +303,21 @@ public class GoalManager : MonoBehaviour
         m_ARPlaneManager.enabled = true;
     }
 
-    // 툴팁 비활성화
-    void DisableTooltips()
-    {
-        if (m_CurrentGoal.CurrentGoal == OnboardingGoals.TapSurface)
-        {
-            if (m_TapTooltip != null)
-            {
-                m_TapTooltip.SetActive(false);
-            }
-        }
-    }
+    //// 툴팁 비활성화
+    //void DisableTooltips()
+    //{
+    //    if (m_CurrentGoal.CurrentGoal == OnboardingGoals.TapSurface)
+    //    {
+    //        if (m_TapTooltip != null)
+    //        {
+    //            m_TapTooltip.SetActive(false);
+    //        }
+    //    }
+    //}
 
     // 목표 강제 완료
     public void ForceCompleteGoal()
     {
-        //Debug.Log("test");
         CompleteGoal();
     }
 
@@ -298,10 +326,10 @@ public class GoalManager : MonoBehaviour
     {
         m_CoachingUIParent.transform.localScale = Vector3.zero;
 
-        TurnOnVideoPlayer();
+        //TurnOnVideoPlayer();
 
-        if (m_VideoPlayerToggle != null)
-            m_VideoPlayerToggle.isOn = true;
+        //if (m_VideoPlayerToggle != null)
+        //    m_VideoPlayerToggle.isOn = true;
 
         if (m_FadeMaterial != null)
         {
@@ -333,13 +361,14 @@ public class GoalManager : MonoBehaviour
         m_OnboardingGoals = new Queue<Goal>();
         var welcomeGoal = new Goal(OnboardingGoals.Empty);
         var findSurfaceGoal = new Goal(OnboardingGoals.FindSurfaces);
-        var tapSurfaceGoal = new Goal(OnboardingGoals.TapSurface);
-        var endGoal = new Goal(OnboardingGoals.Empty);
+        var SelectWorldGoal = new Goal(OnboardingGoals.SelectWorld);
+        //var tapSurfaceGoal = new Goal(OnboardingGoals.TapSurface);
+        var EnterWorldGoal = new Goal(OnboardingGoals.EnterWorld);
 
         m_OnboardingGoals.Enqueue(welcomeGoal);
         m_OnboardingGoals.Enqueue(findSurfaceGoal);
-        m_OnboardingGoals.Enqueue(tapSurfaceGoal);
-        m_OnboardingGoals.Enqueue(endGoal);
+        m_OnboardingGoals.Enqueue(SelectWorldGoal);
+        m_OnboardingGoals.Enqueue(EnterWorldGoal);
 
         for (int i = 0; i < m_StepList.Count; i++)
         {
