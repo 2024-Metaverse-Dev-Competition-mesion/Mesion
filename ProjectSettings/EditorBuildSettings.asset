@@ -9,15 +9,4 @@ EditorBuildSettings:
     path: Assets/TG_WorkSpace/scenes/xr_template.unity
     guid: 55daccc09a3b69647bbab145b54a3ab3
   - enabled: 1
-    path: Assets/TG_WorkSpace/scenes/start_ui.unity
-    guid: ca28b801f7e766e469108943c40bd999
-  m_configObjects:
-    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260, type: 2}
-    Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: dc5a169419fa04987b057f65238cf3ba, type: 2}
-    UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 2e05861145f7f8e4e88f13a9eefcc40a, type: 2}
-    UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: 6c4f4ab68eb32044aafdc72d793daaad, type: 2}
-    com.unity.input.settings: {fileID: 11400000, guid: f8a442de0c8906f4d9c00184993fc289, type: 2}
-    com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: b0adc3ac628078948aade5d77dac8374, type: 2}
-    com.unity.xr.magicleap.magic_leap_settings: {fileID: 11400000, guid: 43e231e21fbbf574a9be9d5f1a44b151, type: 2}
-    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: c85551d0057d80a478e5aa5996926ff3, type: 2}
-    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 6c1bc2bce911786478b67f17e21278a3, type: 2}
+
