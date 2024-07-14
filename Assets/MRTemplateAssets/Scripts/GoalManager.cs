@@ -27,7 +27,7 @@ public class GoalManager : MonoBehaviour
     // 온보딩 목표를 정의하는 열거형
     public enum OnboardingGoals
     {
-        Empty
+        Empty,
         FindSurfaces,
         SelectWorld,
         EnterWorld,
@@ -46,10 +46,10 @@ public class GoalManager : MonoBehaviour
         [SerializeField]
         public GameObject stepObject; // 단계 객체
 
-        [SerializeField]
-        public string buttonText; // 버튼 텍스트
+        //[SerializeField]
+        //public string buttonText; // 버튼 텍스트
 
-        public bool includeSkipButton; // 건너뛰기 버튼 포함 여부
+        //public bool includeSkipButton; // 건너뛰기 버튼 포함 여부
     }
 
     [SerializeField]
@@ -91,14 +91,14 @@ public class GoalManager : MonoBehaviour
     [SerializeField]
     LazyFollow m_GoalPanelLazyFollow; // 목표 패널 LazyFollow
 
-    [SerializeField]
-    GameObject m_TapTooltip; // 탭 툴팁
+    //[SerializeField]
+    //GameObject m_TapTooltip; // 탭 툴팁
 
-    [SerializeField]
-    GameObject m_VideoPlayer; // 비디오 플레이어
+    //[SerializeField]
+    //GameObject m_VideoPlayer; // 비디오 플레이어
 
-    [SerializeField]
-    Toggle m_VideoPlayerToggle; // 비디오 플레이어 토글
+    //[SerializeField]
+    //Toggle m_VideoPlayerToggle; // 비디오 플레이어 토글
 
     [SerializeField]
     ARPlaneManager m_ARPlaneManager; // AR 평면 관리자
@@ -128,16 +128,16 @@ public class GoalManager : MonoBehaviour
         //목표 하나 빼기
         m_CurrentGoal = m_OnboardingGoals.Dequeue();
         //초기화
-        if (m_TapTooltip != null)
-            m_TapTooltip.SetActive(false);
+        //if (m_TapTooltip != null)
+        //    m_TapTooltip.SetActive(false);
 
-        if (m_VideoPlayer != null)
-        {
-            m_VideoPlayer.SetActive(false);
+        //if (m_VideoPlayer != null)
+        //{
+        //    m_VideoPlayer.SetActive(false);
 
-            if (m_VideoPlayerToggle != null)
-                m_VideoPlayerToggle.isOn = false;
-        }
+        //    if (m_VideoPlayerToggle != null)
+        //        m_VideoPlayerToggle.isOn = false;
+        //}
 
         if (m_FadeMaterial != null)
         {
@@ -257,10 +257,10 @@ public class GoalManager : MonoBehaviour
             m_StepList[m_CurrentGoalIndex].stepObject.SetActive(true);
 
             // 버튼 텍스트를 현재 단계의 버튼 텍스트로 설정
-            m_StepButtonTextField.text = m_StepList[m_CurrentGoalIndex].buttonText;
+            //m_StepButtonTextField.text = m_StepList[m_CurrentGoalIndex].buttonText;
 
             // 현재 단계에 스킵 버튼을 포함하는지 여부에 따라 스킵 버튼을 활성화 또는 비활성화
-            m_SkipButton.SetActive(m_StepList[m_CurrentGoalIndex].includeSkipButton);
+            //m_SkipButton.SetActive(m_StepList[m_CurrentGoalIndex].includeSkipButton);
         }
         else
         {
@@ -370,25 +370,25 @@ public class GoalManager : MonoBehaviour
         m_OnboardingGoals.Enqueue(SelectWorldGoal);
         m_OnboardingGoals.Enqueue(EnterWorldGoal);
 
-        for (int i = 0; i < m_StepList.Count; i++)
-        {
-            if (i == 0)
-            {
-                m_StepList[i].stepObject.SetActive(true);
-                m_SkipButton.SetActive(m_StepList[i].includeSkipButton);
-                m_StepButtonTextField.text = m_StepList[i].buttonText;
-            }
-            else
-            {
-                m_StepList[i].stepObject.SetActive(false);
-            }
-        }
+        //for (int i = 0; i < m_StepList.Count; i++)
+        //{
+        //    if (i == 0)
+        //    {
+        //        m_StepList[i].stepObject.SetActive(true);
+        //        m_SkipButton.SetActive(m_StepList[i].includeSkipButton);
+        //        m_StepButtonTextField.text = m_StepList[i].buttonText;
+        //    }
+        //    else
+        //    {
+        //        m_StepList[i].stepObject.SetActive(false);
+        //    }
+        //}
 
         m_CurrentGoal = m_OnboardingGoals.Dequeue();
         m_AllGoalsFinished = false;
 
-        if (m_TapTooltip != null)
-            m_TapTooltip.SetActive(false);
+        //if (m_TapTooltip != null)
+        //    m_TapTooltip.SetActive(false);
 
         if (m_LearnButton != null)
         {
@@ -404,75 +404,75 @@ public class GoalManager : MonoBehaviour
     }
 
     // 객체 생성 시 호출되는 이벤트 핸들러
-    void OnObjectSpawned(GameObject spawnedObject)
-    {
-        m_SurfacesTapped++;
-        if (m_CurrentGoal.CurrentGoal == OnboardingGoals.TapSurface && m_SurfacesTapped >= k_NumberOfSurfacesTappedToCompleteGoal)
-        {
-            CompleteGoal();
-            m_GoalPanelLazyFollow.positionFollowMode = LazyFollow.PositionFollowMode.Follow;
-        }
-    }
+    //void OnObjectSpawned(GameObject spawnedObject)
+    //{
+    //    m_SurfacesTapped++;
+    //    if (m_CurrentGoal.CurrentGoal == OnboardingGoals.TapSurface && m_SurfacesTapped >= k_NumberOfSurfacesTappedToCompleteGoal)
+    //    {
+    //        CompleteGoal();
+    //        m_GoalPanelLazyFollow.positionFollowMode = LazyFollow.PositionFollowMode.Follow;
+    //    }
+    //}
 
     // 비디오 플레이어 토글
-    public void TooglePlayer(bool visibility)
-    {
-        if (visibility)
-        {
-            TurnOnVideoPlayer();
-        }
-        else
-        {
-            if (m_VideoPlayer.activeSelf)
-            {
-                m_VideoPlayer.SetActive(false);
-                if (m_VideoPlayerToggle.isOn)
-                    m_VideoPlayerToggle.isOn = false;
-            }
-        }
-    }
+    //public void TooglePlayer(bool visibility)
+    //{
+    //    if (visibility)
+    //    {
+    //        TurnOnVideoPlayer();
+    //    }
+    //    else
+    //    {
+    //        if (m_VideoPlayer.activeSelf)
+    //        {
+    //            m_VideoPlayer.SetActive(false);
+    //            if (m_VideoPlayerToggle.isOn)
+    //                m_VideoPlayerToggle.isOn = false;
+    //        }
+    //    }
+    //}
 
     // 비디오 플레이어 활성화
-    void TurnOnVideoPlayer()
-    {
-        if (m_VideoPlayer.activeSelf)
-            return;
+    //void TurnOnVideoPlayer()
+    //{
+    //    if (m_VideoPlayer.activeSelf)
+    //        return;
 
-        var follow = m_VideoPlayer.GetComponent<LazyFollow>();
-        if (follow != null)
-            follow.rotationFollowMode = LazyFollow.RotationFollowMode.None;
+    //    var follow = m_VideoPlayer.GetComponent<LazyFollow>();
+    //    if (follow != null)
+    //        follow.rotationFollowMode = LazyFollow.RotationFollowMode.None;
 
-        m_VideoPlayer.SetActive(false);
-        var target = Camera.main.transform;
-        var targetRotation = target.rotation;
-        var newTransform = target;
-        var targetEuler = targetRotation.eulerAngles;
-        targetRotation = Quaternion.Euler
-        (
-            0f,
-            targetEuler.y,
-            targetEuler.z
-        );
+    //    m_VideoPlayer.SetActive(false);
+    //    var target = Camera.main.transform;
+    //    var targetRotation = target.rotation;
+    //    var newTransform = target;
+    //    var targetEuler = targetRotation.eulerAngles;
+    //    targetRotation = Quaternion.Euler
+    //    (
+    //        0f,
+    //        targetEuler.y,
+    //        targetEuler.z
+    //    );
 
-        newTransform.rotation = targetRotation;
-        var targetPosition = target.position + newTransform.TransformVector(m_TargetOffset);
-        m_VideoPlayer.transform.position = targetPosition;
+    //    newTransform.rotation = targetRotation;
+    //    var targetPosition = target.position + newTransform.TransformVector(m_TargetOffset);
+    //    m_VideoPlayer.transform.position = targetPosition;
 
-        var forward = target.position - m_VideoPlayer.transform.position;
-        var targetPlayerRotation = forward.sqrMagnitude > float.Epsilon ? Quaternion.LookRotation(forward, Vector3.up) : Quaternion.identity;
-        targetPlayerRotation *= Quaternion.Euler(new Vector3(0f, 180f, 0f));
-        var targetPlayerEuler = targetPlayerRotation.eulerAngles;
-        var currentEuler = m_VideoPlayer.transform.rotation.eulerAngles;
-        targetPlayerRotation = Quaternion.Euler
-        (
-            currentEuler.x,
-            targetPlayerEuler.y,
-            currentEuler.z
-        );
+    //    var forward = target.position - m_VideoPlayer.transform.position;
+    //    var targetPlayerRotation = forward.sqrMagnitude > float.Epsilon ? Quaternion.LookRotation(forward, Vector3.up) : Quaternion.identity;
+    //    targetPlayerRotation *= Quaternion.Euler(new Vector3(0f, 180f, 0f));
+    //    var targetPlayerEuler = targetPlayerRotation.eulerAngles;
+    //    var currentEuler = m_VideoPlayer.transform.rotation.eulerAngles;
+    //    targetPlayerRotation = Quaternion.Euler
+    //    (
+    //        currentEuler.x,
+    //        targetPlayerEuler.y,
+    //        currentEuler.z
+    //    );
 
-        m_VideoPlayer.transform.rotation = targetPlayerRotation;
-        m_VideoPlayer.SetActive(true);
-        if (follow != null)
-            follow.rotationFollowMode = LazyFollow.RotationFollowMode.LookAtWithWorldUp;
-    }
+    //    m_VideoPlayer.transform.rotation = targetPlayerRotation;
+    //    m_VideoPlayer.SetActive(true);
+    //    if (follow != null)
+    //        follow.rotationFollowMode = LazyFollow.RotationFollowMode.LookAtWithWorldUp;
+    //}
 }
