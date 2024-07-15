@@ -4,8 +4,11 @@ public class PlayerMovement1 : MonoBehaviour
 {
     public float speed = 5.0f; // 이동 속도
     public float mouseSensitivity = 100.0f; // 마우스 민감도
-
+    public GameObject uiPanel; // Space 키를 눌렀을 때 표시할 UI 패널
     private float xRotation = 0f;
+    public Transform petTransform; // 펫의 Transform
+
+    private bool isPetFollowing = false; // 펫이 플레이어를 바라보는지 여부
 
     void Start()
     {
@@ -17,12 +20,21 @@ public class PlayerMovement1 : MonoBehaviour
         {
             rb.freezeRotation = true; // 회전 고정
         }
+        // UI 패널을 초기에는 비활성화 상태로 설정
+        if (uiPanel != null)
+        {
+            uiPanel.SetActive(false);
+        }
     }
 
     void Update()
     {
-        MovePlayer();
-        RotatePlayer();
+        CheckPetInteraction(); // 펫과의 상호작용 체크
+        if (!isPetFollowing)
+        {
+            MovePlayer();
+            RotatePlayer();
+        }
     }
 
     void MovePlayer()
@@ -62,5 +74,35 @@ public class PlayerMovement1 : MonoBehaviour
 
         // 플레이어 Y축 회전
         transform.Rotate(Vector3.up * mouseX);
+    }
+
+    void CheckPetInteraction()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (Vector3.Distance(transform.position, petTransform.position) < 5f)
+            {
+                ToggleUIPanel();
+                isPetFollowing = !isPetFollowing;
+
+                if (isPetFollowing)
+                {
+                    petTransform.LookAt(transform);
+                    petTransform.GetComponent<PetRoam>().SetFollowingPlayer(true);
+                }
+                else
+                {
+                    petTransform.GetComponent<PetRoam>().SetFollowingPlayer(false);
+                }
+            }
+        }
+    }
+
+    void ToggleUIPanel()
+    {
+        if (uiPanel != null)
+        {
+            uiPanel.SetActive(!uiPanel.activeSelf);
+        }
     }
 }
