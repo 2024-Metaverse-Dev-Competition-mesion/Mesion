@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class DroneController : MonoBehaviour
 {
-	public float moveSpeed = 5.0f;
-	public float ascendSpeed = 5.0f;
+	public float moveSpeed = 100.0f;
+	public float ascendSpeed = 100.0f;
 	public float rotationSpeed = 100.0f;
 	public Camera droneCamera;
 	public Camera controllerCamera;
@@ -36,32 +36,38 @@ public class DroneController : MonoBehaviour
 
 		if (Input.GetKey(KeyCode.W))
 		{
+			Debug.Log("Go Up");
 			moveUpDown = ascendSpeed;
 		}
 
 		if (Input.GetKey(KeyCode.S))
 		{
+			Debug.Log("Go Down");
 			moveUpDown = -ascendSpeed;
 		}
 
 		if (Input.GetKey(KeyCode.UpArrow))
 		{
-			moveForwardBackward = -moveSpeed;
+			Debug.Log("Go Straight");
+			moveForwardBackward = moveSpeed;
 		}
 
 		if (Input.GetKey(KeyCode.DownArrow))
 		{
-			moveForwardBackward = moveSpeed;
+			Debug.Log("Go Back");
+			moveForwardBackward = -moveSpeed;
 		}
 
 		if (Input.GetKey(KeyCode.RightArrow))
 		{
-			moveLeftRight = moveSpeed;
+			Debug.Log("Go Right");
+			moveLeftRight = -moveSpeed;
 		}
 
 		if (Input.GetKey(KeyCode.LeftArrow))
 		{
-			moveLeftRight = -moveSpeed;
+			Debug.Log("Go Left");
+			moveLeftRight = moveSpeed;
 		}
 		/*Vector3 movement = new Vector3(moveLeftRight, moveUpDown, moveForwardBackward) * Time.deltaTime;
 		rb.velocity = movement;*/
@@ -77,11 +83,13 @@ public class DroneController : MonoBehaviour
 
 		if (Input.GetKey(KeyCode.D))
 		{
+			Debug.Log("Rotate Right");
 			rotateRudder = rotationSpeed * Time.deltaTime;
 		}
 
 		if (Input.GetKey(KeyCode.A))
 		{
+			Debug.Log("Rotate Left");
 			rotateRudder = -rotationSpeed * Time.deltaTime;
 		}
 
