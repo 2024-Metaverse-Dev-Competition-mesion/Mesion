@@ -31,6 +31,10 @@ public class PointController : MonoBehaviour
         {
             points[currentPointIndex].SetActive(true);
         }
+        else
+        {
+            Debug.Log("모든 포인트를 달성했습니다!");
+        }
     }
 
     // Update is called once per frame

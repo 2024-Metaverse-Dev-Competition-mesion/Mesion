@@ -7,7 +7,7 @@ public class DroneController : MonoBehaviour
 	public float moveSpeed = 100.0f;
 	public float ascendSpeed = 100.0f;
 	public float rotationSpeed = 100.0f;
-	public Camera droneCamera;
+	public Camera droneCamera;  
 	public Camera controllerCamera;
 
 	private Rigidbody rb;
@@ -36,37 +36,31 @@ public class DroneController : MonoBehaviour
 
 		if (Input.GetKey(KeyCode.W))
 		{
-			Debug.Log("Go Up");
 			moveUpDown = ascendSpeed;
 		}
 
 		if (Input.GetKey(KeyCode.S))
 		{
-			Debug.Log("Go Down");
 			moveUpDown = -ascendSpeed;
 		}
 
 		if (Input.GetKey(KeyCode.UpArrow))
 		{
-			Debug.Log("Go Straight");
 			moveForwardBackward = moveSpeed;
 		}
 
 		if (Input.GetKey(KeyCode.DownArrow))
 		{
-			Debug.Log("Go Back");
 			moveForwardBackward = -moveSpeed;
 		}
 
 		if (Input.GetKey(KeyCode.RightArrow))
 		{
-			Debug.Log("Go Right");
 			moveLeftRight = -moveSpeed;
 		}
 
 		if (Input.GetKey(KeyCode.LeftArrow))
 		{
-			Debug.Log("Go Left");
 			moveLeftRight = moveSpeed;
 		}
 		/*Vector3 movement = new Vector3(moveLeftRight, moveUpDown, moveForwardBackward) * Time.deltaTime;
@@ -83,13 +77,11 @@ public class DroneController : MonoBehaviour
 
 		if (Input.GetKey(KeyCode.D))
 		{
-			Debug.Log("Rotate Right");
 			rotateRudder = rotationSpeed * Time.deltaTime;
 		}
 
 		if (Input.GetKey(KeyCode.A))
-		{
-			Debug.Log("Rotate Left");
+		{	
 			rotateRudder = -rotationSpeed * Time.deltaTime;
 		}
 
@@ -110,5 +102,13 @@ public class DroneController : MonoBehaviour
 	{
 		droneCamera.gameObject.SetActive(isDroneView);
 		controllerCamera.gameObject.SetActive(!isDroneView);
+	}
+
+	private void OnTriggerEnter(Collider other)
+	{
+		if (other.CompareTag("Point"))
+		{
+			other.GetComponentInParent<PointController>().OnPointReached();
+		}
 	}
 }
