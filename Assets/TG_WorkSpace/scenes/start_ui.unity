@@ -1557,7 +1557,7 @@ PrefabInstance:
     - target: {fileID: 1910844646705829172, guid: d0d9b0fad5cd8dd41b3e3a43240551aa, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1608636146}
+      objectReference: {fileID: 0}
     - target: {fileID: 1910844646705829172, guid: d0d9b0fad5cd8dd41b3e3a43240551aa, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -2327,7 +2327,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1608636146}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GoalManager, Assembly-CSharp
         m_MethodName: ForceCompleteGoal
         m_Mode: 1
@@ -3660,7 +3660,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1608636146}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GoalManager, Assembly-CSharp
         m_MethodName: ForceEndAllGoals
         m_Mode: 1
@@ -5306,7 +5306,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1608636146}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GoalManager, Assembly-CSharp
         m_MethodName: ForceEndAllGoals
         m_Mode: 1
@@ -6704,6 +6704,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1157969846}
   m_CullTransparentMesh: 1
+--- !u!114 &1197726797 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3199508834110206841, guid: 8a3826b29567e6044a95e79d38cce36c, type: 3}
+  m_PrefabInstance: {fileID: 1676751997}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1213945716
 GameObject:
   m_ObjectHideFlags: 0
@@ -8852,7 +8863,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1608636146}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GoalManager, Assembly-CSharp
         m_MethodName: ForceCompleteGoal
         m_Mode: 1
@@ -9354,7 +9365,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1608636146}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GoalManager, Assembly-CSharp
         m_MethodName: ForceCompleteGoal
         m_Mode: 1
@@ -10428,31 +10439,59 @@ PrefabInstance:
       propertyPath: m_StepList.Array.data[1].includeSkipButton
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9177915868812651432, guid: 86a5bf68cb51f4e44bd3893bd22a2ba7, type: 3}
     m_RemovedGameObjects:
     - {fileID: 6383841202730774034, guid: 86a5bf68cb51f4e44bd3893bd22a2ba7, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6391579207171690961, guid: 86a5bf68cb51f4e44bd3893bd22a2ba7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 48988864}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2591788395326865968, guid: 86a5bf68cb51f4e44bd3893bd22a2ba7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1619940082}
   m_SourcePrefab: {fileID: 100100000, guid: 86a5bf68cb51f4e44bd3893bd22a2ba7, type: 3}
 --- !u!20 &1608636145 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 6484816944661230508, guid: 86a5bf68cb51f4e44bd3893bd22a2ba7, type: 3}
   m_PrefabInstance: {fileID: 1608636142}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1608636146 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9177915868812651432, guid: 86a5bf68cb51f4e44bd3893bd22a2ba7, type: 3}
+--- !u!1 &1619940080 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2591788395326865968, guid: 86a5bf68cb51f4e44bd3893bd22a2ba7, type: 3}
   m_PrefabInstance: {fileID: 1608636142}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+--- !u!114 &1619940082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619940080}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59d2ad3359f96894eb8454c9f9f292fb, type: 3}
+  m_Script: {fileID: 11500000, guid: 822e08cccc153b947be013b7dd35021c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_StepList:
+  - stepObject: {fileID: 5761910053974882418}
+  - stepObject: {fileID: 2083947621639379603}
+  - stepObject: {fileID: 6693438298476327346}
+  - stepObject: {fileID: 8790590038045635596}
+  m_StepButtonTextField: {fileID: 1197726797}
+  m_StartNewButton: {fileID: 1336452817577496166}
+  m_ExitButton: {fileID: 5436384548743707484}
+  m_ContinueButton: {fileID: 2099172215}
+  m_SkipButton: {fileID: 405514495}
+  m_LearnButton: {fileID: 5026014609748126006}
+  m_LearnModal: {fileID: 6509821451006386844}
+  m_LearnModalButton: {fileID: 1676751998}
+  m_CoachingUIParent: {fileID: 8829797444752481016}
+  m_FadeMaterial: {fileID: 1077330018}
+  m_PassthroughToggle: {fileID: 209712153}
+  m_GoalPanelLazyFollow: {fileID: 8176722202106737939}
+  m_ARPlaneManager: {fileID: 0}
 --- !u!1001 &1676751997
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10568,7 +10607,7 @@ PrefabInstance:
     - target: {fileID: 7753147258609537286, guid: 8a3826b29567e6044a95e79d38cce36c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1608636146}
+      objectReference: {fileID: 0}
     - target: {fileID: 7753147258609537286, guid: 8a3826b29567e6044a95e79d38cce36c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -12132,7 +12171,7 @@ PrefabInstance:
     - target: {fileID: 7753147258609537286, guid: 8a3826b29567e6044a95e79d38cce36c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1608636146}
+      objectReference: {fileID: 0}
     - target: {fileID: 7753147258609537286, guid: 8a3826b29567e6044a95e79d38cce36c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -12595,7 +12634,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1608636146}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GoalManager, Assembly-CSharp
         m_MethodName: ForceCompleteGoal
         m_Mode: 1
@@ -13383,9 +13422,9 @@ RectTransform:
   - {fileID: 4450472594308144553}
   m_Father: {fileID: 7882302710429490738}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 49, y: -4}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 8, y: 8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &346495744204849339
@@ -13689,9 +13728,9 @@ RectTransform:
   - {fileID: 4563132896902903778}
   m_Father: {fileID: 5719879833980481326}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 150, y: -725.3}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 300, y: 440}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &554562876764109376
@@ -13918,9 +13957,9 @@ RectTransform:
   - {fileID: 756814336761753023}
   m_Father: {fileID: 6441091488840601329}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 49, y: -4}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 8, y: 8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &756814336761753023
@@ -16283,9 +16322,9 @@ RectTransform:
   - {fileID: 3458940693342139343}
   m_Father: {fileID: 7882302710429490738}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 34, y: -4}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 8, y: 8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &1458658628779787708
@@ -16303,9 +16342,9 @@ RectTransform:
   - {fileID: 7754302509496184118}
   m_Father: {fileID: 6441091488840601329}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 34, y: -4}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 8, y: 8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &1484143274071204777
@@ -16935,7 +16974,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 150.00002, y: -28}
-  m_SizeDelta: {x: 53, y: 8}
+  m_SizeDelta: {x: 0, y: 8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2075094216686962581
 CanvasRenderer:
@@ -16960,9 +16999,9 @@ RectTransform:
   - {fileID: 4318803814982989429}
   m_Father: {fileID: 2024798466520664274}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 4, y: -4}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 8, y: 8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2083947621639379603
@@ -16981,7 +17020,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2112421027928536394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17164,9 +17203,9 @@ RectTransform:
   - {fileID: 2307735595051802418}
   m_Father: {fileID: 7882302710429490738}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 4, y: -4}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 8, y: 8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &2227641999735689349
@@ -18437,9 +18476,9 @@ RectTransform:
   - {fileID: 6465422969601171918}
   m_Father: {fileID: 2024798466520664274}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 49, y: -4}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 8, y: 8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3628273335365572140
@@ -18790,9 +18829,9 @@ RectTransform:
   - {fileID: 2212451198195545321}
   m_Father: {fileID: 6441091488840601329}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 19, y: -4}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 8, y: 8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3972213455932468042
@@ -19000,9 +19039,9 @@ RectTransform:
   - {fileID: 7914562750082647789}
   m_Father: {fileID: 6441091488840601329}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 4, y: -4}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 8, y: 8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4271250465029730445
@@ -20280,9 +20319,9 @@ RectTransform:
   - {fileID: 6441091488840601329}
   m_Father: {fileID: 5719879833980481326}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 150, y: -755.3}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 300, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &5345799527167025515
@@ -20559,7 +20598,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1608636146}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GoalManager, Assembly-CSharp
         m_MethodName: ForceQuitApplication
         m_Mode: 1
@@ -21083,9 +21122,9 @@ RectTransform:
   - {fileID: 3136942209062485773}
   m_Father: {fileID: 2024798466520664274}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 34, y: -4}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 8, y: 8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6006741640443560706
@@ -21372,9 +21411,9 @@ RectTransform:
   - {fileID: 1213945717}
   m_Father: {fileID: 5719879833980481326}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 150, y: -755.3}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 300, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6408304589790859224
@@ -21556,7 +21595,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 150.00002, y: -28}
-  m_SizeDelta: {x: 53, y: 8}
+  m_SizeDelta: {x: 0, y: 8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &6465422969601171918
 RectTransform:
@@ -21664,7 +21703,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1608636146}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GoalManager, Assembly-CSharp
         m_MethodName: ForceCompleteGoal
         m_Mode: 1
@@ -21793,9 +21832,9 @@ RectTransform:
   - {fileID: 226265496750514445}
   m_Father: {fileID: 7882302710429490738}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 19, y: -4}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 8, y: 8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &6693438298476327346
@@ -21813,7 +21852,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!222 &6705574767942169282
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -23128,9 +23167,9 @@ RectTransform:
   - {fileID: 1752916880143810967}
   m_Father: {fileID: 2024798466520664274}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 19, y: -4}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 8, y: 8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7714485047260571132
@@ -23345,7 +23384,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 150.20001, y: -28.000076}
-  m_SizeDelta: {x: 53, y: 8}
+  m_SizeDelta: {x: 0, y: 8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &7914562750082647789
 RectTransform:
@@ -25168,7 +25207,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &8806958223658430058
 MonoBehaviour:
   m_ObjectHideFlags: 0
