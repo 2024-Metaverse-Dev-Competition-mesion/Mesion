@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DroneController : MonoBehaviour
 {
@@ -13,11 +14,20 @@ public class DroneController : MonoBehaviour
 	private Rigidbody rb;
 	private bool isDroneView = false;
 
+	public GameObject[] droneViewUIElements;
+
+	WaterSprayController wsc;
+	private Vector3 initialPosition;
+	private Quaternion initialRotation;
+
 	// Start is called before the first frame update
 	void Start()
 	{
 		rb = GetComponent<Rigidbody>();
 		SwitchCameraView(isDroneView);
+
+		initialPosition = transform.position;
+		initialRotation = transform.rotation;
 	}
 
 	// Update is called once per frame
@@ -26,6 +36,11 @@ public class DroneController : MonoBehaviour
 		HandleMovement();
 		HandleRotation();
 		HandleCameraSwitch();
+
+		if (Input.GetKey(KeyCode.Space))
+        {
+			rb.AddForce(transform.forward * wsc.sprayForce, ForceMode.Force);
+		}
 	}
 
 	void HandleMovement()
@@ -95,6 +110,7 @@ public class DroneController : MonoBehaviour
 			isDroneView = !isDroneView;
 			Debug.Log(isDroneView);
 			SwitchCameraView(isDroneView);
+			UpdateUIVisibility();
 		}
 	}
 
@@ -111,4 +127,18 @@ public class DroneController : MonoBehaviour
 			other.GetComponentInParent<PointController>().OnPointReached();
 		}
 	}
+
+	void UpdateUIVisibility()
+    {
+		foreach(GameObject uiElement in droneViewUIElements)
+        {
+			uiElement.SetActive(isDroneView);
+        }
+    }
+
+	void LockPosition()
+    {
+		transform.position = initialPosition;
+		transform.rotation = initialRotation;
+    }
 }
