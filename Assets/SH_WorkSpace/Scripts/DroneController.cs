@@ -15,6 +15,9 @@ public class DroneController : MonoBehaviour
 
 	public Canvas vrCanvas;
 
+	private Rigidbody rb;
+	private Vector3 lastPosition;
+
 	private void OnEnable()
 	{
 		droneMovement.action.Enable();
@@ -28,9 +31,13 @@ public class DroneController : MonoBehaviour
 		droneRotate.action.Disable();
 		toggleCanvasAction.action.Disable();
 	}
+
 	// Start is called before the first frame update
 	void Start()
 	{
+		rb = GetComponent<Rigidbody>();
+		lastPosition = transform.position;
+
 		if (vrCanvas != null)
 		{
 			vrCanvas.gameObject.SetActive(false);
@@ -53,6 +60,19 @@ public class DroneController : MonoBehaviour
 		if (toggleCanvasAction.action.triggered)
 		{
 			vrCanvas.gameObject.SetActive(!vrCanvas.gameObject.activeSelf);
+		}
+
+		// 매 프레임마다 마지막 위치를 업데이트합니다.
+		lastPosition = transform.position;
+	}
+
+	private void OnCollisionEnter(Collision collision)
+	{
+		if (collision.gameObject.CompareTag("Map") || collision.gameObject.CompareTag("Fire"))
+		{
+			// 충돌 시 드론을 마지막 위치로 되돌리고 속도를 0으로 설정하여 밀려나는 것을 방지합니다.
+			rb.velocity = Vector3.zero;
+			transform.position = lastPosition;
 		}
 	}
 

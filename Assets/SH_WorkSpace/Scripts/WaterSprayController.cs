@@ -14,6 +14,8 @@ public class WaterSprayController : MonoBehaviour
 
 	private bool isSpraying = false;
 
+	DroneStatus droneStatus;
+
 	[SerializeField]
 	private InputActionReference sprayWaterAction;
 

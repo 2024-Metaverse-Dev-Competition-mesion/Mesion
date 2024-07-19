@@ -1,44 +1,61 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FireManager : MonoBehaviour
 {
-    public GameObject firePrefab;
-    public Transform[] fireLocations;
-    public float fireInterval = 5f;
+	public GameObject firePrefab;
+	public Transform[] fireLocations;
+	public float fireInterval = 5f;
+	public GameObject successMessage; // 성공 메시지 텍스트
 
-    // 활성화된 불 위치들
-    private HashSet<Transform> activeFireLocations = new HashSet<Transform>();
+	private HashSet<Transform> activeFireLocations = new HashSet<Transform>();
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        InvokeRepeating("ActivateRandomFire", fireInterval, fireInterval);
-    }
+	int cnt = 0;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	void Start()
+	{
+		InvokeRepeating("ActivateRandomFire", fireInterval, fireInterval);
+	}
 
-    void ActivateRandomFire()
-    {
-        if (activeFireLocations.Count >= fireLocations.Length)
-        {
-            // 모든 위치에 불이 켜져 있을 경우, 더 이상 불을 켜지 않음
-            return;
-        }
+	void ActivateRandomFire()
+	{
+		if (activeFireLocations.Count >= fireLocations.Length)
+		{
+			return;
+		}
 
-        Transform fireLocation = null;
-        do
-        {
-            int randomIndex = Random.Range(0, fireLocations.Length); // 랜덤 인덱스 선택
-            fireLocation = fireLocations[randomIndex];
-        } while (activeFireLocations.Contains(fireLocation)); // 이미 불이 켜진 위치인지 확인
+		Transform fireLocation = null;
+		do
+		{
+			int randomIndex = Random.Range(0, fireLocations.Length);
+			fireLocation = fireLocations[randomIndex];
+		} while (activeFireLocations.Contains(fireLocation));
 
-        Instantiate(firePrefab, fireLocation.position, fireLocation.rotation); // 불 생성
-        activeFireLocations.Add(fireLocation); // 활성화된 불 위치 추가
-    }
+		Instantiate(firePrefab, fireLocation.position, fireLocation.rotation);
+		activeFireLocations.Add(fireLocation);
+		cnt++;
+
+		HandleFireExtinguished(cnt);
+	}
+
+	void HandleFireExtinguished(int cnt)
+	{
+		// 모든 불이 꺼졌는지 확인
+		if (fireLocations.Length == cnt)
+		{
+			ShowSuccessMessage();
+		}
+	}
+
+	void ShowSuccessMessage()
+	{
+		if (successMessage != null)
+		{
+			successMessage.SetActive(true);
+		}
+		Debug.Log("All fires extinguished! Success!");
+	}
 }
