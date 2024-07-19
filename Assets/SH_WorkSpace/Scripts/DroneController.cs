@@ -1,123 +1,59 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class DroneController : MonoBehaviour
 {
-	public float moveSpeed = 100.0f;
-	public float ascendSpeed = 100.0f;
-	public float rotationSpeed = 100.0f;
-	public Camera droneCamera;  
-	public Camera controllerCamera;
+	[SerializeField]
+	private InputActionReference droneMovement;
+	[SerializeField]
+	private InputActionReference droneRotate;
+	[SerializeField]
+	private InputActionReference toggleCanvasAction;
 
-	private Rigidbody rb;
-	private bool isDroneView = false;
+	public Canvas vrCanvas;
 
-	public GameObject[] droneViewUIElements;
+	private void OnEnable()
+	{
+		droneMovement.action.Enable();
+		droneRotate.action.Enable();
+		toggleCanvasAction.action.Enable();
+	}
 
-	WaterSprayController wsc;
-	private Vector3 initialPosition;
-	private Quaternion initialRotation;
-
+	private void OnDisable()
+	{
+		droneMovement.action.Disable();
+		droneRotate.action.Disable();
+		toggleCanvasAction.action.Disable();
+	}
 	// Start is called before the first frame update
 	void Start()
 	{
-		rb = GetComponent<Rigidbody>();
-		SwitchCameraView(isDroneView);
-
-		initialPosition = transform.position;
-		initialRotation = transform.rotation;
+		if (vrCanvas != null)
+		{
+			vrCanvas.gameObject.SetActive(false);
+		}
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
-		HandleMovement();
-		HandleRotation();
-		HandleCameraSwitch();
+		//movement
+		Vector3 dir = droneMovement.action.ReadValue<Vector3>();
+		Vector3 new3dir = new Vector3(-dir.x, dir.z, dir.y);
+		gameObject.transform.Translate(new3dir * 5 * Time.deltaTime);
 
-		if (Input.GetKey(KeyCode.Space))
-        {
-			rb.AddForce(transform.forward * wsc.sprayForce, ForceMode.Force);
-		}
-	}
+		//rotation
+		float rotate = droneRotate.action.ReadValue<float>();
+		gameObject.transform.Rotate(Vector3.forward, rotate * 100 * Time.deltaTime);
 
-	void HandleMovement()
-	{
-		float moveForwardBackward = 0f;
-		float moveLeftRight = 0f;
-		float moveUpDown = 0f;
-
-		if (Input.GetKey(KeyCode.W))
+		//toggle
+		if (toggleCanvasAction.action.triggered)
 		{
-			moveUpDown = ascendSpeed;
+			vrCanvas.gameObject.SetActive(!vrCanvas.gameObject.activeSelf);
 		}
-
-		if (Input.GetKey(KeyCode.S))
-		{
-			moveUpDown = -ascendSpeed;
-		}
-
-		if (Input.GetKey(KeyCode.UpArrow))
-		{
-			moveForwardBackward = moveSpeed;
-		}
-
-		if (Input.GetKey(KeyCode.DownArrow))
-		{
-			moveForwardBackward = -moveSpeed;
-		}
-
-		if (Input.GetKey(KeyCode.RightArrow))
-		{
-			moveLeftRight = -moveSpeed;
-		}
-
-		if (Input.GetKey(KeyCode.LeftArrow))
-		{
-			moveLeftRight = moveSpeed;
-		}
-		/*Vector3 movement = new Vector3(moveLeftRight, moveUpDown, moveForwardBackward) * Time.deltaTime;
-		rb.velocity = movement;*/
-
-		Vector3 movement = new Vector3(moveLeftRight, moveForwardBackward, moveUpDown);
-        Vector3 movementDirection = transform.TransformDirection(movement);
-
-        rb.velocity = movementDirection * Time.deltaTime;
-	}
-	void HandleRotation()
-	{
-		float rotateRudder = 0f;
-
-		if (Input.GetKey(KeyCode.D))
-		{
-			rotateRudder = rotationSpeed * Time.deltaTime;
-		}
-
-		if (Input.GetKey(KeyCode.A))
-		{	
-			rotateRudder = -rotationSpeed * Time.deltaTime;
-		}
-
-		transform.Rotate(0f, 0f, rotateRudder);
-	}
-
-	void HandleCameraSwitch()
-	{
-		if (Input.GetKeyDown(KeyCode.F))
-		{
-			isDroneView = !isDroneView;
-			Debug.Log(isDroneView);
-			SwitchCameraView(isDroneView);
-			UpdateUIVisibility();
-		}
-	}
-
-	void SwitchCameraView(bool isDroneView)
-	{
-		droneCamera.gameObject.SetActive(isDroneView);
-		controllerCamera.gameObject.SetActive(!isDroneView);
 	}
 
 	private void OnTriggerEnter(Collider other)
@@ -127,18 +63,4 @@ public class DroneController : MonoBehaviour
 			other.GetComponentInParent<PointController>().OnPointReached();
 		}
 	}
-
-	void UpdateUIVisibility()
-    {
-		foreach(GameObject uiElement in droneViewUIElements)
-        {
-			uiElement.SetActive(isDroneView);
-        }
-    }
-
-	void LockPosition()
-    {
-		transform.position = initialPosition;
-		transform.rotation = initialRotation;
-    }
 }

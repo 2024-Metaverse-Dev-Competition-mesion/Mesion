@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class WaterSprayController : MonoBehaviour
 {
@@ -13,9 +14,26 @@ public class WaterSprayController : MonoBehaviour
 
 	private bool isSpraying = false;
 
+	[SerializeField]
+	private InputActionReference sprayWaterAction;
+
+	private void OnEnable()
+	{
+		sprayWaterAction.action.Enable();
+		sprayWaterAction.action.performed += OnSprayWaterPerformed;
+		sprayWaterAction.action.canceled += OnSprayWaterCanceled;
+	}
+
+	private void OnDisable()
+	{
+		sprayWaterAction.action.Disable();
+		sprayWaterAction.action.performed -= OnSprayWaterPerformed;
+		sprayWaterAction.action.canceled -= OnSprayWaterCanceled;
+	}
+
 	void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.Space))
+		/*if (Input.GetKeyDown(KeyCode.Space))
 		{
 			StartSpraying();
 		}
@@ -23,7 +41,17 @@ public class WaterSprayController : MonoBehaviour
 		if (Input.GetKeyUp(KeyCode.Space))
 		{
 			StopSpraying();
-		}
+		}*/
+	}
+
+	private void OnSprayWaterPerformed(InputAction.CallbackContext context)
+	{
+		StartSpraying();
+	}
+
+	private void OnSprayWaterCanceled(InputAction.CallbackContext context)
+	{
+		StopSpraying();
 	}
 
 	private void StartSpraying()
