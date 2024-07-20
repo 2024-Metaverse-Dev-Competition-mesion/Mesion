@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: c2a5bc74dfcb5bc43add733586017f22
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - seedPrefab: {fileID: 2630425031254273193, guid: ff4399c5c516b6145b031f40e03b2334, type: 3}
+  - seedSpawnPoint: {instanceID: 0}
+  - waterPrefab: {instanceID: 0}
+  - waterSpawnPoint: {instanceID: 0}
+  - droneCamera: {instanceID: 0}
+  - playerCamera: {instanceID: 0}
+  - actionAsset: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
