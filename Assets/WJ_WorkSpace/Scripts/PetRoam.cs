@@ -6,6 +6,7 @@ public class PetRoam : MonoBehaviour
     public float roamRadius = 10f; // 펫이 돌아다닐 반경
     public float roamDelay = 5f;   // 각 이동 간의 지연 시간
 
+    private Animator animator;
     private NavMeshAgent agent;
     private Vector3 startingPosition;
     private bool isFollowingPlayer = false; // 플레이어를 바라보는지 여부
@@ -15,6 +16,7 @@ public class PetRoam : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
         startingPosition = transform.position;
         InvokeRepeating("Roam", 0f, roamDelay);
     }
@@ -25,6 +27,9 @@ public class PetRoam : MonoBehaviour
         {
             transform.LookAt(playerTransform);
         }
+
+        // NavMeshAgent의 속도를 애니메이터의 Speed 파라미터로 설정
+        animator.SetFloat("Speed", agent.velocity.magnitude);
     }
 
     void Roam()
