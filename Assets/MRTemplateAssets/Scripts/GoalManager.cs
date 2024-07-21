@@ -69,7 +69,10 @@ public class GoalManager : MonoBehaviour
 
     [SerializeField]
     public GameObject m_SkipButton; // 건너뛰기 버튼
- 
+
+    [SerializeField]
+    public GameObject m_QuitButton; // 강제종료
+
     [SerializeField]
     GameObject m_LearnButton; // 학습 버튼
 
@@ -162,15 +165,15 @@ public class GoalManager : MonoBehaviour
         {
             m_LearnModalButton.onClick.AddListener(CloseModal);
         }
-
-//        if (m_ObjectSpawner == null)
-//        {
-//#if UNITY_2023_1_OR_NEWER
-//            m_ObjectSpawner = FindAnyObjectByType<ObjectSpawner>();
-//#else
-//            m_ObjectSpawner = FindObjectOfType<ObjectSpawner>();
-//#endif
-//        }
+    
+        //        if (m_ObjectSpawner == null)
+        //        {
+        //#if UNITY_2023_1_OR_NEWER
+        //            m_ObjectSpawner = FindAnyObjectByType<ObjectSpawner>();
+        //#else
+        //            m_ObjectSpawner = FindObjectOfType<ObjectSpawner>();
+        //#endif
+        //        }
     }
 
     // 모달 열기
@@ -190,7 +193,6 @@ public class GoalManager : MonoBehaviour
             m_LearnModal.transform.localScale = Vector3.zero;
         }
     }
-
     void Update()
     {
         if (!m_AllGoalsFinished)
@@ -402,7 +404,17 @@ public class GoalManager : MonoBehaviour
 
         m_CurrentGoalIndex = 0;
     }
+    // 프로그램 종료
+    public void ForceQuitApplication()
+    {
+        // 애플리케이션 종료 로직
+        Application.Quit();
 
+#if UNITY_EDITOR
+        // Unity 에디터에서 실행 중인 경우 플레이 모드를 종료
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
+    }
     // 객체 생성 시 호출되는 이벤트 핸들러
     //void OnObjectSpawned(GameObject spawnedObject)
     //{
