@@ -1,50 +1,22 @@
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
 
-[RequireComponent(typeof(ObjectSpawner))]
 public class SpawnedObjectsManager : MonoBehaviour
 {
-    [SerializeField]
-    TMP_Dropdown m_ObjectSelectorDropdown;
+    public ObjectSpawner objectSpawner;
 
-    [SerializeField]
-    Button m_DestroyObjectsButton;
-
-    ObjectSpawner m_Spawner;
-
-    void OnEnable()
+    void Start()
     {
-        m_Spawner = GetComponent<ObjectSpawner>();
-        m_Spawner.spawnAsChildren = true;
-        OnObjectSelectorDropdownValueChanged(m_ObjectSelectorDropdown.value);
-        m_ObjectSelectorDropdown.onValueChanged.AddListener(OnObjectSelectorDropdownValueChanged);
-        m_DestroyObjectsButton.onClick.AddListener(OnDestroyObjectsButtonClicked);
-    }
+        // Example of setting spawnAsChildren
+        objectSpawner.spawnAsChildren = true;
 
-    void OnDisable()
-    {
-        m_ObjectSelectorDropdown.onValueChanged.RemoveListener(OnObjectSelectorDropdownValueChanged);
-        m_DestroyObjectsButton.onClick.RemoveListener(OnDestroyObjectsButtonClicked);
-    }
+        // Example of calling RandomizeSpawnOption
+        objectSpawner.RandomizeSpawnOption();
 
-    void OnObjectSelectorDropdownValueChanged(int value)
-    {
-        if (value == 0)
-        {
-            m_Spawner.RandomizeSpawnOption();
-            return;
-        }
+        // Example of using spawnOptionIndex
+        int optionIndex = objectSpawner.spawnOptionIndex;
+        Debug.Log("Spawn Option Index: " + optionIndex);
 
-        m_Spawner.spawnOptionIndex = value - 1;
-    }
-
-    void OnDestroyObjectsButtonClicked()
-    {
-        foreach (Transform child in m_Spawner.transform)
-        {
-            Destroy(child.gameObject);
-        }
+        // Example of spawning an object
+        objectSpawner.SpawnObject(new Vector3(0, 0, 0), Quaternion.identity);
     }
 }

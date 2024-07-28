@@ -5,6 +5,7 @@ public class InventoryManager : MonoBehaviour
 {
     public InventoryItem[] inventoryItems;
     public Transform spawnPoint; // XR Rig의 카메라 앞 위치
+    public SaveManager saveManager; // SaveManager 추가
 
     void Start()
     {
@@ -17,6 +18,7 @@ public class InventoryManager : MonoBehaviour
 
     public void OnItemClicked(InventoryItem item)
     {
-        item.SpawnItem(spawnPoint.position, spawnPoint.rotation);
+        GameObject newObj = item.SpawnItem(spawnPoint.position, spawnPoint.rotation);
+        saveManager.AddObjectToSave(newObj); // 생성된 오브젝트를 SaveManager에 추가
     }
 }
