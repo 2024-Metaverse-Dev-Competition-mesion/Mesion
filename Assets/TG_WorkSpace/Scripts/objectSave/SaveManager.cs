@@ -6,6 +6,24 @@ public class SaveManager : MonoBehaviour
 {
     public List<GameObject> objectsToSave = new List<GameObject>();
 
+    private void Start()
+    {
+        // 씬에 있는 모든 저장할 오브젝트를 찾아 리스트에 추가
+        FindAllSaveableObjects();
+    }
+
+    private void FindAllSaveableObjects()
+    {
+        objectsToSave.Clear();
+        foreach (GameObject obj in GameObject.FindObjectsOfType<GameObject>())
+        {
+            if (obj.CompareTag("Saveable")) // "Saveable" 태그를 가진 오브젝트만 저장
+            {
+                objectsToSave.Add(obj);
+            }
+        }
+    }
+
     public void AddObjectToSave(GameObject obj)
     {
         if (!objectsToSave.Contains(obj))
@@ -35,6 +53,6 @@ public class SaveManager : MonoBehaviour
 
         string json = JsonUtility.ToJson(saveData, true);
         File.WriteAllText(Application.persistentDataPath + "/saveFile.json", json);
-        Debug.Log("Data Saved");
+        Debug.Log("Data Saved: " + json);
     }
 }

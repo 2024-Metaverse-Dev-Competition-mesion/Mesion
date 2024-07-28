@@ -3,12 +3,12 @@ using UnityEngine;
 public class ObjectSpawner : MonoBehaviour
 {
     public GameObject objectPrefab;
-    public SaveManager saveManager;
+    public Transform spawnPoint; // XR Rig의 카메라 앞 위치
     public bool spawnAsChildren = false; // Default value, modify as needed
     public int spawnOptionIndex = 0; // Default value, modify as needed
 
     // Method to spawn an object
-    public void SpawnObject(Vector3 position, Quaternion rotation)
+    public GameObject SpawnObject(Vector3 position, Quaternion rotation)
     {
         GameObject newObj = Instantiate(objectPrefab, position, rotation);
 
@@ -17,7 +17,7 @@ public class ObjectSpawner : MonoBehaviour
             newObj.transform.parent = this.transform;
         }
 
-        saveManager.AddObjectToSave(newObj);
+        return newObj;
     }
 
     // Example method for randomizing spawn options
