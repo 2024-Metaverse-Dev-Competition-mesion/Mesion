@@ -7,6 +7,9 @@ TagManager:
   - Point
   - Fire
   - Map
+  - WaterParticle
+  - Ground
+  - Fence
   layers:
   - Default
   - TransparentFX
@@ -43,4 +46,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Forground
+    uniqueID: 3708831919
+    locked: 0
+  - name: Background
+    uniqueID: 3364014577
     locked: 0
