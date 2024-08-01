@@ -34,50 +34,22 @@ public class SettingMenu : MonoBehaviour
     }
     public void PushInventoryButton()
     {
-        // 인벤토리 눌림
         m_InventoryPanel.SetActive(!m_InventoryPanel.activeSelf);
-
     }
-    public void ExitInventoryButton()
-    {
-        // 인벤토리 눌림
-        m_InventoryPanel.SetActive(false);
 
-    }
     public void PushJobButton()
     {
-        // 인벤토리 눌림
         m_JobPanel.SetActive(!m_JobPanel.activeSelf);
-
     }
-    public void ExitJobButton()
-    {
-        // 인벤토리 눌림
-        m_JobPanel.SetActive(false);
 
-    }
     public void PushPetButton()
     {
-        // 인벤토리 눌림
         m_PetPanel.SetActive(!m_PetPanel.activeSelf);
-
     }
-    public void ExitPetButton()
-    {
-        // 인벤토리 눌림
-        m_PetPanel.SetActive(false);
 
-    }
     public void PushPassportButton()
     {
-        // 인벤토리 눌림
         m_PassportPanel.SetActive(!m_PassportPanel.activeSelf);
-
     }
-    public void ExitPassportButton()
-    {
-        // 인벤토리 눌림
-        m_PassportPanel.SetActive(false);
 
-    }
 }
