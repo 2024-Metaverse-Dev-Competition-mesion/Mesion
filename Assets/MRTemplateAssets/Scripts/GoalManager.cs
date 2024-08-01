@@ -59,16 +59,19 @@ public class GoalManager : MonoBehaviour
     public TextMeshProUGUI m_StepButtonTextField; // 단계 버튼 텍스트 필드
 
     [SerializeField]
-    public GameObject m_SkipButton; // 건너뛰기 버튼
-
-    [SerializeField]
     public GameObject m_StartNewButton; // 새출발 버튼
 
     [SerializeField]
-    public GameObject m_LoadButton; // 불러오기 버튼
+    public GameObject m_ExitButton; // 종료 버튼
 
     [SerializeField]
-    public GameObject m_ExitButton; // 종료 버튼
+    public GameObject m_ContinueButton; // 계속하기 버튼
+
+    [SerializeField]
+    public GameObject m_SkipButton; // 건너뛰기 버튼
+
+    [SerializeField]
+    public GameObject m_QuitButton; // 강제종료
 
     [SerializeField]
     GameObject m_LearnButton; // 학습 버튼
@@ -115,15 +118,15 @@ public class GoalManager : MonoBehaviour
         m_OnboardingGoals = new Queue<Goal>();
         var welcomeGoal = new Goal(OnboardingGoals.Empty);
         var findSurfaceGoal = new Goal(OnboardingGoals.FindSurfaces);
-        var SelectWorldGoal = new Goal(OnboardingGoals.SelectWorld);
+        var selectWorldGoal = new Goal(OnboardingGoals.SelectWorld);
         //var tapSurfaceGoal = new Goal(OnboardingGoals.TapSurface);
-        var EnterWorldGoal = new Goal(OnboardingGoals.EnterWorld);
+        var enterWorldGoal = new Goal(OnboardingGoals.EnterWorld);
 
         m_OnboardingGoals.Enqueue(welcomeGoal);
         m_OnboardingGoals.Enqueue(findSurfaceGoal);
         //m_OnboardingGoals.Enqueue(tapSurfaceGoal);
-        m_OnboardingGoals.Enqueue(SelectWorldGoal);
-        m_OnboardingGoals.Enqueue(EnterWorldGoal);
+        m_OnboardingGoals.Enqueue(selectWorldGoal);
+        m_OnboardingGoals.Enqueue(enterWorldGoal);
 
         //목표 하나 빼기
         m_CurrentGoal = m_OnboardingGoals.Dequeue();
@@ -162,15 +165,15 @@ public class GoalManager : MonoBehaviour
         {
             m_LearnModalButton.onClick.AddListener(CloseModal);
         }
-
-//        if (m_ObjectSpawner == null)
-//        {
-//#if UNITY_2023_1_OR_NEWER
-//            m_ObjectSpawner = FindAnyObjectByType<ObjectSpawner>();
-//#else
-//            m_ObjectSpawner = FindObjectOfType<ObjectSpawner>();
-//#endif
-//        }
+    
+        //        if (m_ObjectSpawner == null)
+        //        {
+        //#if UNITY_2023_1_OR_NEWER
+        //            m_ObjectSpawner = FindAnyObjectByType<ObjectSpawner>();
+        //#else
+        //            m_ObjectSpawner = FindObjectOfType<ObjectSpawner>();
+        //#endif
+        //        }
     }
 
     // 모달 열기
@@ -190,7 +193,6 @@ public class GoalManager : MonoBehaviour
             m_LearnModal.transform.localScale = Vector3.zero;
         }
     }
-
     void Update()
     {
         if (!m_AllGoalsFinished)
@@ -361,14 +363,14 @@ public class GoalManager : MonoBehaviour
         m_OnboardingGoals = new Queue<Goal>();
         var welcomeGoal = new Goal(OnboardingGoals.Empty);
         var findSurfaceGoal = new Goal(OnboardingGoals.FindSurfaces);
-        var SelectWorldGoal = new Goal(OnboardingGoals.SelectWorld);
+        var selectWorldGoal = new Goal(OnboardingGoals.SelectWorld);
         //var tapSurfaceGoal = new Goal(OnboardingGoals.TapSurface);
-        var EnterWorldGoal = new Goal(OnboardingGoals.EnterWorld);
+        var enterWorldGoal = new Goal(OnboardingGoals.EnterWorld);
 
         m_OnboardingGoals.Enqueue(welcomeGoal);
         m_OnboardingGoals.Enqueue(findSurfaceGoal);
-        m_OnboardingGoals.Enqueue(SelectWorldGoal);
-        m_OnboardingGoals.Enqueue(EnterWorldGoal);
+        m_OnboardingGoals.Enqueue(selectWorldGoal);
+        m_OnboardingGoals.Enqueue(enterWorldGoal);
 
         //for (int i = 0; i < m_StepList.Count; i++)
         //{
@@ -402,7 +404,17 @@ public class GoalManager : MonoBehaviour
 
         m_CurrentGoalIndex = 0;
     }
+    // 프로그램 종료
+    public void ForceQuitApplication()
+    {
+        // 애플리케이션 종료 로직
+        Application.Quit();
 
+#if UNITY_EDITOR
+        // Unity 에디터에서 실행 중인 경우 플레이 모드를 종료
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
+    }
     // 객체 생성 시 호출되는 이벤트 핸들러
     //void OnObjectSpawned(GameObject spawnedObject)
     //{

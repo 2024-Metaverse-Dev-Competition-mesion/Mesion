@@ -1,50 +1,19 @@
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
 
-[RequireComponent(typeof(ObjectSpawner))]
 public class SpawnedObjectsManager : MonoBehaviour
 {
-    [SerializeField]
-    TMP_Dropdown m_ObjectSelectorDropdown;
+    public ObjectSpawner objectSpawner;
 
-    [SerializeField]
-    Button m_DestroyObjectsButton;
-
-    ObjectSpawner m_Spawner;
-
-    void OnEnable()
+    void Start()
     {
-        m_Spawner = GetComponent<ObjectSpawner>();
-        m_Spawner.spawnAsChildren = true;
-        OnObjectSelectorDropdownValueChanged(m_ObjectSelectorDropdown.value);
-        m_ObjectSelectorDropdown.onValueChanged.AddListener(OnObjectSelectorDropdownValueChanged);
-        m_DestroyObjectsButton.onClick.AddListener(OnDestroyObjectsButtonClicked);
-    }
+        // 예시: ObjectSpawner의 멤버 사용
+        objectSpawner.spawnAsChildren = true;
+        objectSpawner.RandomizeSpawnOption();
+        Debug.Log("Spawn Option Index: " + objectSpawner.spawnOptionIndex);
 
-    void OnDisable()
-    {
-        m_ObjectSelectorDropdown.onValueChanged.RemoveListener(OnObjectSelectorDropdownValueChanged);
-        m_DestroyObjectsButton.onClick.RemoveListener(OnDestroyObjectsButtonClicked);
-    }
-
-    void OnObjectSelectorDropdownValueChanged(int value)
-    {
-        if (value == 0)
-        {
-            m_Spawner.RandomizeSpawnOption();
-            return;
-        }
-
-        m_Spawner.spawnOptionIndex = value - 1;
-    }
-
-    void OnDestroyObjectsButtonClicked()
-    {
-        foreach (Transform child in m_Spawner.transform)
-        {
-            Destroy(child.gameObject);
-        }
+        // 예시: 오브젝트 생성
+        Vector3 spawnPosition = new Vector3(0, 0, 0); // 예시 위치
+        Quaternion spawnRotation = Quaternion.identity; // 예시 회전
+        objectSpawner.SpawnObject(spawnPosition, spawnRotation);
     }
 }
