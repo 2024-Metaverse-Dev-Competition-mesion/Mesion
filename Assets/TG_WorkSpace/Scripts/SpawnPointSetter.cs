@@ -26,11 +26,7 @@ public class ObjectSpawnPositionSetter : MonoBehaviour
 
     void Update()
     {
-        // 스페이스 키를 눌렀을 때 물체를 소환
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            SetSpawnPositionAndSpawn();
-        }
+
     }
 
     void SetSpawnPositionAndSpawn()
