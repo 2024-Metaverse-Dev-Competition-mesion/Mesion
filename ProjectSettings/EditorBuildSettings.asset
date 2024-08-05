@@ -30,7 +30,7 @@ EditorBuildSettings:
     path: Assets/WJ_WorkSpace/Scene/Pet_Select.unity
     guid: be2b0f733a3027947a3f452b07a1d0cc
   - enabled: 1
-    path: Assets/WJ_WorkSpace/Scene/Pet_World_Test.unity
+    path: Assets/WJ_WorkSpace/Scene/Pet_World.unity
     guid: c197f5015f57d43c08d42a064bc3c0d5
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260, type: 2}

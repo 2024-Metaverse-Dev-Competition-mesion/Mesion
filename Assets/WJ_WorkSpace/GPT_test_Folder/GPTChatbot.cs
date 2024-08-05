@@ -87,7 +87,7 @@ public class GPTChatbot : MonoBehaviour
         if (uiHandler == null)
         {
             Debug.LogError("UI Handler is not assigned in the Inspector.");
-            return;
+            return; 
         }
 
         conversationHistory.Clear();
