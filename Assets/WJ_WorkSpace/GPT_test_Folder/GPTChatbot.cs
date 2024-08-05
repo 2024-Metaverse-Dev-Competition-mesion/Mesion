@@ -97,7 +97,7 @@ public class GPTChatbot : MonoBehaviour
         {
             model = "gpt-3.5-turbo",
             messages = new List<Message>(conversationHistory),
-            max_tokens = 300,
+            max_tokens = 1000,
             n = 1 // 한 개의 응답을 요청
         };
 
