@@ -12,7 +12,6 @@ public class TriggerInputDetector : MonoBehaviour
     private void Start()
     {
         _inputData = GetComponent<InputData>();
-        Debug.Log("Started inputData: " + _inputData);
     }
     // Update is called once per frame
     void Update()
