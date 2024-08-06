@@ -28,7 +28,6 @@ public class PetRoam : MonoBehaviour
             transform.LookAt(playerTransform);
         }
 
-        // NavMeshAgent의 속도를 애니메이터의 Speed 파라미터로 설정
         animator.SetFloat("Speed", agent.velocity.magnitude);
     }
 

@@ -15,7 +15,9 @@ public class PM : MonoBehaviour
     private bool isPetFollowing = false;
     private InputData _inputData;
     private float triggerValue;
-    public GameObject panel;
+    public GameObject panelA;
+    public GameObject panelB;
+    public GameObject panelC;
     Vector3 velocity;
     bool isGrounded;
 
@@ -56,15 +58,42 @@ public class PM : MonoBehaviour
 
     void CheckPetInteraction()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (Vector3.Distance(transform.position, petTransform.position) < 5f)
+            {
+                panelA.SetActive(true);
+
+                if (isPetFollowing == false)
+                {
+                    isPetFollowing = !isPetFollowing;
+                }
+
+                if (isPetFollowing)
+                {
+                    petTransform.LookAt(transform);
+                    petTransform.GetComponent<PetRoam>().SetFollowingPlayer(true);
+                }
+                else
+                {
+                    petTransform.GetComponent<PetRoam>().SetFollowingPlayer(false);
+                }
+            }
+        }
+
+        /*
         if (_inputData._rightController.TryGetFeatureValue(CommonUsages.primaryButton, out bool Abutton))
         {
             if (Abutton == true)
             {
                 if (Vector3.Distance(transform.position, petTransform.position) < 5f)
                 {
-                    panel.SetActive(true);
+                    panelA.SetActive(true);
 
-                    isPetFollowing = !isPetFollowing;
+                    if (isPetFollowing == false)
+                    {
+                        isPetFollowing = !isPetFollowing;
+                    }
 
                     if (isPetFollowing)
                     {
@@ -78,11 +107,19 @@ public class PM : MonoBehaviour
                 }
             }
         }
+        */
     }
 
     public void OnCancel()
     {
-        panel.SetActive(false); // Deactivate Panel A
+        panelA.SetActive(false);
+        isPetFollowing = false;
+    }
+
+    public void OnCancel2()
+    {
+        panelB.SetActive(false);
+        panelC.SetActive(false);
         isPetFollowing = false;
     }
 }
