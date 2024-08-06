@@ -5144,7 +5144,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2497444681553213857, guid: 4b400d2c38ced4edd9372b7c2d30cf84, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6478486926397914595, guid: 4b400d2c38ced4edd9372b7c2d30cf84, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5188,7 +5188,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6739245264123965555, guid: 4b400d2c38ced4edd9372b7c2d30cf84, type: 3}
       propertyPath: m_Name
-      value: Slime_01
+      value: Pet
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

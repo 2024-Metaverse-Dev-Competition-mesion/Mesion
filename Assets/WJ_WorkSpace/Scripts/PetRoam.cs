@@ -13,6 +13,8 @@ public class PetRoam : MonoBehaviour
 
     public Transform playerTransform; // 플레이어의 Transform
 
+    private Vector3 fixedPosition; // 펫이 고정될 위치
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -25,10 +27,16 @@ public class PetRoam : MonoBehaviour
     {
         if (isFollowingPlayer)
         {
+            agent.isStopped = true; // 플레이어를 따라갈 때 에이전트 멈춤
             transform.LookAt(playerTransform);
+            transform.position = fixedPosition; // 위치 고정
+            animator.SetFloat("Speed", 0); // 멈췄을 때 애니메이션 속도 0으로 설정
         }
-
-        animator.SetFloat("Speed", agent.velocity.magnitude);
+        else
+        {
+            agent.isStopped = false; // 에이전트가 돌아다니도록 설정
+            animator.SetFloat("Speed", agent.velocity.magnitude); // 에이전트 속도에 따라 애니메이션 업데이트
+        }
     }
 
     void Roam()
@@ -49,6 +57,15 @@ public class PetRoam : MonoBehaviour
     public void SetFollowingPlayer(bool isFollowing)
     {
         isFollowingPlayer = isFollowing;
-        agent.isStopped = isFollowing; // 플레이어를 따라갈 때는 NavMeshAgent를 멈춤
+        if (isFollowingPlayer)
+        {
+            fixedPosition = transform.position; // 현재 위치를 고정
+            agent.isStopped = true; // 플레이어를 따라갈 때 에이전트 완전히 멈춤
+        }
+        else
+        {
+            agent.isStopped = false; // 따라가지 않을 때는 돌아다님
+            Roam(); // 새로운 목적지를 즉시 설정
+        }
     }
 }
