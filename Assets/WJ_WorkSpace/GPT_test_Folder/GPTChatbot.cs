@@ -1,17 +1,64 @@
+/*
+    private string apiKey = "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";
+    private string apiUrl = "https://api.openai.com/v1/chat/completions";
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 using Newtonsoft.Json;
 using System.IO;
+using System.Linq;
+
+[System.Serializable]
+public class UserInfo
+{
+    public string userName;
+    public int age;
+    public List<string> interests;
+
+    public UserInfo(string userName, int age, List<string> interests)
+    {
+        this.userName = userName;
+        this.age = age;
+        this.interests = interests;
+    }
+
+    public static UserInfo LoadUserInfo(string filePath)
+    {
+        if (File.Exists(filePath))
+        {
+            string json = File.ReadAllText(filePath);
+            return JsonConvert.DeserializeObject<UserInfo>(json);
+        }
+        else
+        {
+            Debug.LogError("User info file not found: " + filePath);
+            return null;
+        }
+    }
+
+    public static void SaveSampleUserInfo(string filePath)
+    {
+        UserInfo sampleUser = new UserInfo("Alice", 25, new List<string> { "art", "music", "traveling" });
+        string json = JsonConvert.SerializeObject(sampleUser, Formatting.Indented);
+        File.WriteAllText(filePath, json);
+        Debug.Log("Sample user info file created at: " + filePath);
+    }
+}
 
 public class GPTChatbot : MonoBehaviour
 {
     private string apiKey = "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";
     private string apiUrl = "https://api.openai.com/v1/chat/completions";
+    private string summaryApiUrl = "https://api.openai.com/v1/engines/davinci-codex/completions";
 
     [SerializeField]
     private GPTChatbotUI uiHandler;
+
+    private UserInfo userInfo;
+    private string userInfoFilePath;
 
     [System.Serializable]
     public class Message
@@ -26,7 +73,7 @@ public class GPTChatbot : MonoBehaviour
         public string model;
         public List<Message> messages;
         public int max_tokens;
-        public int n; // 응답 개수 설정
+        public int n;
     }
 
     [System.Serializable]
@@ -42,28 +89,44 @@ public class GPTChatbot : MonoBehaviour
     }
 
     private List<Message> conversationHistory = new List<Message>();
-    private string conversationFilePath; // 파일 경로
+    private string conversationFilePath;
 
-    private const int maxConversationLength = 10; // 유지할 최대 메시지 개수
+    private const int maxConversationLength = 10;
+
     private void Awake()
     {
         conversationFilePath = Path.Combine(Application.persistentDataPath, "conversationHistory.json");
+        userInfoFilePath = Path.Combine(Application.persistentDataPath, "userInfo.json");
         Debug.Log("Conversation file path: " + conversationFilePath);
+        Debug.Log("User info file path: " + userInfoFilePath);
     }
+
     private void Start()
     {
         LoadConversationHistory();
-        Debug.Log(conversationFilePath);
+
+        if (!File.Exists(userInfoFilePath))
+        {
+            UserInfo.SaveSampleUserInfo(userInfoFilePath);
+        }
+
+        userInfo = UserInfo.LoadUserInfo(userInfoFilePath);
+
+        if (userInfo == null)
+        {
+            // Use default user info if loading fails
+            userInfo = new UserInfo("John Doe", 30, new List<string> { "coding", "gaming", "reading" });
+        }
+
+        Debug.Log($"Loaded user info: {userInfo.userName}, {userInfo.age}, {string.Join(", ", userInfo.interests)}");
     }
 
-    // 대화 기록을 파일에 저장하는 메서드
     private void SaveConversationHistory()
     {
         string json = JsonConvert.SerializeObject(conversationHistory);
         File.WriteAllText(conversationFilePath, json);
     }
 
-    // 저장된 대화 기록을 불러오는 메서드
     private void LoadConversationHistory()
     {
         if (File.Exists(conversationFilePath))
@@ -73,12 +136,59 @@ public class GPTChatbot : MonoBehaviour
         }
     }
 
-    // 대화 기록을 관리하는 메서드
+    private IEnumerator SummarizeMessage(string content, System.Action<string> callback)
+    {
+        string prompt = "Summarize the following conversation:\n\n" + content;
+        var request = new GPTRequest
+        {
+            model = "text-davinci-002",
+            messages = new List<Message> { new Message { role = "user", content = prompt } },
+            max_tokens = 150,
+            n = 1
+        };
+
+        string jsonRequest = JsonConvert.SerializeObject(request);
+        UnityWebRequest summarizeRequest = new UnityWebRequest(summaryApiUrl, "POST");
+        byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(jsonRequest);
+        summarizeRequest.uploadHandler = new UploadHandlerRaw(bodyRaw);
+        summarizeRequest.downloadHandler = new DownloadHandlerBuffer();
+        summarizeRequest.SetRequestHeader("Content-Type", "application/json");
+        summarizeRequest.SetRequestHeader("Authorization", "Bearer " + apiKey);
+
+        yield return summarizeRequest.SendWebRequest();
+
+        if (summarizeRequest.result != UnityWebRequest.Result.Success)
+        {
+            Debug.LogError("Error: " + summarizeRequest.error);
+        }
+        else
+        {
+            string jsonResponse = summarizeRequest.downloadHandler.text;
+            GPTResponse response = JsonConvert.DeserializeObject<GPTResponse>(jsonResponse);
+            string summary = response.choices[0]?.message?.content;
+
+            if (string.IsNullOrEmpty(summary))
+            {
+                Debug.LogError("Summary response is empty");
+            }
+            else
+            {
+                callback(summary);
+            }
+        }
+    }
+
     private void ManageConversationHistory()
     {
         if (conversationHistory.Count > maxConversationLength)
         {
-            conversationHistory.RemoveAt(0); // 가장 오래된 메시지 삭제
+            string contentToSummarize = string.Join("\n", conversationHistory.Select(m => m.content).ToArray());
+            StartCoroutine(SummarizeMessage(contentToSummarize, summary =>
+            {
+                conversationHistory.Clear();
+                conversationHistory.Add(new Message { role = "system", content = summary });
+                SaveConversationHistory();
+            }));
         }
     }
 
@@ -91,6 +201,7 @@ public class GPTChatbot : MonoBehaviour
         }
 
         conversationHistory.Clear();
+        conversationHistory.Add(new Message { role = "system", content = $"The user's name is {userInfo.userName}, age is {userInfo.age}, and their interests are {string.Join(", ", userInfo.interests)}." });
         conversationHistory.Add(new Message { role = "user", content = prompt });
 
         GPTRequest request = new GPTRequest
@@ -98,7 +209,7 @@ public class GPTChatbot : MonoBehaviour
             model = "gpt-3.5-turbo",
             messages = new List<Message>(conversationHistory),
             max_tokens = 300,
-            n = 1 // 한 개의 응답을 요청
+            n = 1
         };
 
         string jsonRequest = JsonConvert.SerializeObject(request);
@@ -108,14 +219,14 @@ public class GPTChatbot : MonoBehaviour
     public void SendFollowUpRequest(string userInput)
     {
         conversationHistory.Add(new Message { role = "user", content = userInput });
-        ManageConversationHistory(); // 대화 기록 관리
+        ManageConversationHistory();
 
         GPTRequest request = new GPTRequest
         {
             model = "gpt-3.5-turbo",
             messages = new List<Message>(conversationHistory),
             max_tokens = 200,
-            n = 1 // 한 개의 응답을 요청
+            n = 1
         };
 
         string jsonRequest = JsonConvert.SerializeObject(request);
@@ -163,8 +274,8 @@ public class GPTChatbot : MonoBehaviour
             else
             {
                 conversationHistory.Add(new Message { role = "assistant", content = gptResponseText });
-                ManageConversationHistory(); // 대화 기록 관리
-                SaveConversationHistory(); // 대화 기록 저장
+                ManageConversationHistory();
+                SaveConversationHistory();
                 uiHandler.DisplayGPTResponse(gptResponseText);
 
                 SendFollowUpRequestForChoices(gptResponseText);
@@ -176,7 +287,7 @@ public class GPTChatbot : MonoBehaviour
     {
         List<Message> messages = new List<Message>
         {
-            new Message { role = "system", content = "You are a helpful assistant. Provide four possible user responses to the following assistant response." },
+            new Message { role = "system", content = $"You are a helpful assistant. The user's name is {userInfo.userName}, age is {userInfo.age}, and their interests are {string.Join(", ", userInfo.interests)}. Provide four possible user responses to the following assistant response." },
             new Message { role = "assistant", content = gptResponse }
         };
 
@@ -185,7 +296,7 @@ public class GPTChatbot : MonoBehaviour
             model = "gpt-3.5-turbo",
             messages = messages,
             max_tokens = 300,
-            n = 1 // 한 개의 응답을 요청
+            n = 1
         };
 
         string jsonRequest = JsonConvert.SerializeObject(request);
@@ -240,7 +351,6 @@ public class GPTChatbot : MonoBehaviour
 
     private string[] ParseChoices(string rawResponse)
     {
-        // 응답을 분리하여 각 선택지로 나눕니다.
         string[] separators = new string[] { "1.", "2.", "3.", "4." };
         List<string> choices = new List<string>();
 
