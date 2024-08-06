@@ -21,14 +21,19 @@ public class PM : MonoBehaviour
     Vector3 velocity;
     bool isGrounded;
 
+    private PetRoam petRoam; // Reference to the PetRoam script
+
     private void Start()
     {
         _inputData = GetComponent<InputData>();
+        petRoam = petTransform.GetComponent<PetRoam>(); // Get the PetRoam component
     }
+
     // Update is called once per frame
     void Update()
     {
-        if (!isPetFollowing){
+        if (!isPetFollowing)
+        {
             float x = Input.GetAxis("Horizontal");
             float z = Input.GetAxis("Vertical");
 
@@ -58,30 +63,6 @@ public class PM : MonoBehaviour
 
     void CheckPetInteraction()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (Vector3.Distance(transform.position, petTransform.position) < 5f)
-            {
-                panelA.SetActive(true);
-
-                if (isPetFollowing == false)
-                {
-                    isPetFollowing = !isPetFollowing;
-                }
-
-                if (isPetFollowing)
-                {
-                    petTransform.LookAt(transform);
-                    petTransform.GetComponent<PetRoam>().SetFollowingPlayer(true);
-                }
-                else
-                {
-                    petTransform.GetComponent<PetRoam>().SetFollowingPlayer(false);
-                }
-            }
-        }
-
-        /*
         if (_inputData._rightController.TryGetFeatureValue(CommonUsages.primaryButton, out bool Abutton))
         {
             if (Abutton == true)
@@ -98,22 +79,22 @@ public class PM : MonoBehaviour
                     if (isPetFollowing)
                     {
                         petTransform.LookAt(transform);
-                        petTransform.GetComponent<PetRoam>().SetFollowingPlayer(true);
+                        petRoam.SetFollowingPlayer(true);
                     }
                     else
                     {
-                        petTransform.GetComponent<PetRoam>().SetFollowingPlayer(false);
+                        petRoam.SetFollowingPlayer(false);
                     }
                 }
             }
         }
-        */
     }
 
     public void OnCancel()
     {
         panelA.SetActive(false);
         isPetFollowing = false;
+        petRoam.SetFollowingPlayer(false); // Ensure pet stops following
     }
 
     public void OnCancel2()
@@ -121,5 +102,6 @@ public class PM : MonoBehaviour
         panelB.SetActive(false);
         panelC.SetActive(false);
         isPetFollowing = false;
+        petRoam.SetFollowingPlayer(false); // Ensure pet stops following
     }
 }
