@@ -1,13 +1,23 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System.Collections;
 
 public class GPTChatbotUI : MonoBehaviour
 {
     public GPTChatbot gptChatbot;
     public TMP_InputField inputField;
     public TMP_Text responseText;
-    public Button[] choiceButtons; // 선택지 버튼
+    public Button[] choiceButtons;
+    public Button arrowLeftButton; // New button for simulating "A" key
+    public Button arrowRightButton; // New button for simulating "D" key
+
+    private Coroutine displayCoroutine; 
+    private string[] sentences; 
+    private int currentSentenceIndex = 0; 
+
+    private bool isProcessingInput = false; 
+    private int keyPressCount = 0; 
 
     private void Start()
     {
@@ -15,30 +25,119 @@ public class GPTChatbotUI : MonoBehaviour
         {
             if (button != null)
             {
-                Button localButton = button; // 지역 변수를 사용하여 클로저 문제를 피합니다.
+                Button localButton = button;
                 localButton.onClick.AddListener(() => OnChoiceButtonClicked(localButton));
             }
         }
+
+        // Add listeners for the new arrow buttons
+        arrowLeftButton.onClick.AddListener(OnArrowLeftButtonClicked);
+        arrowRightButton.onClick.AddListener(OnArrowRightButtonClicked);
+
+        arrowLeftButton.gameObject.SetActive(false);
+        arrowRightButton.gameObject.SetActive(false);
     }
 
+    /*    
     public void OnSendButtonClicked()
     {
-        string userInput = inputField.text;
-        Debug.Log("Send Button Clicked. User Input: " + userInput);
-        gptChatbot.SendInitialRequest(userInput);
+        if (!isProcessingInput)
+        {
+            string userInput = inputField.text;
+            Debug.Log("Send Button Clicked. User Input: " + userInput);
+            isProcessingInput = true; 
+            gptChatbot.SendInitialRequest(userInput);
+
+            SetChoiceButtonsActive(false);
+        }
     }
+    */
 
     public void OnChoiceButtonClicked(Button clickedButton)
     {
-        // 버튼의 텍스트를 UserInputField로 전송하지 않고, 바로 GPT에 요청합니다.
-        string choiceText = clickedButton.GetComponentInChildren<TMP_Text>().text;
-        Debug.Log("Button clicked with text: " + choiceText);
-        gptChatbot.SendFollowUpRequest(choiceText);
+        if (!isProcessingInput)
+        {
+            string choiceText = clickedButton.GetComponentInChildren<TMP_Text>().text;
+            Debug.Log("Button clicked with text: " + choiceText);
+            isProcessingInput = true; 
+            gptChatbot.SendFollowUpRequest(choiceText);
+
+            SetChoiceButtonsActive(false);
+            arrowRightButton.gameObject.SetActive(true);
+
+            arrowLeftButton.gameObject.SetActive(false);
+        }
     }
 
     public void DisplayGPTResponse(string gptResponse)
     {
-        responseText.text = gptResponse;
+        if (displayCoroutine != null)
+        {
+            StopCoroutine(displayCoroutine);
+        }
+        sentences = gptResponse.Split(new[] { '.' }, System.StringSplitOptions.RemoveEmptyEntries);
+        currentSentenceIndex = 0;
+        keyPressCount = 0; 
+        displayCoroutine = StartCoroutine(DisplayResponseCoroutine());
+        isProcessingInput = false; 
+    }
+
+    private IEnumerator DisplayResponseCoroutine()
+    {
+        while (currentSentenceIndex < sentences.Length)
+        {
+            responseText.text = sentences[currentSentenceIndex].Trim() + ".";
+            yield return null; // Wait until the buttons are clicked
+        }
+    }
+
+    private void OnArrowLeftButtonClicked()
+    {
+        if (currentSentenceIndex > 0)
+        {
+            currentSentenceIndex--;
+            keyPressCount--;
+
+            responseText.text = sentences[currentSentenceIndex].Trim() + ".";
+
+            if (keyPressCount < sentences.Length - 1)
+            {
+                SetChoiceButtonsActive(false);
+            }
+            UpdateArrowButtonStates();
+        }
+    }
+
+    private void OnArrowRightButtonClicked()
+    {
+        if (currentSentenceIndex < sentences.Length - 1)
+        {
+            currentSentenceIndex++;
+            keyPressCount++;
+
+            responseText.text = sentences[currentSentenceIndex].Trim() + ".";
+
+            if (keyPressCount == sentences.Length - 1)
+            {
+                SetChoiceButtonsActive(true);
+            }
+            UpdateArrowButtonStates();
+        }
+    }
+
+    private void UpdateArrowButtonStates()
+    {
+        // Enable or disable arrow buttons based on keyPressCount
+        arrowLeftButton.gameObject.SetActive(keyPressCount > 0);
+        arrowRightButton.gameObject.SetActive(keyPressCount < sentences.Length - 1);
+    }
+
+    private void SetChoiceButtonsActive(bool isActive)
+    {
+        foreach (Button button in choiceButtons)
+        {
+            button.gameObject.SetActive(isActive);
+        }
     }
 
     public void DisplayChoices(string[] choices)
@@ -48,7 +147,6 @@ public class GPTChatbotUI : MonoBehaviour
             if (i < choices.Length)
             {
                 choiceButtons[i].GetComponentInChildren<TMP_Text>().text = choices[i];
-                choiceButtons[i].gameObject.SetActive(true);
             }
             else
             {
