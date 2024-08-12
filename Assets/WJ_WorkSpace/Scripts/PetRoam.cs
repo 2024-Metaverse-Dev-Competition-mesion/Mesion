@@ -14,6 +14,7 @@ public class PetRoam : MonoBehaviour
     public Transform playerTransform; // 플레이어의 Transform
 
     private Vector3 fixedPosition; // 펫이 고정될 위치
+    private Quaternion fixedRotation; // 펫이 고정될 회전값
 
     void Start()
     {
@@ -30,6 +31,7 @@ public class PetRoam : MonoBehaviour
             agent.isStopped = true; // 플레이어를 따라갈 때 에이전트 멈춤
             transform.LookAt(playerTransform);
             transform.position = fixedPosition; // 위치 고정
+            transform.rotation = fixedRotation; // 회전 고정
             animator.SetFloat("Speed", 0); // 멈췄을 때 애니메이션 속도 0으로 설정
         }
         else
@@ -60,6 +62,7 @@ public class PetRoam : MonoBehaviour
         if (isFollowingPlayer)
         {
             fixedPosition = transform.position; // 현재 위치를 고정
+            fixedRotation = transform.rotation; // 현재 회전을 고정
             agent.isStopped = true; // 플레이어를 따라갈 때 에이전트 완전히 멈춤
         }
         else

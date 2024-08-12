@@ -1,8 +1,3 @@
-/*
-    private string apiKey = "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";
-    private string apiUrl = "https://api.openai.com/v1/chat/completions";
-*/
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -50,7 +45,7 @@ public class UserInfo
 
 public class GPTChatbot : MonoBehaviour
 {
-    private string apiKey = "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";
+    private string apiKey = "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";
     private string apiUrl = "https://api.openai.com/v1/chat/completions";
     private string summaryApiUrl = "https://api.openai.com/v1/engines/davinci-codex/completions";
 
