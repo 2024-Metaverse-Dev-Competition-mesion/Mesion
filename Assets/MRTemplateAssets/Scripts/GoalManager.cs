@@ -89,6 +89,8 @@ public class GoalManager : MonoBehaviour
     FadeMaterial m_FadeMaterial; // 페이드 소재
 
     [SerializeField]
+    FadeBuilding m_FadeBuilding; // 페이드 소재
+    [SerializeField]
     Toggle m_PassthroughToggle; // 패스스루 토글
 
     [SerializeField]
