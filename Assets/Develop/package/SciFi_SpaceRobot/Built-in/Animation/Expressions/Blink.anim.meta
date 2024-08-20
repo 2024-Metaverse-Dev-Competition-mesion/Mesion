@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 5015eafa950967d42a95df0509ed1469
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 246524
+  packageName: Sci-Fi Space Robot
+  packageVersion: 1.0.1
+  assetPath: Assets/SciFi_SpaceRobot/Built-in/Animation/Expressions/Blink.anim
+  uploadId: 619614

@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 1e8225c679c8c484485c904632fa3394
+timeCreated: 1504904007
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 100970
+  packageName: Professional Drone Pack + Drone Controller (VR, PC, Mobile, Gamepad)
+  packageVersion: 2.3
+  assetPath: Assets/ProfessionalAssets/DronePack/Materials/_ToadMaterial [clownfish].mat
+  uploadId: 437219

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c16ba06929e189d438dc7fc43e53ba0c
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 246524
+  packageName: Sci-Fi Space Robot
+  packageVersion: 1.0.1
+  assetPath: Assets/SciFi_SpaceRobot/Built-in/Animation/Fly_Start.anim
+  uploadId: 619614

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 6629e65450c12034bb2ff932950393c6
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 246524
+  packageName: Sci-Fi Space Robot
+  packageVersion: 1.0.1
+  assetPath: Assets/SciFi_SpaceRobot/URP/Material/URP_SciFi_SpaceRobotFace_Angry.mat
+  uploadId: 619614

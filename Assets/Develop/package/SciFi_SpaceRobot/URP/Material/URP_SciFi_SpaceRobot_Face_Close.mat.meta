@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 05bca6b4ef7453341b6e2e46b269d6d1
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 246524
+  packageName: Sci-Fi Space Robot
+  packageVersion: 1.0.1
+  assetPath: Assets/SciFi_SpaceRobot/URP/Material/URP_SciFi_SpaceRobot_Face_Close.mat
+  uploadId: 619614

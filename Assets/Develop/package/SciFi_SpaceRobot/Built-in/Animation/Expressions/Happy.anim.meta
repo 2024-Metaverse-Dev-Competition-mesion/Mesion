@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 961ce30eb8ef8e048a7d15338d4c422d
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 246524
+  packageName: Sci-Fi Space Robot
+  packageVersion: 1.0.1
+  assetPath: Assets/SciFi_SpaceRobot/Built-in/Animation/Expressions/Happy.anim
+  uploadId: 619614

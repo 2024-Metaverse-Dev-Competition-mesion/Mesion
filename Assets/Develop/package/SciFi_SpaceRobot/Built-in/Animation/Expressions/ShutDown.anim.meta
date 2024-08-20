@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 5e4e9b4c44cab3e4d9326c6e5def9f0f
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 246524
+  packageName: Sci-Fi Space Robot
+  packageVersion: 1.0.1
+  assetPath: Assets/SciFi_SpaceRobot/Built-in/Animation/Expressions/ShutDown.anim
+  uploadId: 619614

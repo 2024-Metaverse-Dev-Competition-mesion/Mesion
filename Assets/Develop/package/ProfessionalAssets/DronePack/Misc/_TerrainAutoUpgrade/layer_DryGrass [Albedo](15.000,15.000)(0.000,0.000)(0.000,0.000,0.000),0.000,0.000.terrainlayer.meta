@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: ff4b32a2dd723c44c9407b2764852c97
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 8574412962073106934
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 100970
+  packageName: Professional Drone Pack + Drone Controller (VR, PC, Mobile, Gamepad)
+  packageVersion: 2.3
+  assetPath: Assets/ProfessionalAssets/DronePack/Misc/_TerrainAutoUpgrade/layer_DryGrass
+    [Albedo](15.000,15.000)(0.000,0.000)(0.000,0.000,0.000),0.000,0.000.terrainlayer
+  uploadId: 437219

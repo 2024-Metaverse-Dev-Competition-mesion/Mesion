@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 7d5b4c7bf6afca648aece075f21efa2d
+timeCreated: 1523983800
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 100970
+  packageName: Professional Drone Pack + Drone Controller (VR, PC, Mobile, Gamepad)
+  packageVersion: 2.3
+  assetPath: Assets/ProfessionalAssets/DronePack/Scripts/NightLights.cs
+  uploadId: 437219

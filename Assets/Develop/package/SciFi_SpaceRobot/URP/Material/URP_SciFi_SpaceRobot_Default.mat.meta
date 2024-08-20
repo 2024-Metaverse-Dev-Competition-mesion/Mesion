@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 238ffb4bfa6c6944ea95c5e360ffca1d
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 246524
+  packageName: Sci-Fi Space Robot
+  packageVersion: 1.0.1
+  assetPath: Assets/SciFi_SpaceRobot/URP/Material/URP_SciFi_SpaceRobot_Default.mat
+  uploadId: 619614

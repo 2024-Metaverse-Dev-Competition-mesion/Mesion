@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 92291ad9e7f0fe845ae9c5ab660ecbbd
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 246524
+  packageName: Sci-Fi Space Robot
+  packageVersion: 1.0.1
+  assetPath: Assets/SciFi_SpaceRobot/Built-in/Animation/Timelines/SciFi_SpaceRobot_Warning.playable
+  uploadId: 619614

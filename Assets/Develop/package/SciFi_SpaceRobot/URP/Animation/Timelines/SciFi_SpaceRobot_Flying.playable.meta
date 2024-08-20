@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: eabd30f6fd8edf14e92619724b83afa8
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 246524
+  packageName: Sci-Fi Space Robot
+  packageVersion: 1.0.1
+  assetPath: Assets/SciFi_SpaceRobot/URP/Animation/Timelines/SciFi_SpaceRobot_Flying.playable
+  uploadId: 619614
