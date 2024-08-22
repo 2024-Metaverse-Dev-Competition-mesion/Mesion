@@ -22,7 +22,7 @@ public class QuizManager : MonoBehaviour
         DisplayQuestion();
     }
 
-    // 현재 파트에 해당하는 질문들만 로드하고 랜덤하게 섞은 후, 5개만 선택
+    // 현재 파트에 해당하는 질문들만 로드하고 랜덤하게 섞은 후, 10개만 선택
     void LoadQuestionsForPart(int part)
     {
         currentPartQuestions = quizData.questions.Where(q => q.part == part).ToList();
