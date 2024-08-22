@@ -173,8 +173,8 @@ MonoBehaviour:
   - {fileID: 302968198}
   - {fileID: 336353304}
   - {fileID: 1663213316}
-  quizData: {fileID: 11400000, guid: 9c3907d03ea1f4fb799170a678271f23, type: 2}
-  currentPart: 0
+  quizData: {fileID: 11400000, guid: 9bd9e470c6c5048ed850b883b5b632e6, type: 2}
+  currentPart: 2
 --- !u!1 &302968196
 GameObject:
   m_ObjectHideFlags: 0
