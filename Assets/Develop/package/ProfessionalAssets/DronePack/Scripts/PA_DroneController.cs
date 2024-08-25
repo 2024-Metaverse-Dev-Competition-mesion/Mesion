@@ -115,8 +115,8 @@ namespace PA_DronePack
             startPosition = transform.position;     // store the drone's start position
             startRotation = transform.rotation;     // store the drone's rotation
             oGrav = rigidBody.useGravity;           // store the drone's rigidbody gravity settings
-            oDrag = rigidBody.linearDamping;                 // store the drone's rigidbody drag settings
-            oADrag = rigidBody.angularDamping;         // store the drone's rigidbody angular drag settings
+            oDrag = rigidBody.drag;                 // store the drone's rigidbody drag settings
+            oADrag = rigidBody.angularDrag;         // store the drone's rigidbody angular drag settings
             #endregion
         }
 
@@ -153,8 +153,8 @@ namespace PA_DronePack
             if (motorOn)  // if the drone's motor is on...
             {
                 rigidBody.useGravity = false;  // disable the rigidbody's gravity during flight
-                rigidBody.linearDamping = 0;            // lower the rigidbody's drag during flight
-                rigidBody.angularDamping = 0;     // lower the rigidbody's angular drag during flight
+                rigidBody.drag = 0;            // lower the rigidbody's drag during flight
+                rigidBody.angularDrag = 0;     // lower the rigidbody's angular drag during flight
 
                 if (headless)                                                                                                                                                                          // if using headless mode...
                 {                                                                                                                                                                                      //
@@ -165,15 +165,15 @@ namespace PA_DronePack
                     }                                                                                                                                                                                  //
                     if (groundDistance > 0.2f)                                                                                                                                                         // if we're NOT too close to the ground...
                     {                                                                                                                                                                                  //
-                        if (driveInput != 0 || strafeInput != 0) { rigidBody.AddForceAtPosition(Vector3.down, (rigidBody.position + rigidBody.linearVelocity.normalized * 0.5f), ForceMode.Acceleration); }  // add downward/tilt force in the direction we're moving (tilt points ignored)
+                        if (driveInput != 0 || strafeInput != 0) { rigidBody.AddForceAtPosition(Vector3.down, (rigidBody.position + rigidBody.velocity.normalized * 0.5f), ForceMode.Acceleration); }  // add downward/tilt force in the direction we're moving (tilt points ignored)
                     }
 
-                    Vector3 localVelocity = compass.InverseTransformDirection(rigidBody.linearVelocity);                                                                                         // convert drone's world velocity into the external compass's local space and store it 
+                    Vector3 localVelocity = compass.InverseTransformDirection(rigidBody.velocity);                                                                                         // convert drone's world velocity into the external compass's local space and store it 
                     localVelocity.z = (driveInput != 0) ? Mathf.Lerp(localVelocity.z, driveInput, acceleration * 0.3f) : Mathf.Lerp(localVelocity.z, driveInput, deceleration * 0.2f);     // accelerate/decelerate local velocity's Z axis based on drive input
                     driveForce = (Mathf.Abs(localVelocity.z) > 0.01f) ? localVelocity.z : 0f;                                                                                              // set driveforce equal to local velocity's Z axis if larger than 0.01
                     localVelocity.x = (strafeInput != 0) ? Mathf.Lerp(localVelocity.x, strafeInput, acceleration * 0.3f) : Mathf.Lerp(localVelocity.x, strafeInput, deceleration * 0.2f);  // accelerate/decelerate local velocity's X axis based on strafe input
                     strafeForce = (Mathf.Abs(localVelocity.x) > 0.01f) ? localVelocity.x : 0f;                                                                                             // set strafeforce equal to local velocity's Z axis if larger than 0.01
-                    rigidBody.linearVelocity = compass.TransformDirection(localVelocity);                                                                                                        // convert drone's local velocity back into the external compass's world space and apply it
+                    rigidBody.velocity = compass.TransformDirection(localVelocity);                                                                                                        // convert drone's local velocity back into the external compass's world space and apply it
                 }
                 else                                                                                                                      // if NOT using headless mode...
                 {                                                                                                                         //
@@ -185,17 +185,17 @@ namespace PA_DronePack
                         if (strafeInput < 0) { rigidBody.AddForceAtPosition(Vector3.down * (Mathf.Abs(strafeInput) * 0.3f), leftTilt.position, ForceMode.Acceleration); }   // ...
                     }
 
-                    Vector3 localVelocity = transform.InverseTransformDirection(rigidBody.linearVelocity);                                                                                       // convert drone's world velocity into local velocity and store it 
+                    Vector3 localVelocity = transform.InverseTransformDirection(rigidBody.velocity);                                                                                       // convert drone's world velocity into local velocity and store it 
                     localVelocity.z = (driveInput != 0) ? Mathf.Lerp(localVelocity.z, driveInput, acceleration * 0.3f) : Mathf.Lerp(localVelocity.z, driveInput, deceleration * 0.2f);     // accelerate/decelerate local velocity's Z axis based on drive input
                     driveForce = (Mathf.Abs(localVelocity.z) > 0.01f) ? localVelocity.z : 0f;                                                                                              // set driveforce equal to local velocity's Z axis if larger than 0.01
                     localVelocity.x = (strafeInput != 0) ? Mathf.Lerp(localVelocity.x, strafeInput, acceleration * 0.3f) : Mathf.Lerp(localVelocity.x, strafeInput, deceleration * 0.2f);  // accelerate/decelerate local velocity's X axis based on strafe input
                     strafeForce = (Mathf.Abs(localVelocity.x) > 0.01f) ? localVelocity.x : 0f;                                                                                             // set strafeforce equal to local velocity's Z axis if larger than 0.01
-                    rigidBody.linearVelocity = transform.TransformDirection(localVelocity);                                                                                                      // convert drone's local velocity back into world velocity and apply it
+                    rigidBody.velocity = transform.TransformDirection(localVelocity);                                                                                                      // convert drone's local velocity back into world velocity and apply it
                 }
 
                 liftForce = (liftInput != 0) ? Mathf.Lerp(liftForce, liftInput, acceleration * 0.2f) : Mathf.Lerp(liftForce, liftInput, deceleration * 0.3f); // accelerate/decelerate the global velocity's Y axis based on liftinput
                 liftForce = (Mathf.Abs(liftForce) > 0.01f) ? liftForce : 0f;                                                                                  // set strafeforce equal to local velocity's Z axis if larger than 0.01
-                rigidBody.linearVelocity = new Vector3(rigidBody.linearVelocity.x, liftForce, rigidBody.linearVelocity.z);                                                      // apply global velocity's Y axis to global velocity
+                rigidBody.velocity = new Vector3(rigidBody.velocity.x, liftForce, rigidBody.velocity.z);                                                      // apply global velocity's Y axis to global velocity
 
                 rigidBody.angularVelocity *= 1f - Mathf.Clamp(InputMagnitude(), 0.2f, 1.0f) * stability;                       // dampen the drone's angulary velocity based on movement inputs and the stability value
                 Quaternion uprightRotation = Quaternion.FromToRotation(transform.up, Vector3.up);                              // generate a new rotation direction that faces upwards (global Y axis)
@@ -205,8 +205,8 @@ namespace PA_DronePack
             else // if the drone's motor is off...
             {
                 rigidBody.useGravity = oGrav;    // reset the rigidbody's gravity
-                rigidBody.linearDamping = oDrag;          // reset the rigidbody's drag
-                rigidBody.angularDamping = oADrag;  // reset the rigidbody's angular
+                rigidBody.drag = oDrag;          // reset the rigidbody's drag
+                rigidBody.angularDrag = oADrag;  // reset the rigidbody's angular
             }
             #endregion
         }
@@ -248,7 +248,7 @@ namespace PA_DronePack
         public void StrafeInput(float input) { if (input > 0) { strafeInput = input * rightSpeed; } else if (input < 0) { strafeInput = input * leftSpeed; } else { strafeInput = 0; } }
         public void LiftInput(float input) { if (input > 0) { liftInput = input * riseSpeed; motorOn = true; } else if (input < 0) { liftInput = input * lowerSpeed; } else { liftInput = 0; } }
         public void TurnInput(float input) { turnForce = input * turnSensitivty; }
-        public void ResetDronePosition() { rigidBody.position = startPosition; rigidBody.rotation = startRotation; rigidBody.linearVelocity = Vector3.zero; }
+        public void ResetDronePosition() { rigidBody.position = startPosition; rigidBody.rotation = startRotation; rigidBody.velocity = Vector3.zero; }
         public void SpawnSparkPrefab(Vector3 position) { GameObject spark = Instantiate(sparkPrefab, position, Quaternion.identity) as GameObject; ParticleSystem.MainModule ps = spark.GetComponent<ParticleSystem>().main; Destroy(spark, ps.duration + ps.startLifetime.constantMax); }
 
         public void AdjustLift(float value) { riseSpeed = value; lowerSpeed = value; }
