@@ -8,7 +8,7 @@ public class QuizManager_Random : MonoBehaviour
 {
     public TextMeshProUGUI questionText;
     public TextMeshProUGUI resultText;
-    public TextMeshProUGUI partInfoText;  // 문제의 part 정보를 표시하기 위한 TextMeshProUGUI 추가
+    public TextMeshProUGUI partInfoText;
     public Button[] optionsButtons;
     public QuizData[] quizDataArray;
 
@@ -23,13 +23,11 @@ public class QuizManager_Random : MonoBehaviour
         DisplayQuestion();
     }
 
-    // 각 파트에서 지정된 수의 문제를 선택
     void LoadQuestions()
     {
         selectedQuestions = new List<Question>();
         System.Random rnd = new System.Random();
 
-        // 각 파트별로 문제를 선택하여 추가
         for (int part = 0; part <= 2; part++)
         {
             int numberOfQuestionsToTake = 0;
@@ -63,7 +61,6 @@ public class QuizManager_Random : MonoBehaviour
         }
     }
 
-    // 선택된 모든 질문을 랜덤하게 섞음
     void ShuffleQuestions()
     {
         System.Random rnd = new System.Random();
@@ -84,7 +81,9 @@ public class QuizManager_Random : MonoBehaviour
             return;
         }
 
-        // 질문 텍스트와 함께 파트 정보도 함께 표시
+        // 이전 질문의 결과를 비활성화
+        resultText.text = "";
+
         questionText.text = selectedQuestions[currentQuestionIndex].questionText;
         partInfoText.text = $"Part: {selectedQuestions[currentQuestionIndex].part}";
 
@@ -115,8 +114,18 @@ public class QuizManager_Random : MonoBehaviour
         if (index == selectedQuestions[currentQuestionIndex].correctAnswerIndex)
         {
             score++;
+            resultText.text = "정답입니다!";
+        }
+        else
+        {
+            resultText.text = "오답입니다!";
         }
 
+        Invoke(nameof(NextQuestion), 1.5f);
+    }
+
+    private void NextQuestion()
+    {
         currentQuestionIndex++;
         if (currentQuestionIndex < selectedQuestions.Count)
         {
