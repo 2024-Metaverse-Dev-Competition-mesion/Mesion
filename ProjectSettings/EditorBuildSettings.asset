@@ -32,7 +32,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/WJ_WorkSpace/Scene/Pet_World.unity
     guid: c197f5015f57d43c08d42a064bc3c0d5
-  - enabled: 1
+  - enabled: 0
     path: Assets/TG_WorkSpace/scenes2/xr_template.unity
     guid: 1d43c4775b1027343ac9a07496c7b279
   m_configObjects:
