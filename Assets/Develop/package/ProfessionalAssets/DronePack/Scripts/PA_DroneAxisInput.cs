@@ -287,10 +287,10 @@ namespace PA_DronePack
         public void UpdateInput()
         {
             if (inputType == InputType.Desktop) {
-                forwardBackward = "Vertical";
-                strafeLeftRight = "Horizontal";
+                forwardBackward = "Horizontal";
+                strafeLeftRight = "Vertical";
                 riseLower = "Lift";
-                turn = "Mouse X";
+                turn = "Rudder Turn";
                 cameraRiseLower = "Mouse Y";
                 cameraTurn = "Mouse X";
                 cameraTilt = "Mouse ScrollWheel";
