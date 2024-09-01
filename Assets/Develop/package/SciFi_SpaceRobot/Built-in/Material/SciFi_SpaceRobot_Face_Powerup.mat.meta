@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 180edde33404e8d4ba311c40f0572b7c
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 246524
+  packageName: Sci-Fi Space Robot
+  packageVersion: 1.0.1
+  assetPath: Assets/SciFi_SpaceRobot/Built-in/Material/SciFi_SpaceRobot_Face_Powerup.mat
+  uploadId: 619614

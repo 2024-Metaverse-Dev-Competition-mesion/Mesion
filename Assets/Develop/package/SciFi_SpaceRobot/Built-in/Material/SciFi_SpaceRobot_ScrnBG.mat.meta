@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ac54f2478c7bc144f957e7ed18584097
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 246524
+  packageName: Sci-Fi Space Robot
+  packageVersion: 1.0.1
+  assetPath: Assets/SciFi_SpaceRobot/Built-in/Material/SciFi_SpaceRobot_ScrnBG.mat
+  uploadId: 619614

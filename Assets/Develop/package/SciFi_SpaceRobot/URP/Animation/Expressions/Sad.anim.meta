@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 54618e561d46ec045baec8f8d162313b
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 246524
+  packageName: Sci-Fi Space Robot
+  packageVersion: 1.0.1
+  assetPath: Assets/SciFi_SpaceRobot/URP/Animation/Expressions/Sad.anim
+  uploadId: 619614

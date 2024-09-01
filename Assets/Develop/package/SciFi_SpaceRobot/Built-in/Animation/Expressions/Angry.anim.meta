@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 9fdcba6244afe004fab20c58d61a8fdf
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 246524
+  packageName: Sci-Fi Space Robot
+  packageVersion: 1.0.1
+  assetPath: Assets/SciFi_SpaceRobot/Built-in/Animation/Expressions/Angry.anim
+  uploadId: 619614

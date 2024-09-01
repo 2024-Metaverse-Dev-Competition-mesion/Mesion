@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ce458c32f4001e149a4c371d7fa1939a
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 246524
+  packageName: Sci-Fi Space Robot
+  packageVersion: 1.0.1
+  assetPath: Assets/SciFi_SpaceRobot/URP/Animation/Timelines/SciFi_SpaceRobot_ShutDown.playable
+  uploadId: 619614

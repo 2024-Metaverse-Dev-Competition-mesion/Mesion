@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 12279939e0f561046bfb313ca99b7e81
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 246524
+  packageName: Sci-Fi Space Robot
+  packageVersion: 1.0.1
+  assetPath: Assets/SciFi_SpaceRobot/URP/Material/URP_SciFi_SpaceRobot_Face_Powerup.mat
+  uploadId: 619614

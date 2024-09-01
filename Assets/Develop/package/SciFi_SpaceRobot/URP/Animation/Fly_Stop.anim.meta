@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: f6d3c9ab07c0fc143a34b0c91768c8fc
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 246524
+  packageName: Sci-Fi Space Robot
+  packageVersion: 1.0.1
+  assetPath: Assets/SciFi_SpaceRobot/URP/Animation/Fly_Stop.anim
+  uploadId: 619614

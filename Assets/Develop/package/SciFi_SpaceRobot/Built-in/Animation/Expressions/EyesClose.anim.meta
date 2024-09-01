@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 8a96a82b5a3fadc4d8b5e4f1ea037c86
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 246524
+  packageName: Sci-Fi Space Robot
+  packageVersion: 1.0.1
+  assetPath: Assets/SciFi_SpaceRobot/Built-in/Animation/Expressions/EyesClose.anim
+  uploadId: 619614

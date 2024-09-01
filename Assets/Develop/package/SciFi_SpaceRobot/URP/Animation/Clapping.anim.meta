@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 4fa5ccd831c2bd844a1b0bac6acaa7dc
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 246524
+  packageName: Sci-Fi Space Robot
+  packageVersion: 1.0.1
+  assetPath: Assets/SciFi_SpaceRobot/URP/Animation/Clapping.anim
+  uploadId: 619614

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 04a9cfb5b10bb384f98b3a6efa30d866
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 246524
+  packageName: Sci-Fi Space Robot
+  packageVersion: 1.0.1
+  assetPath: Assets/SciFi_SpaceRobot/URP/Animation/Timelines/SciFi_SpaceRobot_Bowing.playable
+  uploadId: 619614
