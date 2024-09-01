@@ -10,6 +10,14 @@ TagManager:
   - WaterParticle
   - Ground
   - Fence
+  - pro1
+  - pro2
+  - pro3
+  - pro4
+  - badge
+  - pro5
+  - pro6
+  - dronebody
   layers:
   - Default
   - TransparentFX
