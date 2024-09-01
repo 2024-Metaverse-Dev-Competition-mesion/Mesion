@@ -471,14 +471,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56627653cbab45044a4e9ec69d14bf44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardSpeed: 7
+  forwardSpeed: 5
   backwardSpeed: 5
   rightSpeed: 5
   leftSpeed: 5
   riseSpeed: 5
   lowerSpeed: 5
-  acceleration: 1
-  deceleration: 0.2
+  acceleration: 0.615
+  deceleration: 0.285
   stability: 0.1
   turnSensitivty: 3
   motorOn: 1
