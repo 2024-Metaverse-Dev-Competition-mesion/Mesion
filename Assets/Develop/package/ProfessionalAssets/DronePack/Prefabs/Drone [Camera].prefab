@@ -4856,7 +4856,8 @@ GameObject:
   - component: {fileID: 124025063055176988}
   - component: {fileID: 81545356787713122}
   - component: {fileID: 114838993674394640}
-  - component: {fileID: -8927360810279726567}
+  - component: {fileID: -3435583505932363231}
+
   m_Layer: 0
   m_Name: Drone [Camera]
   m_TagString: MainCamera
@@ -4978,7 +4979,8 @@ MonoBehaviour:
   gyroscopeEnabled: 0
   invertYAxis: 0
   jitterRigidBodies: []
---- !u!114 &-8927360810279726567
+--- !u!114 &-3435583505932363231
+
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
