@@ -10,6 +10,7 @@ TagManager:
   - WaterParticle
   - Ground
   - Fence
+  - Drone
   layers:
   - Default
   - TransparentFX

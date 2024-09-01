@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 1009fb76b6f10b84ca5b4208311f985a
+timeCreated: 1505854239
+licenseType: Store
+ShaderImporter:
+  defaultTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 100970
+  packageName: Professional Drone Pack + Drone Controller (VR, PC, Mobile, Gamepad)
+  packageVersion: 2.3
+  assetPath: Assets/ProfessionalAssets/DronePack/Shaders/StandardSpecular [DoubleSided].shader
+  uploadId: 437219

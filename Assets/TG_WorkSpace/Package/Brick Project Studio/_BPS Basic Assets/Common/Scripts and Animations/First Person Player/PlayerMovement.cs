@@ -1,37 +1,37 @@
-﻿    using System.Collections;
-    using System.Collections.Generic;
-    using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-    namespace SojaExiles
+namespace SojaExiles
 
+{
+    public class PlayerMovement : MonoBehaviour
     {
-        public class PlayerMovement : MonoBehaviour
+
+        public CharacterController controller;
+
+        public float speed = 5f;
+        public float gravity = -15f;
+
+        Vector3 velocity;
+
+        bool isGrounded;
+
+        // Update is called once per frame
+        void Update()
         {
 
-            public CharacterController controller;
+            float x = Input.GetAxis("Horizontal");
+            float z = Input.GetAxis("Vertical");
 
-            public float speed = 5f;
-            public float gravity = -15f;
+            Vector3 move = transform.right * x + transform.forward * z;
 
-            Vector3 velocity;
+            controller.Move(move * speed * Time.deltaTime);
 
-            bool isGrounded;
+            velocity.y += gravity * Time.deltaTime;
 
-            // Update is called once per frame
-            void Update()
-            {
+            controller.Move(velocity * Time.deltaTime);
 
-                float x = Input.GetAxis("Horizontal");
-                float z = Input.GetAxis("Vertical");
-
-                Vector3 move = transform.right * x + transform.forward * z;
-
-                controller.Move(move * speed * Time.deltaTime);
-
-                velocity.y += gravity * Time.deltaTime;
-
-                controller.Move(velocity * Time.deltaTime);
-
-            }
         }
     }
+}

@@ -920,11 +920,9 @@ MonoBehaviour:
   - {fileID: 1294803895}
   - {fileID: 265468149}
   - {fileID: 440753802}
---- !u!20 &514321693 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 6484816944661230508, guid: 86a5bf68cb51f4e44bd3893bd22a2ba7, type: 3}
-  m_PrefabInstance: {fileID: 1851167286}
-  m_PrefabAsset: {fileID: 0}
+  tutorialPanel: {fileID: 0}
+  tutorialText: {fileID: 0}
+  nextSceneName: 
 --- !u!1001 &609628350
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2080,11 +2078,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b447552bd1373fb48b55fd8bdf129dd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 100
-  ascendSpeed: 100
-  rotationSpeed: 100
-  droneCamera: {fileID: 452516658}
-  controllerCamera: {fileID: 514321693}
+  droneMovement: {fileID: 0}
+  droneRotate: {fileID: 0}
+  toggleCanvasAction: {fileID: 0}
+  vrCanvas: {fileID: 0}
 --- !u!4 &1461122072 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: bb389ef37a07cf54abe3f2aa9dda41ef, type: 3}

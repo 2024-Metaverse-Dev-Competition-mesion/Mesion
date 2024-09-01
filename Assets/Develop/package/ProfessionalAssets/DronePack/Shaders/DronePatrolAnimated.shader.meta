@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: bf9bc4cb0b0280d439b5d2d8ff6ebeaa
+timeCreated: 1524494047
+licenseType: Store
+ShaderImporter:
+  defaultTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 100970
+  packageName: Professional Drone Pack + Drone Controller (VR, PC, Mobile, Gamepad)
+  packageVersion: 2.3
+  assetPath: Assets/ProfessionalAssets/DronePack/Shaders/DronePatrolAnimated.shader
+  uploadId: 437219
