@@ -4857,6 +4857,7 @@ GameObject:
   - component: {fileID: 81545356787713122}
   - component: {fileID: 114838993674394640}
   - component: {fileID: -3435583505932363231}
+
   m_Layer: 0
   m_Name: Drone [Camera]
   m_TagString: MainCamera
@@ -4979,6 +4980,7 @@ MonoBehaviour:
   invertYAxis: 0
   jitterRigidBodies: []
 --- !u!114 &-3435583505932363231
+
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
