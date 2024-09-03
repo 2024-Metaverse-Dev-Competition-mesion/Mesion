@@ -1,0 +1,67 @@
+using UnityEngine;
+using System.Collections.Generic;
+
+public class GameManager_tg : MonoBehaviour
+{
+    public static GameManager_tg Instance;  // Singleton 인스턴스
+
+    public int currentCurrency = 1000;  // 초기 통화 설정
+    public List<Item> playerInventory = new List<Item>();  // 플레이어 인벤토리
+
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);  // 이 오브젝트가 씬 전환 시 파괴되지 않도록 설정
+        }
+        else
+        {
+            Destroy(gameObject);  // 이미 인스턴스가 존재하면 이 오브젝트를 파괴
+        }
+    }
+
+    // 통화 추가 메서드
+    public void AddCurrency(int amount)
+    {
+        currentCurrency += amount;
+        Debug.Log("Added " + amount + " currency. Current total: " + currentCurrency);
+    }
+
+    // 통화 사용 메서드
+    public bool SpendCurrency(int amount)
+    {
+        if (currentCurrency >= amount)
+        {
+            currentCurrency -= amount;
+            Debug.Log("Spent " + amount + " currency. Current total: " + currentCurrency);
+            return true;
+        }
+        else
+        {
+            Debug.Log("Not enough currency. Current total: " + currentCurrency);
+            return false;
+        }
+    }
+
+    // 아이템 추가 메서드
+    public void AddItem(Item item)
+    {
+        playerInventory.Add(item);
+        Debug.Log("Added " + item.itemName + " to inventory.");
+    }
+
+    // 아이템 제거 메서드
+    public void RemoveItem(Item item)
+    {
+        if (playerInventory.Contains(item))
+        {
+            playerInventory.Remove(item);
+            Debug.Log("Removed " + item.itemName + " from inventory.");
+        }
+        else
+        {
+            Debug.Log("Item not found in inventory.");
+        }
+    }
+}
