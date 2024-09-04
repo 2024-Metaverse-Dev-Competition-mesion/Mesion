@@ -1,69 +1,72 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Linq;
 
 public class Test_Quiz_Manager : MonoBehaviour
 {
+    // UI 요소들
     public TextMeshProUGUI questionText;
     public TextMeshProUGUI resultText;
     public TextMeshProUGUI timerText; 
     public Button[] optionsButtons; 
     public TMP_Dropdown questionDropdown; 
-    public Button submitButton; // 제출 버튼 추가
-    public GameObject warningPanel; // 경고 메시지를 표시할 패널 추가
-    public TextMeshProUGUI warningText; // 경고 메시지를 표시할 텍스트 추가
-    public Button closeWarningButton; // 경고 패널을 닫는 버튼 추가
-    public GameObject confirmSubmitPanel; // 최종 제출 확인 패널 추가
-    public Button confirmSubmitButton; // 최종 제출 확인 패널의 제출 버튼
-    public Button cancelSubmitButton; // 최종 제출 확인 패널의 취소 버튼
-    public GameObject resultPanel; // 결과를 보여주는 패널 추가
-    public TextMeshProUGUI scoreText; // 결과 패널에 점수를 표시할 텍스트
-    public QuizData[] quizDataArray;
+    public Button submitButton;
+    public GameObject warningPanel;
+    public TextMeshProUGUI warningText;
+    public Button closeWarningButton;
+    public GameObject confirmSubmitPanel;
+    public Button confirmSubmitButton;
+    public Button cancelSubmitButton;
+    public GameObject resultPanel;
+    public TextMeshProUGUI scoreText;
 
-    private int currentQuestionIndex = 0;
-    private int score = 0;
-    private List<Question> selectedQuestions;
-    private float timeRemaining = 600f; // 600 seconds (10 minutes)
-    private int[] selectedAnswers; // 각 문제에 대해 선택된 답안을 저장
-    private bool isQuizEnded = false; // 퀴즈 종료 상태를 나타내는 변수
+    // 퀴즈 데이터 및 결과
+    public QuizData[] quizDataArray;
+    public QuizResultData quizResultData; // 퀴즈 결과를 저장할 ScriptableObject 추가
+    private List<Question> selectedQuestions; // 선택된 질문 리스트
+    private int[] selectedAnswers; // 선택된 답안의 인덱스
+    private int score; // 점수
+    private int currentQuestionIndex = 0; // 현재 문제 인덱스
+    private bool isQuizEnded = false; // 퀴즈 종료 여부
+    private DateTime quizStartTime; // 퀴즈 시작 시간 기록
 
     void Start()
     {
+        quizStartTime = DateTime.Now; // 퀴즈 시작 시간 기록
         LoadQuestions();
         ShuffleQuestions();
-        selectedAnswers = new int[selectedQuestions.Count]; // 각 문제에 대해 선택된 답안을 저장할 배열 초기화
+        selectedAnswers = new int[selectedQuestions.Count];
         for (int i = 0; i < selectedAnswers.Length; i++)
         {
-            selectedAnswers[i] = -1; // 초기값은 -1로 설정하여 아무것도 선택되지 않은 상태를 나타냄
+            selectedAnswers[i] = -1; // 답을 선택하지 않은 상태는 -1로 설정
         }
-        SetupDropdown(); 
+        SetupDropdown();
         DisplayQuestion();
-        StartCoroutine(TimerCountdown()); 
+        StartCoroutine(TimerCountdown());
 
         // 제출 버튼 이벤트 리스너 추가
         submitButton.onClick.AddListener(SubmitQuiz);
 
-        // 경고 패널 초기화 - 처음에는 비활성화
+        // 경고 패널 초기화
         warningPanel.SetActive(false);
 
-        // 경고 패널 닫기 버튼에 대한 이벤트 리스너 추가
+        // 경고 패널 닫기 버튼 이벤트 리스너 추가
         closeWarningButton.onClick.AddListener(CloseWarningPanel);
 
-        // 최종 제출 확인 패널 초기화 - 처음에는 비활성화
+        // 최종 제출 확인 패널 초기화 및 리스너 추가
         confirmSubmitPanel.SetActive(false);
-
-        // 최종 제출 확인 패널의 버튼에 대한 이벤트 리스너 추가
         confirmSubmitButton.onClick.AddListener(ConfirmFinalSubmit);
         cancelSubmitButton.onClick.AddListener(CloseConfirmSubmitPanel);
 
-        // 결과 패널 초기화 - 처음에는 비활성화
+        // 결과 패널 초기화
         resultPanel.SetActive(false);
     }
 
-    // Load the required number of questions from each part
+    // 질문을 로드하는 메서드
     void LoadQuestions()
     {
         selectedQuestions = new List<Question>();
@@ -102,7 +105,7 @@ public class Test_Quiz_Manager : MonoBehaviour
         }
     }
 
-    // Shuffle the selected questions
+    // 질문 리스트를 섞는 메서드
     void ShuffleQuestions()
     {
         System.Random rnd = new System.Random();
@@ -122,18 +125,27 @@ public class Test_Quiz_Manager : MonoBehaviour
         questionDropdown.onValueChanged.AddListener(delegate { GoToQuestion(questionDropdown.value); });
     }
 
-    // Display the current question
+    // 특정 문제로 이동
+    void GoToQuestion(int index)
+    {
+        if (index >= 0 && index < selectedQuestions.Count)
+        {
+            currentQuestionIndex = index;
+            DisplayQuestion();
+        }
+        else
+        {
+            Debug.LogError("잘못된 질문 인덱스");
+        }
+    }
+
+    // 질문을 표시하는 메서드
     public void DisplayQuestion()
     {
         if (selectedQuestions == null || selectedQuestions.Count == 0)
         {
             resultText.text = "해당 파트에 질문이 없습니다.";
             return;
-        }
-
-        if (currentQuestionIndex >= selectedQuestions.Count)
-        {
-            currentQuestionIndex = selectedQuestions.Count - 1; // 현재 문제를 마지막 문제로 유지
         }
 
         questionText.text = selectedQuestions[currentQuestionIndex].questionText;
@@ -154,35 +166,13 @@ public class Test_Quiz_Manager : MonoBehaviour
             }
         }
 
-        // 선택된 답안에 따라 버튼 색상 업데이트
         UpdateButtonColors();
         questionDropdown.SetValueWithoutNotify(currentQuestionIndex);
     }
 
-    // 특정 문제로 이동
-    void GoToQuestion(int index)
-    {
-        if (index >= 0 && index < selectedQuestions.Count)
-        {
-            currentQuestionIndex = index; // 선택된 문제로 이동
-            DisplayQuestion(); // 문제를 화면에 표시
-        }
-        else
-        {
-            Debug.LogError("잘못된 질문 인덱스");
-        }
-    }
-
-    // 사용자가 답안을 선택했을 때 호출되는 메서드
+    // 답안 선택
     public void OnAnswerSelected(int index)
     {
-        if (index < 0 || index >= optionsButtons.Length)
-        {
-            Debug.LogError("잘못된 선택지 인덱스");
-            return;
-        }
-
-        // 현재 질문의 선택된 답안을 배열에 저장
         selectedAnswers[currentQuestionIndex] = index;
 
         // 정답인지 체크
@@ -191,10 +181,8 @@ public class Test_Quiz_Manager : MonoBehaviour
             score++;
         }
 
-        // 선택한 답안에 따라 버튼 색상 업데이트
         UpdateButtonColors();
 
-        // 마지막 문제가 아닐 경우에만 다음 문제로 넘어가기
         if (currentQuestionIndex < selectedQuestions.Count - 1)
         {
             currentQuestionIndex++;
@@ -202,7 +190,7 @@ public class Test_Quiz_Manager : MonoBehaviour
         }
     }
 
-    // 선택된 답안에 따라 버튼 색상을 업데이트하는 메서드
+    // 선택한 답안에 따라 버튼 색상 업데이트
     void UpdateButtonColors()
     {
         for (int i = 0; i < optionsButtons.Length; i++)
@@ -210,73 +198,57 @@ public class Test_Quiz_Manager : MonoBehaviour
             ColorBlock colors = optionsButtons[i].colors;
             if (i == selectedAnswers[currentQuestionIndex])
             {
-                // 선택된 버튼은 다른 색상으로 설정
                 colors.normalColor = Color.green;
             }
             else
             {
-                // 선택되지 않은 버튼은 기본 색상으로 설정
                 colors.normalColor = Color.white;
             }
             optionsButtons[i].colors = colors;
         }
     }
 
-    // 퀴즈 제출 버튼을 눌렀을 때 호출되는 메서드
+    // 퀴즈 제출
     public void SubmitQuiz()
     {
         List<int> unansweredQuestions = new List<int>();
 
-        // 답을 선택하지 않은 문제를 체크
         for (int i = 0; i < selectedAnswers.Length; i++)
         {
             if (selectedAnswers[i] == -1)
             {
-                unansweredQuestions.Add(i + 1); // 1부터 시작하는 문제 번호로 추가
+                unansweredQuestions.Add(i + 1);
             }
         }
 
         if (unansweredQuestions.Count > 0)
         {
-            // 아직 답을 선택하지 않은 문제가 있을 때 경고 패널 활성화 및 메시지 표시
             string warningMessage = "다음 문제들이 아직 풀리지 않았습니다:\n";
             warningMessage += string.Join(", ", unansweredQuestions.Select(q => $"문제 {q}").ToArray());
-            warningText.text = warningMessage; // 경고 패널의 텍스트에 메시지 설정
-            warningPanel.SetActive(true); // 경고 패널 활성화
+            warningText.text = warningMessage;
+            warningPanel.SetActive(true);
         }
         else
         {
-            // 모든 문제가 풀렸다면 최종 제출 확인 패널 활성화
             confirmSubmitPanel.SetActive(true);
         }
     }
 
-    // 경고 패널을 닫는 메서드
-    public void CloseWarningPanel()
-    {
-        warningPanel.SetActive(false);
-    }
-
-    // 최종 제출 확인 패널의 취소 버튼을 눌렀을 때 호출되는 메서드
-    public void CloseConfirmSubmitPanel()
-    {
-        confirmSubmitPanel.SetActive(false);
-    }
-
-    // 최종 제출 확인 패널의 제출 버튼을 눌렀을 때 호출되는 메서드
+    // 최종 제출 확인 패널에서 제출 버튼 클릭
     public void ConfirmFinalSubmit()
     {
-        confirmSubmitPanel.SetActive(false); // 확인 패널 비활성화
-        EndQuiz(); // 퀴즈 종료 및 결과 표시
+        confirmSubmitPanel.SetActive(false);
+        EndQuiz();
     }
 
-    // End the quiz and display the score
+    // 퀴즈 종료 및 결과 저장
     public void EndQuiz()
     {
-        isQuizEnded = true; // 퀴즈가 종료됨을 표시
-        StopCoroutine(TimerCountdown()); // 타이머 멈춤
+        isQuizEnded = true;
+        StopCoroutine(TimerCountdown());
 
-        // 현재 할당된 모든 UI 요소 비활성화
+        SaveQuizResult();
+
         questionText.gameObject.SetActive(false);
         timerText.gameObject.SetActive(false);
         foreach (var button in optionsButtons)
@@ -288,10 +260,8 @@ public class Test_Quiz_Manager : MonoBehaviour
         warningPanel.SetActive(false);
         confirmSubmitPanel.SetActive(false);
 
-        // 결과 패널 및 점수 텍스트만 활성화
         resultPanel.SetActive(true);
 
-        // 점수에 따른 메시지 설정
         string resultMessage = $"당신의 점수는 {score * 10}점\n";
         if (score >= 7)
         {
@@ -302,32 +272,85 @@ public class Test_Quiz_Manager : MonoBehaviour
             resultMessage += "불합격입니다.";
         }
 
-        // 결과 메시지 표시
         scoreText.text = resultMessage;
     }
 
-    // Timer coroutine
-    private IEnumerator TimerCountdown()
+    // 퀴즈 결과 저장
+    private void SaveQuizResult()
     {
-        while (timeRemaining > 0)
+        float quizDuration = (float)(DateTime.Now - quizStartTime).TotalSeconds;
+
+        QuizResult currentQuizResult = new QuizResult
         {
-            if (isQuizEnded) yield break; // 퀴즈가 종료되었으면 타이머 종료
-            timeRemaining -= 1;
-            UpdateTimerText();
-            yield return new WaitForSeconds(1f);
+            quizTitle = "퀴즈 제목",
+            totalTime = quizDuration,
+            totalScore = score,
+            results = new List<QuestionResult>()
+        };
+
+        for (int i = 0; i < selectedQuestions.Count; i++)
+        {
+            Question question = selectedQuestions[i];
+            bool isCorrect = selectedAnswers[i] == question.correctAnswerIndex;
+            string correctAnswerText = question.options[question.correctAnswerIndex];
+
+            QuestionResult questionResult = new QuestionResult
+            {
+                questionText = question.questionText,
+                selectedAnswerText = question.options[selectedAnswers[i]],
+                selectedAnswerIndex = selectedAnswers[i],
+                isCorrect = isCorrect,
+                correctAnswerText = isCorrect ? "" : correctAnswerText,
+                part = question.part
+            };
+
+            currentQuizResult.results.Add(questionResult);
         }
-        TimeUp();
+
+        quizResultData.quizResults.Add(currentQuizResult);
+
+#if UNITY_EDITOR
+        UnityEditor.EditorUtility.SetDirty(quizResultData);
+#endif
     }
 
-    // Update the timer text
-    private void UpdateTimerText()
+    // 경고 패널 닫기
+    public void CloseWarningPanel()
+    {
+        warningPanel.SetActive(false);
+    }
+
+    // 최종 제출 확인 패널 닫기
+    public void CloseConfirmSubmitPanel()
+    {
+        confirmSubmitPanel.SetActive(false);
+    }
+
+    // 타이머 시작
+    private IEnumerator TimerCountdown()
+    {
+        float timeRemaining = 600f; // 10분 타이머
+        while (timeRemaining > 0 && !isQuizEnded)
+        {
+            timeRemaining -= 1;
+            UpdateTimerText(timeRemaining);
+            yield return new WaitForSeconds(1f);
+        }
+        if (timeRemaining <= 0)
+        {
+            TimeUp();
+        }
+    }
+
+    // 타이머 텍스트 업데이트
+    private void UpdateTimerText(float timeRemaining)
     {
         int minutes = Mathf.FloorToInt(timeRemaining / 60F);
         int seconds = Mathf.FloorToInt(timeRemaining % 60F);
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 
-    // Handle time up
+    // 시간 초과 처리
     private void TimeUp()
     {
         resultText.text = $"시간 초과! 당신의 점수: {score}/{selectedQuestions.Count}";
@@ -335,6 +358,6 @@ public class Test_Quiz_Manager : MonoBehaviour
         {
             button.interactable = false;
         }
-        warningPanel.SetActive(false); // 퀴즈가 종료되면 경고 패널 비활성화
+        warningPanel.SetActive(false);
     }
 }
