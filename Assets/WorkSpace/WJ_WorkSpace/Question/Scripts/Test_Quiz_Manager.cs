@@ -280,9 +280,16 @@ public class Test_Quiz_Manager : MonoBehaviour
     {
         float quizDuration = (float)(DateTime.Now - quizStartTime).TotalSeconds;
 
+        // 현재 날짜를 "MM/dd" 형식으로 저장
+        string currentDate = DateTime.Now.ToString("MM/dd");
+
+        // score를 10배로 곱해서 점수 표시
+        int finalScore = score * 10;
+
         QuizResult currentQuizResult = new QuizResult
         {
-            quizTitle = "퀴즈 제목",
+            // 실전 모드, 날짜, 점수를 포함한 제목 생성
+            quizTitle = $"실전 모드 {currentDate} [{finalScore}점]",
             totalTime = quizDuration,
             totalScore = score,
             results = new List<QuestionResult>()
@@ -309,9 +316,9 @@ public class Test_Quiz_Manager : MonoBehaviour
 
         quizResultData.quizResults.Add(currentQuizResult);
 
-#if UNITY_EDITOR
+    #if UNITY_EDITOR
         UnityEditor.EditorUtility.SetDirty(quizResultData);
-#endif
+    #endif
     }
 
     // 경고 패널 닫기

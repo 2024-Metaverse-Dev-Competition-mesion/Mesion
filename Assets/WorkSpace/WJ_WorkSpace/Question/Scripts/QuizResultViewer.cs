@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class QuizResultViewer : MonoBehaviour
 {
+    public GameObject Mode_Select_Panel;
+    public GameObject Quiz_History_Store;
     public QuizResultData quizResultData; // 퀴즈 결과 데이터
     public TextMeshProUGUI[] resultTexts; // 결과를 표시할 TextMeshPro 배열 (5개)
     public Button[] deleteButtons; // 삭제 버튼 배열 추가
@@ -261,5 +263,17 @@ public class QuizResultViewer : MonoBehaviour
     {
         int startItemIndex = (quizResultData.quizResults.Count - 1) - ((currentPage - 1) * itemsPerPage);
         return startItemIndex - index;
+    }
+
+    public void listPanel_Pre_Panel_Button()
+    {
+        Mode_Select_Panel.SetActive(true);
+        Quiz_History_Store.SetActive(false);
+    }
+
+    public void detailPanel_Pre_Panel_Button()
+    {
+        listPanel.SetActive(true);
+        detailsPanel.SetActive(false);
     }
 }
