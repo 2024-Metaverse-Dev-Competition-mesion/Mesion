@@ -74,7 +74,15 @@ public class DroneAssemblyManager : MonoBehaviour
         DestroyWithTag("dronebody");
 
         // 완성된 드론 프리팹을 생성하고 지정된 위치에 배치
-        Instantiate(completedDronePrefab, spawnPoint.position, spawnPoint.rotation);
+        GameObject drone = Instantiate(completedDronePrefab, spawnPoint.position, spawnPoint.rotation);
+
+        Camera droneCamera = drone.GetComponentInChildren<Camera>();
+        CameraSwitcher cameraSwitcher = FindObjectOfType<CameraSwitcher>();
+
+        if (droneCamera != null && cameraSwitcher != null)
+        {
+            cameraSwitcher.droneCamera = droneCamera;
+        }
     }
 
     private void DestroyWithTag(string tag)
