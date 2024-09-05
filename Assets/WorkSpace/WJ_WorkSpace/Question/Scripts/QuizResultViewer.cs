@@ -8,6 +8,7 @@ public class QuizResultViewer : MonoBehaviour
 {
     public QuizResultData quizResultData; // 퀴즈 결과 데이터
     public TextMeshProUGUI[] resultTexts; // 결과를 표시할 TextMeshPro 배열 (5개)
+    public Button[] deleteButtons; // 삭제 버튼 배열 추가
     public Button previousPageButton; // 이전 페이지 버튼
     public Button nextPageButton; // 다음 페이지 버튼
     public TextMeshProUGUI pageNumberText; // 페이지 번호를 표시할 TextMeshPro
@@ -38,6 +39,7 @@ public class QuizResultViewer : MonoBehaviour
         {
             int index = i; // 로컬 변수로 인덱스를 저장하여 리스너에 전달
             resultTexts[i].GetComponent<Button>().onClick.AddListener(() => OnTitleClicked(index));
+            deleteButtons[i].onClick.AddListener(() => DeleteQuiz(index)); // 삭제 버튼에 리스너 추가
         }
 
         detailsPanel.SetActive(false); // 시작할 때는 세부 패널을 비활성화
@@ -53,30 +55,32 @@ public class QuizResultViewer : MonoBehaviour
         int quizCount = quizResultData.quizResults.Count;
 
         // 현재 페이지에 맞는 항목 표시 (역순으로)
-        int startItemIndex = (quizResultData.quizResults.Count - 1) - ((currentPage - 1) * itemsPerPage);
+        int startItemIndex = (quizCount - 1) - ((currentPage - 1) * itemsPerPage);
 
         for (int i = 0; i < itemsPerPage; i++)
         {
-            int quizIndex = startItemIndex - i; // 역순으로 인덱스 계산
+            int quizIndex = startItemIndex - i;
 
             if (quizIndex >= 0)
             {
                 resultTexts[i].text = quizResultData.quizResults[quizIndex].quizTitle;
                 resultTexts[i].gameObject.SetActive(true);
+                deleteButtons[i].gameObject.SetActive(true); // 삭제 버튼 보이기
             }
             else
             {
                 resultTexts[i].gameObject.SetActive(false); // 항목이 없으면 숨김
+                deleteButtons[i].gameObject.SetActive(false); // 삭제 버튼 숨기기
             }
         }
 
         // 페이지 번호 업데이트
-        pageNumberText.text = $"{currentPage}/{totalPage}";
+        pageNumberText.text = $"{currentPage}/{Mathf.Max(1, Mathf.CeilToInt((float)quizCount / itemsPerPage))}";
 
         // 버튼 보이기/숨기기 로직
         if (quizCount <= itemsPerPage)
         {
-            // 문제 수가 5개 이하인 경우: 둘 다 숨기기
+            // 문제 수가 itemsPerPage 이하인 경우: 둘 다 숨기기
             previousPageButton.gameObject.SetActive(false);
             nextPageButton.gameObject.SetActive(false);
         }
@@ -86,7 +90,7 @@ public class QuizResultViewer : MonoBehaviour
             previousPageButton.gameObject.SetActive(currentPage > 1);
 
             // 마지막 페이지일 경우: Next 버튼 숨기기
-            nextPageButton.gameObject.SetActive(currentPage < totalPage);
+            nextPageButton.gameObject.SetActive(currentPage < Mathf.CeilToInt((float)quizCount / itemsPerPage));
         }
     }
 
@@ -228,5 +232,34 @@ public class QuizResultViewer : MonoBehaviour
             currentPage++;
             UpdatePage();
         }
+    }
+
+    // 삭제 버튼 클릭 시 호출되는 함수
+    void DeleteQuiz(int index)
+    {
+        int actualIndex = GetQuizIndexForCurrentPage(index); // 현재 페이지에서 실제 퀴즈 인덱스를 가져옴
+        if (actualIndex >= 0 && actualIndex < quizResultData.quizResults.Count)
+        {
+            quizResultData.quizResults.RemoveAt(actualIndex); // 리스트에서 삭제
+
+            // 현재 페이지의 마지막 퀴즈를 삭제했을 때
+            int totalItems = quizResultData.quizResults.Count;
+            int lastPage = Mathf.CeilToInt((float)totalItems / itemsPerPage);
+
+            // 만약 삭제 후 페이지에 퀴즈가 하나도 남아 있지 않으면 이전 페이지로 이동
+            if (currentPage > lastPage)
+            {
+                currentPage--;
+            }
+
+            UpdatePage(); // 페이지 업데이트
+        }
+    }
+
+    // 현재 페이지에 맞는 퀴즈 인덱스를 계산하는 함수
+    int GetQuizIndexForCurrentPage(int index)
+    {
+        int startItemIndex = (quizResultData.quizResults.Count - 1) - ((currentPage - 1) * itemsPerPage);
+        return startItemIndex - index;
     }
 }
