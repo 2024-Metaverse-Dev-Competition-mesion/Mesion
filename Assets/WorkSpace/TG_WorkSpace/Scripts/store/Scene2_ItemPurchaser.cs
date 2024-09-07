@@ -3,35 +3,35 @@ using UnityEngine.UI;
 
 public class Scene2_ItemPurchaser : MonoBehaviour
 {
-    public Button purchaseButton;  // ±¸¸Å ¹öÆ°
-    public Item itemToBuy;  // ±¸¸ÅÇÒ ¾ÆÀÌÅÛ (¿¡µğÅÍ¿¡¼­ ¼³Á¤ °¡´É)
-    public int itemPrice = 500;  // ¾ÆÀÌÅÛ °¡°İ
-    public GameObject itemGameObject;  // ºñÈ°¼ºÈ­ÇÒ ¾ÆÀÌÅÛÀÇ °ÔÀÓ ¿ÀºêÁ§Æ®
+    public Button purchaseButton;  // êµ¬ë§¤ ë²„íŠ¼
+    public Item itemToBuy;  // êµ¬ë§¤í•  ì•„ì´í…œ (ì—ë””í„°ì—ì„œ ì„¤ì • ê°€ëŠ¥)
+    public int itemPrice = 500;  // ì•„ì´í…œ ê°€ê²©
+    public GameObject itemGameObject;  // ë¹„í™œì„±í™”í•  ì•„ì´í…œì˜ ê²Œì„ ì˜¤ë¸Œì íŠ¸
 
-    private bool isPurchased = false;  // ¾ÆÀÌÅÛ ±¸¸Å ¿©ºÎ È®ÀÎ º¯¼ö
+    private bool isPurchased = false;  // ì•„ì´í…œ êµ¬ë§¤ ì—¬ë¶€ í™•ì¸ ë³€ìˆ˜
 
     void Start()
     {
-        purchaseButton.onClick.AddListener(TryPurchaseItem);  // ¹öÆ° Å¬¸¯ ¸®½º³Ê Ãß°¡
+        purchaseButton.onClick.AddListener(TryPurchaseItem);  // ë²„íŠ¼ í´ë¦­ ë¦¬ìŠ¤ë„ˆ ì¶”ê°€
     }
 
     void TryPurchaseItem()
     {
-        if (!isPurchased)  // ÀÌ¹Ì ±¸¸ÅÇÑ »óÅÂ°¡ ¾Æ´Ï¶ó¸é
+        if (!isPurchased)  // ì´ë¯¸ êµ¬ë§¤í•œ ìƒíƒœê°€ ì•„ë‹ˆë¼ë©´
         {
-            if (GameManager_tg.Instance.SpendCurrency(itemPrice))  // µ·ÀÌ ÃæºĞÇÑÁö È®ÀÎÇÏ°í Â÷°¨
+            if (GameManager_tg.Instance.SpendCurrency(itemPrice))  // ëˆì´ ì¶©ë¶„í•œì§€ í™•ì¸í•˜ê³  ì°¨ê°
             {
-                GameManager_tg.Instance.AddItem(itemToBuy);  // ¾ÆÀÌÅÛÀ» ÀÎº¥Åä¸®¿¡ Ãß°¡
+                GameManager_tg.Instance.AddItem(itemToBuy);  // ì•„ì´í…œì„ ì¸ë²¤í† ë¦¬ì— ì¶”ê°€
                 Debug.Log("Scene2: Purchased " + itemToBuy.itemName + ". Remaining currency: " + GameManager_tg.Instance.currentCurrency);
 
-                // ±¸¸Å ¿Ï·á »óÅÂ·Î ¼³Á¤
+                // êµ¬ë§¤ ì™„ë£Œ ìƒíƒœë¡œ ì„¤ì •
                 isPurchased = true;
 
-                // UI¿Í ¿ÀºêÁ§Æ® ºñÈ°¼ºÈ­
-                purchaseButton.interactable = false;  // ±¸¸Å ¹öÆ° ºñÈ°¼ºÈ­
+                // UIì™€ ì˜¤ë¸Œì íŠ¸ ë¹„í™œì„±í™”
+                purchaseButton.interactable = false;  // êµ¬ë§¤ ë²„íŠ¼ ë¹„í™œì„±í™”
                 if (itemGameObject != null)
                 {
-                    itemGameObject.SetActive(false);  // ÇØ´ç ¾ÆÀÌÅÛÀÇ ¿ÀºêÁ§Æ® ºñÈ°¼ºÈ­
+                    itemGameObject.SetActive(false);  // í•´ë‹¹ ì•„ì´í…œì˜ ì˜¤ë¸Œì íŠ¸ ë¹„í™œì„±í™”
                 }
             }
             else
