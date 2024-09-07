@@ -11,6 +11,7 @@ TagManager:
   - Ground
   - Fence
   - Drone
+  - Saveable
   layers:
   - Default
   - TransparentFX
