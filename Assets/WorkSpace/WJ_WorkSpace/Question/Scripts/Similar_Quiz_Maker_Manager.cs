@@ -29,20 +29,23 @@ public class Similar_Quiz_Maker_Manager : MonoBehaviour
     public TMP_Text choiceText4;
 
     // 패널 두 개
-    public GameObject inputPanel;  // 비활성화할 패널 (기존 입력 문제)
-    public GameObject resultPanel;  // 활성화할 패널 (결과 표시 패널)
+    public GameObject Detail_Panel;  // 비활성화할 패널 (기존 입력 문제)
+    public GameObject Similar_Quiz_Panel;  // 활성화할 패널 (결과 표시 패널)
 
     // 문제 생성 요청을 보내는 버튼
     public Button generateProblemButton;  
 
     // 선택된 정답을 저장할 변수
     private string correctAnswer;
+    public Button backButton;
+    public GameObject result_panel;
 
     // Start에서 버튼 클릭 이벤트 연결
     void Start()
     {
         // 버튼 클릭 이벤트 설정
         generateProblemButton.onClick.AddListener(OnGenerateProblemButtonClick);
+        backButton.onClick.AddListener(Back);
 
         // 각 선택지 버튼에 이벤트 리스너 추가
         choiceButton1.onClick.AddListener(() => CheckAnswer(choiceText1.text));
@@ -50,7 +53,7 @@ public class Similar_Quiz_Maker_Manager : MonoBehaviour
         choiceButton3.onClick.AddListener(() => CheckAnswer(choiceText3.text));
         choiceButton4.onClick.AddListener(() => CheckAnswer(choiceText4.text));
         
-        resultPanel.SetActive(false);  // 결과 패널은 처음에 비활성화
+        Similar_Quiz_Panel.SetActive(false);  // 결과 패널은 처음에 비활성화
     }
 
     // 문제 생성 버튼 클릭 시 실행되는 함수
@@ -60,11 +63,35 @@ public class Similar_Quiz_Maker_Manager : MonoBehaviour
         string originalProblem = inputText.text;
 
         // 패널 전환: 입력 패널 비활성화, 결과 패널 활성화
-        inputPanel.SetActive(false);
-        resultPanel.SetActive(true);
+        Detail_Panel.SetActive(false);
+        Similar_Quiz_Panel.SetActive(true);
 
         // GPT API로 문제 생성 요청 전송
         StartCoroutine(SendProblemGenerationRequest(originalProblem));
+    }
+
+    void Back()
+    {
+        // Reactivate the Detail Panel and deactivate the Similar Quiz Panel
+        Detail_Panel.SetActive(true);
+        Similar_Quiz_Panel.SetActive(false);
+        result_panel.SetActive(false);
+
+        // Reset the problem text and result text
+        problemText.text = "";
+        resultText.text = "";
+
+        // Reset the choice buttons' text
+        choiceText1.text = "";
+        choiceText2.text = "";
+        choiceText3.text = "";
+        choiceText4.text = "";
+
+        // Optionally, reset the correct answer
+        correctAnswer = "";
+
+        // Reset any other variables or states that should be initialized
+        // For example, if you have some state flags or counters, reset them here
     }
 
     // GPT API로 요청을 보내는 Coroutine 함수
@@ -190,13 +217,14 @@ private void ParseAndDisplayProblem(string problemMessage)
     private void CheckAnswer(string selectedAnswer)
     {
         Debug.Log(selectedAnswer);
+        result_panel.SetActive(true);
         if (selectedAnswer == correctAnswer)
         {
             resultText.text = "정답입니다!";
         }
         else
         {
-            resultText.text = "오답입니다.";
+            resultText.text = "오답입니다. 정답은 " + correctAnswer;
         }
     }
 }

@@ -22,6 +22,9 @@ public class QuizResultViewer : MonoBehaviour
     public Button previousQuestionButton; // 이전 문제로 넘어가는 버튼
     public Button nextQuestionButton; // 다음 문제로 넘어가는 버튼
 
+    public Button firstNewButton; // 새로 추가된 첫 번째 버튼
+    public Button secondNewButton; // 새로 추가된 두 번째 버튼
+
     private int currentPage = 1; // 현재 페이지
     private int itemsPerPage = 5; // 페이지 당 표시할 항목 수
     private int totalPage; // 총 페이지 수
@@ -36,6 +39,10 @@ public class QuizResultViewer : MonoBehaviour
         previousPageButton.onClick.AddListener(GoToPreviousPage);
         nextPageButton.onClick.AddListener(GoToNextPage);
 
+        // 새로 추가된 버튼 초기 비활성화
+        firstNewButton.gameObject.SetActive(false);
+        secondNewButton.gameObject.SetActive(false);
+
         // 각 제목에 클릭 리스너 추가
         for (int i = 0; i < resultTexts.Length; i++)
         {
@@ -49,6 +56,9 @@ public class QuizResultViewer : MonoBehaviour
         // 이전/다음 문제 버튼에 대한 리스너 추가
         previousQuestionButton.onClick.AddListener(GoToPreviousQuestion);
         nextQuestionButton.onClick.AddListener(GoToNextQuestion);
+
+        // 다음 문제 버튼이 클릭되었을 때 새로운 버튼을 활성화하는 로직
+        nextQuestionButton.onClick.AddListener(ActivateNewButtons);
     }
 
     // 페이지를 업데이트하는 함수
@@ -80,20 +90,8 @@ public class QuizResultViewer : MonoBehaviour
         pageNumberText.text = $"{currentPage}/{Mathf.Max(1, Mathf.CeilToInt((float)quizCount / itemsPerPage))}";
 
         // 버튼 보이기/숨기기 로직
-        if (quizCount <= itemsPerPage)
-        {
-            // 문제 수가 itemsPerPage 이하인 경우: 둘 다 숨기기
-            previousPageButton.gameObject.SetActive(false);
-            nextPageButton.gameObject.SetActive(false);
-        }
-        else
-        {
-            // 첫 페이지일 경우: Previous 버튼 숨기기
-            previousPageButton.gameObject.SetActive(currentPage > 1);
-
-            // 마지막 페이지일 경우: Next 버튼 숨기기
-            nextPageButton.gameObject.SetActive(currentPage < Mathf.CeilToInt((float)quizCount / itemsPerPage));
-        }
+        previousPageButton.gameObject.SetActive(currentPage > 1);
+        nextPageButton.gameObject.SetActive(currentPage < Mathf.CeilToInt((float)quizCount / itemsPerPage));
     }
 
     // 제목 클릭 시 호출되는 함수
@@ -168,7 +166,6 @@ public class QuizResultViewer : MonoBehaviour
     // 이전/다음 버튼을 업데이트하는 함수
     private void UpdateQuestionNavigationButtons()
     {
-        // 첫 번째 페이지일 때 (기본 정보 표시)
         previousQuestionButton.gameObject.SetActive(currentQuestionIndex >= 0); // 문제를 보는 중이면 이전 버튼 보이기
         nextQuestionButton.gameObject.SetActive(currentQuestionIndex < selectedResult.results.Count - 1); // 다음 문제가 있으면 활성화
     }
@@ -263,6 +260,13 @@ public class QuizResultViewer : MonoBehaviour
     {
         int startItemIndex = (quizResultData.quizResults.Count - 1) - ((currentPage - 1) * itemsPerPage);
         return startItemIndex - index;
+    }
+
+    // 새로 추가된 버튼을 활성화하는 함수
+    void ActivateNewButtons()
+    {
+        firstNewButton.gameObject.SetActive(true);
+        secondNewButton.gameObject.SetActive(true);
     }
 
     public void listPanel_Pre_Panel_Button()

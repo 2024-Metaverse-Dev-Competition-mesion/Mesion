@@ -1,8 +1,9 @@
 using UnityEngine;
+using UnityEngine.UI;  // Add this for Button component
 
 public class Practice_Mode_Select_Manager : MonoBehaviour
 {
-    // Reference to the other GameObject you want to activate
+    // References to the GameObjects you want to activate and deactivate
     public GameObject objectToActivate;
     public GameObject ObjectToDeactivate;
     public GameObject Quiz_Random;
@@ -10,19 +11,35 @@ public class Practice_Mode_Select_Manager : MonoBehaviour
     public GameObject Test_Quiz;
     public GameObject Part_Text;
 
-    public void OnButtonClick()
+    // References to the buttons
+    public Button Random;
+    public Button Regulations;
+    public Button Meteorological;
+    public Button Theory_and_Applications;
+
+    void Start()
     {
-        Quiz_Part.SetActive(false);
-        Test_Quiz.SetActive(false);
+        // Assign button click event listeners
+        Random.onClick.AddListener(() => OnButtonClick(Quiz_Part, Test_Quiz));
+        Regulations.onClick.AddListener(() => OnButtonClick2(Quiz_Random, Part_Text, Test_Quiz));
+        Meteorological.onClick.AddListener(() => OnButtonClick2(Quiz_Random, Part_Text, Test_Quiz));
+        Theory_and_Applications.onClick.AddListener(() => OnButtonClick2(Quiz_Random, Part_Text, Test_Quiz));
+    }
+
+    private void OnButtonClick(GameObject quizPart, GameObject testQuiz)
+    {
+        quizPart.SetActive(false);
+        testQuiz.SetActive(false);
         ObjectToDeactivate.SetActive(false);
         objectToActivate.SetActive(true);
     }
 
-    public void OnButtonClick2()
+    // Generalized method to handle activation/deactivation for button2
+    private void OnButtonClick2(GameObject quizRandom, GameObject partText, GameObject testQuiz)
     {
-        Quiz_Random.SetActive(false);
-        Part_Text.SetActive(false);
-        Test_Quiz.SetActive(false);
+        quizRandom.SetActive(false);
+        partText.SetActive(false);
+        testQuiz.SetActive(false);
         ObjectToDeactivate.SetActive(false);
         objectToActivate.SetActive(true);
     }

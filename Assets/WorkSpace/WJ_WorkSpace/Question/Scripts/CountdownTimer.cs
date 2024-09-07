@@ -19,7 +19,7 @@ public class CountdownTimer : MonoBehaviour
 
     IEnumerator CountdownCoroutine()
     {
-        int countdownValue = 10;
+        int countdownValue = 5;
         
         while (countdownValue > 0)
         {
