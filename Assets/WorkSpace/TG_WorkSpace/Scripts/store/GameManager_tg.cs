@@ -25,6 +25,13 @@ public class GameManager_tg : MonoBehaviour
 
     void Start()
     {
+        // 씬이 전환되면 새로운 씬의 UI를 찾습니다.
+        if (currencyText == null)
+        {
+            // 씬 안의 "CurrencyText"라는 이름을 가진 오브젝트를 찾아 연결
+            currencyText = GameObject.Find("CurrencyText")?.GetComponent<Text>();
+        }
+
         // 초기 통화 값을 UI에 업데이트
         UpdateCurrencyUI();
     }
@@ -80,7 +87,7 @@ public class GameManager_tg : MonoBehaviour
     {
         if (currencyText != null)
         {
-            currencyText.text = "Currency: " + currentCurrency.ToString();
+            currencyText.text = currentCurrency.ToString();
         }
     }
 }
