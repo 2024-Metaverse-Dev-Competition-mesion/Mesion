@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 8063301985475614212}
   - component: {fileID: 8099210055043741270}
   - component: {fileID: 478086611090342483}
-  - component: {fileID: 3892515545996354588}
   m_Layer: 5
   m_Name: buy
   m_TagString: Untagged
@@ -167,21 +166,6 @@ MonoBehaviour:
   itemToBuy: {fileID: 11400000, guid: efa4060714acfe3489c2d916ef0f6b1b, type: 2}
   itemPrice: 500
   itemGameObject: {fileID: 0}
---- !u!114 &3892515545996354588
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1110159990276804862}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc24122912ebc9346b99783cbdc9d098, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  xrRigCamera: {fileID: 0}
-  spawnDistance: 1.5
-  heightOffset: 0
 --- !u!1001 &3177220125558089452
 PrefabInstance:
   m_ObjectHideFlags: 0

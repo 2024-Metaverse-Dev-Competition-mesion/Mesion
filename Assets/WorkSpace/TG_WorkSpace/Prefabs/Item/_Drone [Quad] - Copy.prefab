@@ -716,7 +716,7 @@ GameObject:
   - component: {fileID: 82602022810353006}
   - component: {fileID: 82730757447104980}
   m_Layer: 0
-  m_Name: _Drone [Quad]
+  m_Name: _Drone [Quad] - Copy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
