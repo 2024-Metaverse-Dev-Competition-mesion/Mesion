@@ -4505,6 +4505,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentCurrency: 10000
   playerInventory: []
+  currencyText: {fileID: 0}
 --- !u!4 &667463002
 Transform:
   m_ObjectHideFlags: 0
@@ -10153,6 +10154,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7731166594885262156, guid: 3bfaaf975d4ff154fa605bb6d45a18ff, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7870541905198828413, guid: 3bfaaf975d4ff154fa605bb6d45a18ff, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8074150192742303898, guid: 3bfaaf975d4ff154fa605bb6d45a18ff, type: 3}

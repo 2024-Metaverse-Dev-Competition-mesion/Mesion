@@ -22861,7 +22861,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6624382578046829325
 RectTransform:
   m_ObjectHideFlags: 0
@@ -32583,6 +32583,7 @@ GameObject:
   - component: {fileID: 5155576311067990130}
   - component: {fileID: 8039734207288032137}
   - component: {fileID: 7788567742077872928}
+  - component: {fileID: 5340357158991940364}
   - component: {fileID: 9081750500797648461}
   - component: {fileID: 4783718082496612871}
   - component: {fileID: 881984250528178348}
@@ -32655,6 +32656,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: Start_ui
   changeSceneButton: {fileID: 5063317653793623664}
+--- !u!114 &5340357158991940364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6566731700000844622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ad015578db787e4498cc71bed8c0694, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: Store
+  changeSceneButton: {fileID: 1061689832066323226}
 --- !u!114 &9081750500797648461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36128,7 +36143,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4246865419089754191
 RectTransform:
   m_ObjectHideFlags: 0
@@ -36190,7 +36205,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\uD544\uC694 \uC790\uACA9\uC99D"
+  m_Text: "\uBCF4\uC720 \uD3EC\uC778\uD2B8"
 --- !u!1 &7366363802395838158
 GameObject:
   m_ObjectHideFlags: 0
@@ -36461,7 +36476,7 @@ GameObject:
   - component: {fileID: 6907208525999740855}
   - component: {fileID: 8095758325850616984}
   m_Layer: 5
-  m_Name: Value
+  m_Name: text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36527,7 +36542,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "1\uC885"
+  m_Text: 1000
 --- !u!1 &7497120056759298232
 GameObject:
   m_ObjectHideFlags: 0
@@ -45696,7 +45711,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7753147258609537286, guid: 8a3826b29567e6044a95e79d38cce36c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PushJobButton
+      value: PushRealityButton
       objectReference: {fileID: 0}
     - target: {fileID: 7753147258609537286, guid: 8a3826b29567e6044a95e79d38cce36c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -47020,7 +47035,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7753147258609537286, guid: 8a3826b29567e6044a95e79d38cce36c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PushPassportButton
+      value: PushQualificationsButton
       objectReference: {fileID: 0}
     - target: {fileID: 7753147258609537286, guid: 8a3826b29567e6044a95e79d38cce36c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -47209,6 +47224,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a3826b29567e6044a95e79d38cce36c, type: 3}
+--- !u!114 &1061689832066323226 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7753147258609537286, guid: 8a3826b29567e6044a95e79d38cce36c, type: 3}
+  m_PrefabInstance: {fileID: 7287764401485120028}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &4928638448443251656 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2397425259038431700, guid: 8a3826b29567e6044a95e79d38cce36c, type: 3}
@@ -47360,7 +47386,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7753147258609537286, guid: 8a3826b29567e6044a95e79d38cce36c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PushJobButton
+      value: PushCusualButton
       objectReference: {fileID: 0}
     - target: {fileID: 7753147258609537286, guid: 8a3826b29567e6044a95e79d38cce36c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName

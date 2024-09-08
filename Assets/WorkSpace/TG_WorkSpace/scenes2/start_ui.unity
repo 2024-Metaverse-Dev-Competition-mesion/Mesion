@@ -8894,19 +8894,47 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114194610146817586, guid: 1089eb9231d2f55468aec2916e14ba77, type: 3}
       propertyPath: turn
-      value: Rudder Turn
+      value: OVR LeftJoystick X
+      objectReference: {fileID: 0}
+    - target: {fileID: 114194610146817586, guid: 1089eb9231d2f55468aec2916e14ba77, type: 3}
+      propertyPath: inputType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114194610146817586, guid: 1089eb9231d2f55468aec2916e14ba77, type: 3}
+      propertyPath: riseLower
+      value: OVR LeftJoystick Y
       objectReference: {fileID: 0}
     - target: {fileID: 114194610146817586, guid: 1089eb9231d2f55468aec2916e14ba77, type: 3}
       propertyPath: cameraTilt
-      value: Mouse ScrollWheel
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114194610146817586, guid: 1089eb9231d2f55468aec2916e14ba77, type: 3}
+      propertyPath: cameraTurn
+      value: OVR LeftJoystick X
+      objectReference: {fileID: 0}
+    - target: {fileID: 114194610146817586, guid: 1089eb9231d2f55468aec2916e14ba77, type: 3}
+      propertyPath: toggleMotor
+      value: OVR RightButton 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114194610146817586, guid: 1089eb9231d2f55468aec2916e14ba77, type: 3}
+      propertyPath: cameraFreeLook
+      value: OVR RightTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 114194610146817586, guid: 1089eb9231d2f55468aec2916e14ba77, type: 3}
+      propertyPath: toggleHeadless
+      value: OVR RightGrip
+      objectReference: {fileID: 0}
+    - target: {fileID: 114194610146817586, guid: 1089eb9231d2f55468aec2916e14ba77, type: 3}
+      propertyPath: cameraRiseLower
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 114194610146817586, guid: 1089eb9231d2f55468aec2916e14ba77, type: 3}
       propertyPath: forwardBackward
-      value: Horizontal
+      value: OVR RightJoystick Y
       objectReference: {fileID: 0}
     - target: {fileID: 114194610146817586, guid: 1089eb9231d2f55468aec2916e14ba77, type: 3}
       propertyPath: strafeLeftRight
-      value: Vertical
+      value: OVR RightJoystick X
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10652,6 +10680,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentCurrency: 100000
   playerInventory: []
+  currencyText: {fileID: 5169636373691873792}
 --- !u!4 &1888779303
 Transform:
   m_ObjectHideFlags: 0
@@ -43033,6 +43062,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 30721925}
     m_Modifications:
+    - target: {fileID: 639952528956798086, guid: 3bfaaf975d4ff154fa605bb6d45a18ff, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 688633892863769251, guid: 3bfaaf975d4ff154fa605bb6d45a18ff, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 866914573989581311, guid: 3bfaaf975d4ff154fa605bb6d45a18ff, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1355890806937148132, guid: 3bfaaf975d4ff154fa605bb6d45a18ff, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1966874518006767849, guid: 3bfaaf975d4ff154fa605bb6d45a18ff, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -43051,6 +43096,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1966874518006767849, guid: 3bfaaf975d4ff154fa605bb6d45a18ff, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2308131938404059305, guid: 3bfaaf975d4ff154fa605bb6d45a18ff, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2364899007171503590, guid: 3bfaaf975d4ff154fa605bb6d45a18ff, type: 3}
@@ -43104,6 +43153,10 @@ PrefabInstance:
     - target: {fileID: 4928638448443251656, guid: 3bfaaf975d4ff154fa605bb6d45a18ff, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6300219921379876314, guid: 3bfaaf975d4ff154fa605bb6d45a18ff, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6432516904555292317, guid: 3bfaaf975d4ff154fa605bb6d45a18ff, type: 3}
       propertyPath: m_LocalPosition.x
@@ -43322,6 +43375,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3bfaaf975d4ff154fa605bb6d45a18ff, type: 3}
+--- !u!114 &5169636373691873792 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8095758325850616984, guid: 3bfaaf975d4ff154fa605bb6d45a18ff, type: 3}
+  m_PrefabInstance: {fileID: 5169636373691873791}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &5184570663117968955
 RectTransform:
   m_ObjectHideFlags: 0
