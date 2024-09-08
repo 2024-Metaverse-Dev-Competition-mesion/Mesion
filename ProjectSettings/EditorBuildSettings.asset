@@ -8,6 +8,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/WorkSpace/TG_WorkSpace/scenes2/Store.unity
     guid: 7b533dfe561bc47c8975c955fe4ef3d3
+  - enabled: 1
+    path: Assets/WorkSpace/SH_WorkSpace/Scenes/Drone_Structure.unity
+    guid: 384879a37dbd4bd44a88bc5101a497b9
+  - enabled: 1
+    path: "Assets/WorkSpace/GB_WorkSpace/\uB4DC\uB860\uC870\uB9BD\uC52C/assemblescene.unity"
+    guid: 9cf3f10d56c27904e8cf7558d5499c72
+  - enabled: 1
+    path: "Assets/WorkSpace/GB_WorkSpace/\uB4DC\uB860\uC870\uB9BD\uC52C/Drone_Structure_GB.unity"
+    guid: 39a4b43ca6299344ea72a9450b0554fa
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 106889636277126408cd63dccae392e8, type: 2}
     com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: b0adc3ac628078948aade5d77dac8374, type: 2}

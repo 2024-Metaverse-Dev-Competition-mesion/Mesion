@@ -36,6 +36,7 @@ TagManager:
   - s2
   - gps1
   - gps2
+  - dropzone
   layers:
   - Default
   - TransparentFX

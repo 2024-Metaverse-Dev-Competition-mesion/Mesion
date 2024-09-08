@@ -72,6 +72,7 @@ public class DroneAssemblyManager : MonoBehaviour
         DestroyWithTag("pro5");
         DestroyWithTag("pro6");
         DestroyWithTag("dronebody");
+        DestroyWithTag("dropzone");
 
         // 완성된 드론 프리팹을 생성하고 지정된 위치에 배치
         GameObject drone = Instantiate(completedDronePrefab, spawnPoint.position, spawnPoint.rotation);
