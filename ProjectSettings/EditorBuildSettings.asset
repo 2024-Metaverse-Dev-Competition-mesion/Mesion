@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/WorkSpace/TG_WorkSpace/scenes2/Start_ui.unity
+    guid: ca296cfa78326854c966bec50e76c970
+  - enabled: 1
     path: Assets/WorkSpace/TG_WorkSpace/scenes2/Store.unity
     guid: 7b533dfe561bc47c8975c955fe4ef3d3
   m_configObjects:

@@ -1,5 +1,6 @@
 using UnityEngine;
-using System.Collections.Generic;
+using UnityEngine.UI;  // UI 관련 클래스를 사용하기 위해 필요
+using System.Collections.Generic;  // List<>를 사용하기 위해 추가
 
 public class GameManager_tg : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class GameManager_tg : MonoBehaviour
 
     public int currentCurrency = 1000;  // 초기 통화 설정
     public List<Item> playerInventory = new List<Item>();  // 플레이어 인벤토리
+    public Text currencyText;  // UI 텍스트 참조
 
     void Awake()
     {
@@ -21,11 +23,18 @@ public class GameManager_tg : MonoBehaviour
         }
     }
 
+    void Start()
+    {
+        // 초기 통화 값을 UI에 업데이트
+        UpdateCurrencyUI();
+    }
+
     // 통화 추가 메서드
     public void AddCurrency(int amount)
     {
         currentCurrency += amount;
         Debug.Log("Added " + amount + " currency. Current total: " + currentCurrency);
+        UpdateCurrencyUI();  // 통화 변경 시 UI 업데이트
     }
 
     // 통화 사용 메서드
@@ -35,6 +44,7 @@ public class GameManager_tg : MonoBehaviour
         {
             currentCurrency -= amount;
             Debug.Log("Spent " + amount + " currency. Current total: " + currentCurrency);
+            UpdateCurrencyUI();  // 통화 변경 시 UI 업데이트
             return true;
         }
         else
@@ -62,6 +72,15 @@ public class GameManager_tg : MonoBehaviour
         else
         {
             Debug.Log("Item not found in inventory.");
+        }
+    }
+
+    // 통화 UI 업데이트 메서드
+    void UpdateCurrencyUI()
+    {
+        if (currencyText != null)
+        {
+            currencyText.text = "Currency: " + currentCurrency.ToString();
         }
     }
 }
