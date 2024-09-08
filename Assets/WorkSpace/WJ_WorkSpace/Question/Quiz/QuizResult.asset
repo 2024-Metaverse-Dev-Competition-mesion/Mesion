@@ -1403,3 +1403,167 @@ MonoBehaviour:
       isCorrect: 0
       correctAnswerText: "\uB09C\uB958\uAC00 \uD615\uC131\uB418\uC5B4\uC57C \uD55C\uB2E4."
       part: 1
+  - quizTitle: "\uC5F0\uC2B5 \uBAA8\uB4DC (\uB79C\uB364) 09/08 [50\uC810]"
+    totalTime: 33.33108
+    totalScore: 5
+    results:
+    - questionText: "\uCD08\uACBD\uB7C9\uBE44\uD589\uC7A5\uCE58 \uC2E0\uACE0\uB294
+        \uB204\uAD6C\uC5D0\uAC8C \uC2E0\uCCAD\uD558\uB294\uAC00?"
+      selectedAnswerText: "\uD55C\uAD6D\uAD50\uD1B5\uC548\uC804\uACF5\uB2E8 \uC774\uC0AC\uC7A5"
+      selectedAnswerIndex: 0
+      isCorrect: 1
+      correctAnswerText: 
+      part: 0
+    - questionText: "\uD1B5\uC0C1 \uD558\uB8E8 \uC911 \uCD5C\uC800\uAE30\uC628\uC758
+        \uC2DC\uAC04\uC740?"
+      selectedAnswerText: "\uC790\uC815 1\uC2DC\uAC04 \uD6C4"
+      selectedAnswerIndex: 1
+      isCorrect: 0
+      correctAnswerText: "\uC77C\uCD9C\uBD80\uD130 \uC77C\uCD9C \uD6C4 1\uC2DC\uAC04
+        \uC0AC\uC774"
+      part: 1
+    - questionText: "\uD604\uC7AC\uC758 \uC9C0\uC0C1\uAE30\uC628\uC774 31\xB0C \uC77C
+        \uB54C 3,000\uD53C\uD2B8 \uC0C1\uACF5\uC758 \uAE30\uC628\uC740? (\uB2E8,
+        \uC870\uAC74\uC740 ISA\uC870\uAC74\uC774\uB2E4)"
+      selectedAnswerText: "29\xB0C"
+      selectedAnswerIndex: 2
+      isCorrect: 0
+      correctAnswerText: "25\xB0C"
+      part: 1
+    - questionText: "\uD070 \uC0AC\uACE0\uB294 \uC6B0\uC5F0\uD788 \uB610\uB294 \uC5B4\uB290
+        \uC21C\uAC04 \uAC11\uC791\uC2A4\uB7FD\uAC8C \uBC1C\uC0DD\uD558\uB294 \uAC83\uC774
+        \uC544\uB2C8\uB77C \uADF8 \uC774\uC804\uC5D0 \uBC18\uB4DC\uC2DC \uACBD\uBBF8\uD55C
+        \uC0AC\uACE0\uB4E4\uC774 \uBC18\uBCF5\uB418\uB294 \uACFC\uC815 \uC18D\uC5D0\uC11C
+        \uBC1C\uC0DD\uD55C\uB2E4\uB294 \uAC83\uC744 \uC124\uBA85\uD55C \uBC95\uCE59\uC740
+        \uBB34\uC5C7\uC778\uAC00? "
+      selectedAnswerText: "\uBCA0\uBC84\uC758 \uBC95\uCE59"
+      selectedAnswerIndex: 3
+      isCorrect: 0
+      correctAnswerText: "\uB4A4\uBCA0\uB974\uAC70\uC758 \uBC95\uCE59"
+      part: 2
+    - questionText: "\uACF5\uAE30 \uC911 \uAC00\uC7A5 \uB9CE\uC740 \uBD80\uBD84\uC744
+        \uCC28\uC9C0\uD558\uB294 \uAE30\uCCB4 \uC131\uBD84\uC740?"
+      selectedAnswerText: "\uC218\uC18C"
+      selectedAnswerIndex: 3
+      isCorrect: 0
+      correctAnswerText: "\uC9C8\uC18C"
+      part: 1
+    - questionText: "\uBE44\uD589 \uD6C4 \uCC29\uB959 \uC7A5\uC18C\uB85C \uC633\uC9C0
+        \uC54A\uC740 \uAC83\uC740?"
+      selectedAnswerText: "\uC7A5\uC560\uBB3C\uC774 \uC5C6\uB294 \uACBD\uC0AC\uBA74"
+      selectedAnswerIndex: 3
+      isCorrect: 1
+      correctAnswerText: 
+      part: 2
+    - questionText: "\uC218\uD3C9 \uC9C1\uC9C4\uBE44\uD589\uC744 \uD558\uB2E4\uAC00
+        \uC0C1\uC2B9\uBE44\uD589\uC73C\uB85C \uC804\uD658 \uC2DC \uBC1B\uC74C\uAC01(\uC601\uAC01)\uC774
+        \uC99D\uAC00\uD558\uBA74 \uC591\uB825\uC740 \uC5B4\uB5BB\uAC8C \uBCC0\uD558\uB294\uAC00?"
+      selectedAnswerText: "\uC9C0\uC18D\uC801\uC73C\uB85C \uAC10\uC18C\uD55C\uB2E4"
+      selectedAnswerIndex: 3
+      isCorrect: 0
+      correctAnswerText: "\uC21C\uAC01\uC801\uC73C\uB85C \uC99D\uAC00\uD55C\uB2E4"
+      part: 2
+    - questionText: "\uACF5\uC5ED\uC9C0\uC815\uC758 \uACF5\uACE0 \uC218\uB2E8\uC73C\uB85C
+        \uC633\uC740 \uAC83\uC744 \uACE0\uB974\uC2DC\uC624."
+      selectedAnswerText: AIP
+      selectedAnswerIndex: 3
+      isCorrect: 0
+      correctAnswerText: AIC
+      part: 0
+    - questionText: "\uAE30\uC218 \uBC29\uD5A5 \uC720\uC9C0\uC5D0 \uC0AC\uC6A9\uB418\uB294
+        \uBD80\uD488\uC774 \uC544\uB2CC \uAC83\uC740?"
+      selectedAnswerText: ESC
+      selectedAnswerIndex: 3
+      isCorrect: 1
+      correctAnswerText: 
+      part: 2
+    - questionText: "\uAD6D\uD1A0\uAD50\uD1B5\uBD80\uB839\uC73C\uB85C \uC815\uD558\uB294
+        \uC900\uC218\uC0AC\uD56D\uC744 \uB530\uB974\uC9C0 \uC54A\uACE0 \uCD08\uACBD\uB7C9\uBE44\uD589\uC7A5\uCE58\uB97C
+        \uC774\uC6A9\uD558\uC5EC \uBE44\uD589\uD560 \uACBD\uC6B0 1\uCC28 \uACFC\uD0DC\uB8CC
+        \uAE08\uC561\uC744 \uACE0\uB974\uC2DC\uC624."
+      selectedAnswerText: "150\uB9CC \uC6D0"
+      selectedAnswerIndex: 3
+      isCorrect: 0
+      correctAnswerText: "100\uB9CC \uC6D0"
+      part: 0
+  - quizTitle: "\uC2E4\uC804 \uBAA8\uB4DC 09/08 [40\uC810]"
+    totalTime: 8.046335
+    totalScore: 4
+    results:
+    - questionText: "\uB1CC\uC6B0\uAC00 \uB3D9\uBC18\uD558\uB294 \uAE30\uC0C1\uD604\uC0C1\uC774
+        \uC544\uB2CC \uAC83\uC740?"
+      selectedAnswerText: "\uC548\uAC1C"
+      selectedAnswerIndex: 0
+      isCorrect: 1
+      correctAnswerText: 
+      part: 1
+    - questionText: "\uBE44\uD589 \uC804 \uC810\uAC80 \uC2DC, \uBAA8\uD130\uC5D0
+        \uB300\uD55C \uB0B4\uC6A9\uC73C\uB85C \uC633\uC9C0 \uC54A\uC740 \uAC83\uC740?"
+      selectedAnswerText: "\uBCA0\uC5B4\uB9C1 \uC0C1\uD0DC"
+      selectedAnswerIndex: 1
+      isCorrect: 0
+      correctAnswerText: "\uC724\uD65C\uC720 \uC8FC\uC785\uC0C1\uD0DC"
+      part: 2
+    - questionText: "\uD56D\uACF5\uC548\uC804\uBC95\uC0C1 \uACF5\uC5ED\uC744 \uC0AC\uC6A9\uBAA9\uC801\uC5D0
+        \uB530\uB77C \uBD84\uB958\uD588\uC744 \uB54C \uC8FC\uC758\uACF5\uC5ED\uC5D0
+        \uD574\uB2F9\uD558\uC9C0 \uC54A\uB294 \uAC83\uC740?"
+      selectedAnswerText: "\uD6C8\uB828\uAD6C\uC5ED"
+      selectedAnswerIndex: 0
+      isCorrect: 0
+      correctAnswerText: "\uC870\uC5B8\uAD6C\uC5ED"
+      part: 0
+    - questionText: "\uC218\uD3C9 \uC9C1\uC9C4\uBE44\uD589\uC744 \uD558\uB2E4\uAC00
+        \uC0C1\uC2B9\uBE44\uD589\uC73C\uB85C \uC804\uD658 \uC2DC \uBC1B\uC74C\uAC01(\uC601\uAC01)\uC774
+        \uC99D\uAC00\uD558\uBA74 \uC591\uB825\uC740 \uC5B4\uB5BB\uAC8C \uBCC0\uD558\uB294\uAC00?"
+      selectedAnswerText: "\uC21C\uAC01\uC801\uC73C\uB85C \uC99D\uAC00\uD55C\uB2E4"
+      selectedAnswerIndex: 1
+      isCorrect: 1
+      correctAnswerText: 
+      part: 2
+    - questionText: "\uAD6D\uD1A0\uAD50\uD1B5\uBD80\uB839\uC73C\uB85C \uC815\uD558\uB294
+        \uC900\uC218\uC0AC\uD56D\uC744 \uB530\uB974\uC9C0 \uC54A\uACE0 \uCD08\uACBD\uB7C9\uBE44\uD589\uC7A5\uCE58\uB97C
+        \uC774\uC6A9\uD558\uC5EC \uBE44\uD589\uD560 \uACBD\uC6B0 1\uCC28 \uACFC\uD0DC\uB8CC
+        \uAE08\uC561\uC744 \uACE0\uB974\uC2DC\uC624."
+      selectedAnswerText: "10\uB9CC \uC6D0"
+      selectedAnswerIndex: 1
+      isCorrect: 0
+      correctAnswerText: "100\uB9CC \uC6D0"
+      part: 0
+    - questionText: "\uB2E4\uC74C \uC911 \uAC15\uD55C \uBE44\uAC00 \uACC4\uC18D \uC62C
+        \uC218\uB3C4 \uC788\uB294 \uAD6C\uB984\uC758 \uC57D\uC5B4\uB294 \uBB34\uC5C7\uC778\uAC00?"
+      selectedAnswerText: As
+      selectedAnswerIndex: 1
+      isCorrect: 0
+      correctAnswerText: Cb
+      part: 1
+    - questionText: "\uC218\uC9C1\uC73C\uB85C \uBC1C\uB2EC\uD558\uACE0 \uB9CE\uC740
+        \uAC15\uC6B0\uB97C \uD3EC\uD568\uD558\uACE0 \uC788\uB294 \uC801\uB780\uC6B4\uC758
+        \uBD80\uD638\uB85C \uB9DE\uB294 \uAC83\uC740?"
+      selectedAnswerText: Ns
+      selectedAnswerIndex: 1
+      isCorrect: 0
+      correctAnswerText: Cb
+      part: 1
+    - questionText: "\uB4DC\uB860\uC774 \uC77C\uC815\uACE0\uB3C4\uC5D0\uC11C \uB4F1\uC18D\uBE44\uD589\uC744
+        \uD558\uACE0 \uC788\uC744 \uB54C\uC758 \uC870\uAC74\uC73C\uB85C \uB9DE\uB294
+        \uAC83\uC740?"
+      selectedAnswerText: "\uCD94\uB825 = \uD56D\uB825, \uC591\uB825 \uFF1C\uC911\uB825"
+      selectedAnswerIndex: 1
+      isCorrect: 0
+      correctAnswerText: "\uC591\uB825 = \uC911\uB825, \uCD94\uB825 = \uD56D\uB825"
+      part: 2
+    - questionText: "\uB0A0\uAC1C\uB098 \uAE30\uCCB4\uD45C\uBA74\uC744 \uD1B5\uACFC\uD558\uB294
+        \uACF5\uAE30\uC758 \uD750\uB984\uC744 \uAC00\uB2A5\uD55C \uD55C \uC21C\uC870\uB86D\uAC8C
+        \uD750\uB974\uAC8C \uD558\uB294 \uC774\uC720\uB294?"
+      selectedAnswerText: "\uB9C8\uCC30\uD56D\uB825\uC744 \uC904\uC774\uAE30 \uC704\uD558\uC5EC"
+      selectedAnswerIndex: 1
+      isCorrect: 1
+      correctAnswerText: 
+      part: 2
+    - questionText: "\uC2E0\uACE0\uD558\uC9C0 \uC54A\uC544\uB3C4 \uB418\uB294 \uCD08\uACBD\uB7C9\uBE44\uD589\uC7A5\uCE58\uB294
+        \uC5B4\uB290 \uAC83\uC778\uAC00?"
+      selectedAnswerText: "\uC778\uB825\uD65C\uACF5\uAE30"
+      selectedAnswerIndex: 1
+      isCorrect: 1
+      correctAnswerText: 
+      part: 0
