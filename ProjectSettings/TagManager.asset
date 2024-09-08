@@ -37,6 +37,13 @@ TagManager:
   - gps1
   - gps2
   - dropzone
+  - "\uD504\uB86D"
+  - "\uC2A4\uD0A4\uB4DC"
+  - "\uBAA8\uD130"
+  - "\uC554\uB300"
+  - "\uBA54\uC778\uD504\uB808\uC784"
+  - GPS
+  - "\uBC30\uD130\uB9AC"
   layers:
   - Default
   - TransparentFX
