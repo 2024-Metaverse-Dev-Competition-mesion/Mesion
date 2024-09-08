@@ -1,28 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
-
-public class DroneCameraDisplay : MonoBehaviour
-{
-	public RawImage droneCameraFeed;
-	public RenderTexture renderTexture;
-
-	void Start()
-	{
-		if (droneCameraFeed != null && renderTexture != null)
-		{
-			droneCameraFeed.texture = renderTexture;
-			droneCameraFeed.gameObject.SetActive(false); // 처음에는 비활성화
-		}
-	}
-
-	void Update()
-	{
-		if (Input.GetKeyDown(KeyCode.F))
-		{
-			// F 키를 눌렀을 때 활성화 상태를 토글
-			droneCameraFeed.gameObject.SetActive(!droneCameraFeed.gameObject.activeSelf);
-		}
-	}
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:ef798a91f8f509fe8df6f7ac4f065a59ec534315788a6a5e87e933f9a54f9ea4
+size 639
