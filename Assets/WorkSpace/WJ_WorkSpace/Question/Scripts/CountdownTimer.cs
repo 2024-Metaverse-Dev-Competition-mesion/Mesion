@@ -9,17 +9,19 @@ public class CountdownTimer : MonoBehaviour
     public GameObject Test_Quiz; // 활성화할 게임 오브젝트
     public GameObject QuizManager_Part;
     public GameObject QuizManager_Random;
-    
+
+    private int initialCountdownValue = 5; // 카운트다운 초기값
+    private Coroutine countdownCoroutine; // 카운트다운 코루틴을 추적하기 위한 변수
 
     void Start()
     {
         // 카운트다운 시작
-        StartCoroutine(CountdownCoroutine());
+        countdownCoroutine = StartCoroutine(CountdownCoroutine());
     }
 
     IEnumerator CountdownCoroutine()
     {
-        int countdownValue = 5;
+        int countdownValue = initialCountdownValue;
         
         while (countdownValue > 0)
         {
@@ -36,5 +38,25 @@ public class CountdownTimer : MonoBehaviour
         Test_Quiz.SetActive(true);
         QuizManager_Part.SetActive(false);
         QuizManager_Random.SetActive(false);
+    }
+
+    // 이 스크립트가 속한 GameObject가 비활성화될 때 초기화
+    private void OnDisable()
+    {
+        // 코루틴이 진행 중이면 중지
+        if (countdownCoroutine != null)
+        {
+            StopCoroutine(countdownCoroutine);
+        }
+
+        // GameObject 상태를 초기화하지 않고 카운트다운 텍스트만 초기화
+        countdownText.text = initialCountdownValue + "초 후 시험을 시작합니다\n\n준비해주세요";
+    }
+
+    // GameObject가 다시 활성화될 때 초기화가 필요하다면 OnEnable에서 처리 가능
+    private void OnEnable()
+    {
+        // 필요한 경우 활성화될 때 초기화 작업을 추가
+        countdownCoroutine = StartCoroutine(CountdownCoroutine());
     }
 }

@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.UI;  // Add this for Button component
+using UnityEngine.UI;
 
 public class Test_Panel_Manager : MonoBehaviour
 {
@@ -32,6 +32,21 @@ public class Test_Panel_Manager : MonoBehaviour
         if (panelToActivate != null)
         {
             panelToActivate.SetActive(true);
+        }
+    }
+
+    // Called when this GameObject is disabled
+    private void OnDisable()
+    {
+        // Deactivate Panel3 and activate Panel1 when this GameObject is disabled
+        if (Panel3 != null)
+        {
+            Panel3.SetActive(false);
+        }
+
+        if (Panel1 != null)
+        {
+            Panel1.SetActive(true);
         }
     }
 }

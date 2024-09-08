@@ -36,6 +36,37 @@ public class Test_Quiz_Manager : MonoBehaviour
 
     void Start()
     {
+        InitializeQuiz();
+    }
+
+    void OnEnable()
+    {
+        // 다시 활성화될 때 퀴즈 초기화
+        InitializeQuiz();
+
+        // 비활성화된 UI 요소들 다시 활성화
+        if (questionText != null)
+            questionText.gameObject.SetActive(true);
+        
+        if (timerText != null)
+            timerText.gameObject.SetActive(true);
+
+        if (questionDropdown != null)
+            questionDropdown.gameObject.SetActive(true);
+
+        if (submitButton != null)
+            submitButton.gameObject.SetActive(true);
+    }
+
+    // 게임 오브젝트가 비활성화될 때 호출되는 메서드
+    void OnDisable()
+    {
+        ResetQuiz();
+    }
+
+    // 퀴즈 초기화 메서드
+    void InitializeQuiz()
+    {
         quizStartTime = DateTime.Now; // 퀴즈 시작 시간 기록
         LoadQuestions();
         ShuffleQuestions();
@@ -63,6 +94,41 @@ public class Test_Quiz_Manager : MonoBehaviour
         cancelSubmitButton.onClick.AddListener(CloseConfirmSubmitPanel);
 
         // 결과 패널 초기화
+        resultPanel.SetActive(false);
+
+        // 점수 및 상태 초기화
+        score = 0;
+        currentQuestionIndex = 0;
+        isQuizEnded = false;
+    }
+
+    // 퀴즈를 초기 상태로 되돌리는 메서드
+    void ResetQuiz()
+    {
+        StopAllCoroutines(); // 타이머 코루틴 정지
+
+        // 선택된 답안 배열 초기화
+        for (int i = 0; i < selectedAnswers.Length; i++)
+        {
+            selectedAnswers[i] = -1; // 초기화
+        }
+
+        // 점수 및 상태 초기화
+        score = 0;
+        currentQuestionIndex = 0;
+        isQuizEnded = false;
+
+        // UI 요소 초기화
+        questionText.text = "";
+        timerText.text = "00:00";
+        foreach (var button in optionsButtons)
+        {
+            button.GetComponentInChildren<TextMeshProUGUI>().text = "";
+            button.gameObject.SetActive(false);
+        }
+        questionDropdown.ClearOptions();
+        warningPanel.SetActive(false);
+        confirmSubmitPanel.SetActive(false);
         resultPanel.SetActive(false);
     }
 

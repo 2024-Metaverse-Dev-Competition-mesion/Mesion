@@ -18,6 +18,9 @@ public class QuizResultViewer : MonoBehaviour
 
     public GameObject listPanel; // 제목 리스트 패널
     public GameObject detailsPanel; // 세부 퀴즈 내용을 표시할 패널
+    public GameObject Quiz_Commentary_Panel;
+    public GameObject Similar_Quiz_Panel;
+
 
     public Button previousQuestionButton; // 이전 문제로 넘어가는 버튼
     public Button nextQuestionButton; // 다음 문제로 넘어가는 버튼
@@ -59,6 +62,15 @@ public class QuizResultViewer : MonoBehaviour
 
         // 다음 문제 버튼이 클릭되었을 때 새로운 버튼을 활성화하는 로직
         nextQuestionButton.onClick.AddListener(ActivateNewButtons);
+    }
+
+    void OnDisable()
+    {
+        // When this GameObject gets disabled, activate listPanel and deactivate others
+        listPanel.SetActive(true);
+        detailsPanel.SetActive(false);
+        Quiz_Commentary_Panel.SetActive(false);
+        Similar_Quiz_Panel.SetActive(false);
     }
 
     // 페이지를 업데이트하는 함수
