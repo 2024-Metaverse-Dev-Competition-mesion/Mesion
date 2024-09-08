@@ -83,7 +83,7 @@ public class GameManager_tg : MonoBehaviour
     }
 
     // 통화 UI 업데이트 메서드
-    void UpdateCurrencyUI()
+    public void UpdateCurrencyUI()
     {
         if (currencyText != null)
         {

@@ -33,6 +33,7 @@ public class Scene2_ItemPurchaser : MonoBehaviour
                 {
                     itemGameObject.SetActive(false);  // 해당 아이템의 오브젝트 비활성화
                 }
+                GameManager_tg.Instance.UpdateCurrencyUI();  // 통화 UI 업데이트
             }
             else
             {
