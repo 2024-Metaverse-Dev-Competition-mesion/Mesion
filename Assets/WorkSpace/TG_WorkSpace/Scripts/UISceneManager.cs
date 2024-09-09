@@ -3,28 +3,21 @@ using UnityEngine;
 public class UISceneManager : MonoBehaviour
 {
     public GameObject uiPanel; // 처음에 표시될 UI 패널
+    private bool isUIPanelShown = false; // flag 변수로 UI 패널 표시 여부 관리
 
     void Start()
     {
-        // UI가 이미 표시된 적이 있는지 확인
-        if (PlayerPrefs.GetInt("HasShownUI", 0) == 0)
+        DontDestroyOnLoad(gameObject); // 씬이 바뀌어도 파괴되지 않도록 설정
+
+        // UI가 표시된 적이 없으면 표시
+        if (!isUIPanelShown)
         {
-            // 처음 시작 시 UI 패널 표시
-            uiPanel.SetActive(true);
-            PlayerPrefs.SetInt("HasShownUI", 1); // UI를 표시한 적이 있다고 저장
-            PlayerPrefs.Save();  // PlayerPrefs를 디스크에 저장
+            uiPanel.SetActive(true); // UI 패널을 활성화
+            isUIPanelShown = true;   // 표시했다고 flag를 설정
         }
         else
         {
-            // 이미 표시된 적이 있으면 UI 패널을 비활성화
-            uiPanel.SetActive(false);
+            uiPanel.SetActive(false); // 이미 표시되었으면 UI 패널 비활성화
         }
-    }
-
-    // 프로그램이 종료될 때 호출되는 메서드
-    void OnApplicationQuit()
-    {
-        // 프로그램 종료 시 UI 표시 상태를 초기화
-        PlayerPrefs.DeleteKey("HasShownUI");
     }
 }
