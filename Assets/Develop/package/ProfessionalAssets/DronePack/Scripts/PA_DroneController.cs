@@ -150,13 +150,6 @@ namespace PA_DronePack
                 flyingSound.pitch = 1 + (liftForce * 0.02f);                                                                    // alter the pitch according to lift input
             }
 			#endregion
-
-			if (!motorOn)
-			{
-				Debug.Log("Player Move");
-                Rigidbody rb = player.GetComponent<Rigidbody>();
-				pc.MovePlayer(rb);
-			}
 		}
 
         void FixedUpdate()
