@@ -16,4 +16,6 @@ MonoBehaviour:
   description: "\uB0A0\uC544\uB2E4\uB2C8\uB294 \uD584\uBC84\uAC70"
   itemID: 0
   price: 500
+  deviceType: "\uC74C\uC2DD"
+  deviceImage: {fileID: 21300000, guid: 8518afbaac2af5d41a8ff64070593909, type: 3}
   itemPrefab: {fileID: 1756696917985646, guid: c24784302e7fda44cb95c0bc0f474d60, type: 3}

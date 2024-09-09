@@ -15729,7 +15729,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5022724132645223218}
   m_Layer: 0
-  m_Name: control
+  m_Name: control_ttt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

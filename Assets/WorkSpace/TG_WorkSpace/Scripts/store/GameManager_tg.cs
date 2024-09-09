@@ -105,7 +105,7 @@ public class GameManager_tg : MonoBehaviour
         // 씬 안의 "CurrencyText"라는 이름을 가진 오브젝트를 찾아 연결
         if (currencyText == null)
         {
-            currencyText = GameObject.Find("CurrencyText")?.GetComponent<Text>();
+            currencyText = GameObject.Find("Currency_Text_")?.GetComponent<Text>();
         }
 
         // 씬 안의 "UpdateCurrencyButton"라는 이름을 가진 버튼을 찾아 연결
@@ -116,6 +116,7 @@ public class GameManager_tg : MonoBehaviour
             {
                 updateCurrencyButton.onClick.RemoveAllListeners();  // 기존 리스너 제거
                 updateCurrencyButton.onClick.AddListener(UpdateCurrencyUI);  // 새 리스너 추가
+                currencyText = GameObject.Find("Currency_Text_")?.GetComponent<Text>();
             }
         }
     }

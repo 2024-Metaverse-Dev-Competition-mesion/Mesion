@@ -3,10 +3,16 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NewItem", menuName = "Inventory/Item")]
 public class Item : ScriptableObject
 {
-    public string itemName;
-    public string description;
-    public int itemID;
-    public int price;
+    public string itemName;          // 아이템 이름
+    public string description;       // 아이템 설명
+    public int itemID;               // 아이템 ID
+    public int price;                // 아이템 가격
+
+    // 기기 종류를 위한 변수 (enum 또는 string 선택 가능)
+    public string deviceType;        // 기기 종류 (예: 드론, 카메라 등)
+
+    // 기기 이미지를 위한 변수 (Sprite 타입)
+    public Sprite deviceImage;       // 기기 이미지
 
     // 특정 오브젝트(프리팹)를 불러오기 위한 변수
     public GameObject itemPrefab;
