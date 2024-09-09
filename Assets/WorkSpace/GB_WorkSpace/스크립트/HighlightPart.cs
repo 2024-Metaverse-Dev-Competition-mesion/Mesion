@@ -1,11 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class HighlightPart : MonoBehaviour
 {
     private Material[] originalMaterials;
     public Material highlightMaterial;
+    public ToDoListManager toDoListManager; // ToDoListManager 참조
 
     void Start()
     {
@@ -15,7 +14,7 @@ public class HighlightPart : MonoBehaviour
 
         for (int i = 0; i < renderers.Length; i++)
         {
-            originalMaterials[i] = renderers[i].material;
+            originalMaterials[i] = renderers[i].sharedMaterial;
         }
     }
 
@@ -26,7 +25,7 @@ public class HighlightPart : MonoBehaviour
 
         foreach (Renderer rend in renderers)
         {
-            rend.material = highlightMaterial;
+            rend.sharedMaterial = highlightMaterial;
         }
 
         Debug.Log($"{gameObject.name}가 강조되었습니다.");
@@ -39,9 +38,15 @@ public class HighlightPart : MonoBehaviour
 
         for (int i = 0; i < renderers.Length; i++)
         {
-            renderers[i].material = originalMaterials[i];
+            renderers[i].sharedMaterial = originalMaterials[i];
         }
 
         Debug.Log($"{gameObject.name}의 강조가 해제되었습니다.");
+    }
+
+    // 클릭 시 현재 강조된 부품인지 확인
+    private void OnMouseDown() // 마우스 클릭 이벤트
+    {
+        toDoListManager.OnPartClicked(this); // 현재 부품을 ToDoListManager로 전달
     }
 }

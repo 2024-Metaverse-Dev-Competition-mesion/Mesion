@@ -1,7 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro; // TextMeshPro 관련 네임스페이스 추가
 
 public class ToDoListManager : MonoBehaviour
@@ -16,6 +14,20 @@ public class ToDoListManager : MonoBehaviour
     {
         // 첫 번째 항목 강조 시작
         HighlightNextPart();
+    }
+
+    // 특정 부품이 클릭되었을 때 호출
+    public void OnPartClicked(HighlightPart clickedPart)
+    {
+        // 클릭된 부품이 현재 강조된 부품인지 확인
+        if (droneParts[currentIndex] == clickedPart)
+        {
+            CompleteCurrentItem();
+        }
+        else
+        {
+            Debug.Log("잘못된 부품이 클릭되었습니다. 현재 강조된 부품을 클릭하세요.");
+        }
     }
 
     public void CompleteCurrentItem()
