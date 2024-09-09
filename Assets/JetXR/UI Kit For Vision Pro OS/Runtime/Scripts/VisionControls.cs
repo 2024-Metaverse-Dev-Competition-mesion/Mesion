@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using UnityEngine.XR.Interaction.Toolkit;
+
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -2032,7 +2032,7 @@ namespace JetXR.VisionUI
             GameObject closeButton = CreateUIObject("Close Button", closeButtonWindow, typeof(Image));
             GameObject closeButtonAlphaBackground = CreateUIObject("Alpha Background", closeButtonWindow, typeof(Image));
             GameObject crossIcon = CreateUIObject("Cross Icon", closeButtonWindow, typeof(Image));
-            GameObject grabberObject = CreateUIObject("Grabber", grabberObjectWindow, typeof(Image), typeof(BoxCollider), typeof(XRSimpleInteractable), typeof(Grabber));
+            GameObject grabberObject = CreateUIObject("Grabber", grabberObjectWindow, typeof(Image), typeof(BoxCollider), typeof(UnityEngine.XR.Interaction.Toolkit.Interactables.XRSimpleInteractable), typeof(Grabber));
             GameObject grabberAlphaBackground = CreateUIObject("Alpha Background", grabberObjectWindow, typeof(Image));
 
             // Animation
@@ -2398,7 +2398,7 @@ namespace JetXR.VisionUI
             GameObject positionPivot = CreateUIObject("Position Pivot", root, typeof(RectTransform));
             GameObject trailing = CreateUIObject("Trailing", positionPivot, typeof(Image));
             GameObject line = CreateUIObject("Line", root, typeof(Image));
-            GameObject interactable = CreateUIObject("Interactable", root, typeof(Image), typeof(Resizer), typeof(XRSimpleInteractable), typeof(BoxCollider));
+            GameObject interactable = CreateUIObject("Interactable", root, typeof(Image), typeof(Resizer), typeof(UnityEngine.XR.Interaction.Toolkit.Interactables.XRSimpleInteractable), typeof(BoxCollider));
 
             // Position Pivot
             RectTransform positionPivotRect = positionPivot.GetComponent<RectTransform>();
