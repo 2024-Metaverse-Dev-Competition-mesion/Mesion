@@ -1,17 +1,22 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro; // TextMeshPro 관련 네임스페이스 추가
 
 public class ToDoListManager : MonoBehaviour
 {
     public List<HighlightPart> droneParts; // 드론 부품 리스트
     public List<GameObject> toDoItems; // ToDo 리스트 항목들 (TextMeshProUGUI가 포함된 UI 오브젝트)
+    public QuizManager quizManager; // 퀴즈 매니저 연결
+    public Button quizStartButton; // 퀴즈 시작 버튼
+    public InteractionManager interactionManager; // InteractionManager 참조
 
     private int currentIndex = 0;
     private Color originalTextColor;
 
     void Start()
     {
+        quizStartButton.gameObject.SetActive(false); // 시작 시 버튼 숨기기
         // 첫 번째 항목 강조 시작
         HighlightNextPart();
     }
@@ -48,7 +53,14 @@ public class ToDoListManager : MonoBehaviour
         else
         {
             Debug.Log("모든 부품이 완료되었습니다.");
+            quizStartButton.gameObject.SetActive(true);
         }
+    }
+    public void OnQuizStartButtonClicked()
+    {
+        quizManager.StartQuiz(); // 퀴즈 시작
+        quizStartButton.gameObject.SetActive(false); // 퀴즈 시작 후 버튼 숨기기
+        interactionManager.enabled = false;
     }
 
     private void HighlightNextPart()
