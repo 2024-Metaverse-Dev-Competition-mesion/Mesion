@@ -1,19 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class WaterDroplet : MonoBehaviour
-{
-	private void OnCollisionEnter(Collision collision)
-	{
-		if (collision.gameObject.CompareTag("Fire"))
-		{
-			FireController fireController = collision.gameObject.GetComponent<FireController>();
-			if (fireController != null)
-			{
-				fireController.ApplyWater();
-				Destroy(gameObject); // 물방울은 충돌 후 파괴됩니다.
-			}
-		}
-	}
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:89949b5a2aa7bccb2daa02a191d8e3d2fccf0b2835726861a21710dea25f5132
+size 477
