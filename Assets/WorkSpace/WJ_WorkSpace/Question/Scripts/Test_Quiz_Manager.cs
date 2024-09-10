@@ -310,10 +310,13 @@ public class Test_Quiz_Manager : MonoBehaviour
     // 퀴즈 종료 및 결과 저장
     public void EndQuiz()
     {
-        isQuizEnded = true;
+        if (isQuizEnded) // 이미 퀴즈가 끝났다면 return으로 종료
+            return;
+
+        isQuizEnded = true; // 퀴즈 종료 처리
         StopCoroutine(TimerCountdown());
 
-        SaveQuizResult();
+        SaveQuizResult(); // 퀴즈 결과 저장
 
         questionText.gameObject.SetActive(false);
         timerText.gameObject.SetActive(false);
