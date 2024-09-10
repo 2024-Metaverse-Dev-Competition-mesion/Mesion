@@ -4,8 +4,8 @@ using UnityEngine.UI;
 public class InventoryManager : MonoBehaviour
 {
     public InventoryItem[] inventoryItems;
-    public Transform spawnPoint; // XR RigÀÇ Ä«¸Þ¶ó ¾Õ À§Ä¡
-    public SaveManager saveManager; // SaveManager Ãß°¡
+    public Transform spawnPoint; // XR Rigï¿½ï¿½ Ä«ï¿½Þ¶ï¿½ ï¿½ï¿½ ï¿½ï¿½Ä¡
+    public SaveManager saveManager; // SaveManager ï¿½ß°ï¿½
 
     void Start()
     {
@@ -18,7 +18,5 @@ public class InventoryManager : MonoBehaviour
 
     public void OnItemClicked(InventoryItem item)
     {
-        GameObject newObj = item.SpawnItem(spawnPoint.position, spawnPoint.rotation);
-        saveManager.AddObjectToSave(newObj); // »ý¼ºµÈ ¿ÀºêÁ§Æ®¸¦ SaveManager¿¡ Ãß°¡
     }
 }

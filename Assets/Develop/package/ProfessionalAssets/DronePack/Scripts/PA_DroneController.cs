@@ -6,13 +6,8 @@ namespace PA_DronePack
 {
     public class PA_DroneController : MonoBehaviour
     {
-		#region Player Control
-		public GameObject player;
-		public PlayerController00 pc;
-		#endregion
-
-		#region Movement Values
-		[Tooltip("sets the drone's max forward speed")]
+        #region Movement Values
+        [Tooltip("sets the drone's max forward speed")]
         public float forwardSpeed = 7f;
         [Tooltip("sets the drone's max backward speed")]
         public float backwardSpeed = 5f;
@@ -149,8 +144,8 @@ namespace PA_DronePack
                 flyingSound.volume = (calPropSpeed / propSpinSpeed);                                                            // increase the volume by the propeller speed
                 flyingSound.pitch = 1 + (liftForce * 0.02f);                                                                    // alter the pitch according to lift input
             }
-			#endregion
-		}
+            #endregion
+        }
 
         void FixedUpdate()
         {
@@ -247,80 +242,16 @@ namespace PA_DronePack
         }
 
         #region Public Functions
-        public void ToggleMotor() 
-        { 
-            motorOn = !motorOn; 
-        }
+        public void ToggleMotor() { motorOn = !motorOn; }
         public void ToggleHeadless() { headless = !headless; }
-		public void DriveInput(float input)
-		{
-			if (motorOn)  // 모터가 켜져 있을 때만 움직임 허용
-			{
-				if (input > 0) { driveInput = input * forwardSpeed; }
-				else if (input < 0) { driveInput = input * backwardSpeed; }
-				else { driveInput = 0; }
-			}
-			else
-			{
-				driveInput = 0;  // 모터가 꺼져 있으면 이동 멈춤
-			}
-		}
+        public void DriveInput(float input) { if (input > 0) { driveInput = input * forwardSpeed; } else if (input < 0) { driveInput = input * backwardSpeed; } else { driveInput = 0; } }
+        public void StrafeInput(float input) { if (input > 0) { strafeInput = input * rightSpeed; } else if (input < 0) { strafeInput = input * leftSpeed; } else { strafeInput = 0; } }
+        public void LiftInput(float input) { if (input > 0) { liftInput = input * riseSpeed; motorOn = true; } else if (input < 0) { liftInput = input * lowerSpeed; } else { liftInput = 0; } }
+        public void TurnInput(float input) { turnForce = input * turnSensitivty; }
+        public void ResetDronePosition() { rigidBody.position = startPosition; rigidBody.rotation = startRotation; rigidBody.velocity = Vector3.zero; }
+        public void SpawnSparkPrefab(Vector3 position) { GameObject spark = Instantiate(sparkPrefab, position, Quaternion.identity) as GameObject; ParticleSystem.MainModule ps = spark.GetComponent<ParticleSystem>().main; Destroy(spark, ps.duration + ps.startLifetime.constantMax); }
 
-		public void StrafeInput(float input)
-		{
-			if (motorOn)  // 모터가 켜져 있을 때만 움직임 허용
-			{
-				if (input > 0) { strafeInput = input * rightSpeed; }
-				else if (input < 0) { strafeInput = input * leftSpeed; }
-				else { strafeInput = 0; }
-			}
-			else
-			{
-				strafeInput = 0;  // 모터가 꺼져 있으면 이동 멈춤
-			}
-		}
-
-		public void LiftInput(float input)
-		{
-			if (motorOn)  // 모터가 켜져 있을 때만 상승/하강 허용
-			{
-				if (input > 0) { liftInput = input * riseSpeed; }
-				else if (input < 0) { liftInput = input * lowerSpeed; }
-				else { liftInput = 0; }
-			}
-			else
-			{
-				liftInput = 0;  // 모터가 꺼져 있으면 상승/하강 멈춤
-			}
-		}
-
-		public void TurnInput(float input)
-		{
-			if (motorOn)  // 모터가 켜져 있을 때만 회전 허용
-			{
-				turnForce = input * turnSensitivty;
-			}
-			else
-			{
-				turnForce = 0;  // 모터가 꺼져 있으면 회전 멈춤
-			}
-		}
-
-		public void ResetDronePosition()
-		{
-			rigidBody.position = startPosition;
-			rigidBody.rotation = startRotation;
-			rigidBody.velocity = Vector3.zero;
-		}
-
-		public void SpawnSparkPrefab(Vector3 position)
-		{
-			GameObject spark = Instantiate(sparkPrefab, position, Quaternion.identity) as GameObject;
-			ParticleSystem.MainModule ps = spark.GetComponent<ParticleSystem>().main;
-			Destroy(spark, ps.duration + ps.startLifetime.constantMax);
-		}
-
-		public void AdjustLift(float value) { riseSpeed = value; lowerSpeed = value; }
+        public void AdjustLift(float value) { riseSpeed = value; lowerSpeed = value; }
         public void AdjustSpeed(float value) { forwardSpeed = value; backwardSpeed = value; }
         public void AdjustStrafe(float value) { rightSpeed = value; leftSpeed = value; }
         public void AdjustTurn(float value) { turnSensitivty = value; }

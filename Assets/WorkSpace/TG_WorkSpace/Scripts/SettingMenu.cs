@@ -13,21 +13,18 @@ public class SettingMenu : MonoBehaviour
     [SerializeField]
     private GameObject m_InventoryPanel; // �κ��丮 �г�
     [SerializeField]
-    private GameObject m_JobPanel; // �κ��丮 �г�
+    private GameObject m_CusualPanel; // �κ��丮 �г�
     [SerializeField]
-    private GameObject m_PetPanel; // �κ��丮 �г�
+    private GameObject m_RealityPanel; // �κ��丮 �г�
     [SerializeField]
-    private GameObject m_PassportPanel;
-    [SerializeField]
-    private GameObject m_StorePanel;
+    private GameObject m_QualificationsPanel;
     // Start is called before the first frame update
     void Start()
     {
         m_InventoryPanel.SetActive(false); // ó���� ��ư�� ��Ȱ��ȭ�� ���
-        m_JobPanel.SetActive(false);
-        m_PetPanel.SetActive(false);
-        m_PassportPanel.SetActive(false);
-        m_StorePanel.SetActive(false);
+        m_CusualPanel.SetActive(false);
+        m_RealityPanel.SetActive(false);
+        m_QualificationsPanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -40,23 +37,19 @@ public class SettingMenu : MonoBehaviour
         m_InventoryPanel.SetActive(!m_InventoryPanel.activeSelf);
     }
 
-    public void PushJobButton()
+    public void PushCusualButton()
     {
-        m_JobPanel.SetActive(!m_JobPanel.activeSelf);
+        m_CusualPanel.SetActive(!m_CusualPanel.activeSelf);
     }
 
-    public void PushPetButton()
+    public void PushRealityButton()
     {
-        m_PetPanel.SetActive(!m_PetPanel.activeSelf);
+        m_RealityPanel.SetActive(!m_RealityPanel.activeSelf);
     }
 
-    public void PushPassportButton()
+    public void PushQualificationsButton()
     {
-        m_PassportPanel.SetActive(!m_PassportPanel.activeSelf);
-    }
-    public void PushStoreButton()
-    {
-        m_StorePanel.SetActive(!m_StorePanel.activeSelf);
+        m_QualificationsPanel.SetActive(!m_QualificationsPanel.activeSelf);
     }
 
 }

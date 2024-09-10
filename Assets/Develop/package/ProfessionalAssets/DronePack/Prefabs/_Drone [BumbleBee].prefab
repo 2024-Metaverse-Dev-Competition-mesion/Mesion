@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 33708812893187706}
   - component: {fileID: 23993723900318910}
   m_Layer: 0
-  m_Name: BumbleBee [Propeller] (2)
+  m_Name: BumbleBee [Propeller] (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -240,7 +240,7 @@ GameObject:
   - component: {fileID: 33353399165766078}
   - component: {fileID: 23786209442520474}
   m_Layer: 0
-  m_Name: BumbleBee [Propeller] (4)
+  m_Name: BumbleBee [Propeller] (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -321,6 +321,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4259768179975592}
   - component: {fileID: 108763879352078030}
+  - component: {fileID: 4779454438666677794}
   m_Layer: 0
   m_Name: Light (blue)
   m_TagString: Untagged
@@ -405,6 +406,29 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &4779454438666677794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1727842084005562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &1764103926722910
 GameObject:
   m_ObjectHideFlags: 0
@@ -417,7 +441,7 @@ GameObject:
   - component: {fileID: 33946633478533214}
   - component: {fileID: 23807189228044656}
   m_Layer: 0
-  m_Name: BumbleBee [Propeller] (0)
+  m_Name: BumbleBee [Propeller] (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -500,7 +524,7 @@ GameObject:
   - component: {fileID: 33968920797502684}
   - component: {fileID: 23604204891493382}
   m_Layer: 0
-  m_Name: BumbleBee [Propeller] (3)
+  m_Name: BumbleBee [Propeller] (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -614,7 +638,7 @@ GameObject:
   - component: {fileID: 33157966685142490}
   - component: {fileID: 23019163439659674}
   m_Layer: 0
-  m_Name: BumbleBee [Propeller] (5)
+  m_Name: BumbleBee [Propeller] (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1094,12 +1118,12 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4247378639386004}
+  - {fileID: 4273196079556630}
+  - {fileID: 4845925437325988}
   - {fileID: 4991152262658286}
   - {fileID: 4009524700742698}
   - {fileID: 4565533302687788}
   - {fileID: 4882914848253230}
-  - {fileID: 4273196079556630}
-  - {fileID: 4845925437325988}
   - {fileID: 4259768179975592}
   - {fileID: 4538242387849828}
   m_Father: {fileID: 4978456261335238}
@@ -1147,7 +1171,7 @@ GameObject:
   - component: {fileID: 33001800579207456}
   - component: {fileID: 23409764056784442}
   m_Layer: 0
-  m_Name: BumbleBee [Propeller] (1)
+  m_Name: BumbleBee [Propeller] (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1228,6 +1252,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4538242387849828}
   - component: {fileID: 108172583658376416}
+  - component: {fileID: 4644611365151494172}
   m_Layer: 0
   m_Name: Light (white)
   m_TagString: Untagged
@@ -1312,3 +1337,26 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &4644611365151494172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1964017098944720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
