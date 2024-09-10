@@ -37,6 +37,7 @@ public class Test_Quiz_Manager : MonoBehaviour
     void Start()
     {
         InitializeQuiz();
+        SetupUIInteraction();
     }
 
     void OnEnable()
@@ -274,7 +275,6 @@ public class Test_Quiz_Manager : MonoBehaviour
         }
     }
 
-    // 퀴즈 제출
     public void SubmitQuiz()
     {
         List<int> unansweredQuestions = new List<int>();
@@ -293,10 +293,12 @@ public class Test_Quiz_Manager : MonoBehaviour
             warningMessage += string.Join(", ", unansweredQuestions.Select(q => $"문제 {q}").ToArray());
             warningText.text = warningMessage;
             warningPanel.SetActive(true);
+            SetUIInteractable(false); // UI 상호작용 불가능
         }
         else
         {
             confirmSubmitPanel.SetActive(true);
+            SetUIInteractable(false); // UI 상호작용 불가능
         }
     }
 
@@ -390,16 +392,44 @@ public class Test_Quiz_Manager : MonoBehaviour
     #endif
     }
 
-    // 경고 패널 닫기
+    void SetupUIInteraction()
+    {
+        // 경고 패널이 활성화되거나 비활성화될 때 상호작용 처리
+        warningPanel.SetActive(false);
+        confirmSubmitPanel.SetActive(false);
+        warningPanel.SetActive(false);
+
+        // 비활성화 시 UI 요소들을 클릭 불가 상태로 설정
+        warningPanel.SetActive(false);
+        confirmSubmitPanel.SetActive(false);
+        
+        closeWarningButton.onClick.AddListener(CloseWarningPanel);
+        cancelSubmitButton.onClick.AddListener(CloseConfirmSubmitPanel);
+    }
+
+    // 상호작용 가능한 상태로 전환하는 메서드
+    void SetUIInteractable(bool state)
+    {
+        foreach (var button in optionsButtons)
+        {
+            button.interactable = state;
+        }
+        questionDropdown.interactable = state;
+        submitButton.interactable = state;
+    }
+
+    // 경고 패널을 닫고 상호작용 상태 복구
     public void CloseWarningPanel()
     {
         warningPanel.SetActive(false);
+        SetUIInteractable(true);
     }
 
-    // 최종 제출 확인 패널 닫기
+    // 최종 제출 확인 패널을 닫고 상호작용 상태 복구
     public void CloseConfirmSubmitPanel()
     {
         confirmSubmitPanel.SetActive(false);
+        SetUIInteractable(true);
     }
 
     // 타이머 시작
