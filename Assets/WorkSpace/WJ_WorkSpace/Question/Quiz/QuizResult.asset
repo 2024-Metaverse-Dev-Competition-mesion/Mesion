@@ -2555,3 +2555,665 @@ MonoBehaviour:
       isCorrect: 0
       correctAnswerText: "\uB3D9\uB825\uD328\uB7EC\uC288\uD2B8"
       part: 0
+  - quizTitle: "\uC5F0\uC2B5 \uBAA8\uB4DC (\uBE44\uD589 \uC774\uB860 \uBC0F \uC751\uC6A9)
+      09-10 [40\uC810]"
+    totalTime: 3.7676685
+    totalScore: 4
+    results:
+    - questionText: "\uBE44\uD589 \uD6C4 \uCC29\uB959 \uC7A5\uC18C\uB85C \uC633\uC9C0
+        \uC54A\uC740 \uAC83\uC740?"
+      selectedAnswerText: "\uC0AC\uB78C\uC774\uB098 \uCC28\uB7C9\uC758 \uC774\uB3D9\uC774
+        \uB4DC\uBB38 \uACF3"
+      selectedAnswerIndex: 0
+      isCorrect: 0
+      correctAnswerText: "\uC7A5\uC560\uBB3C\uC774 \uC5C6\uB294 \uACBD\uC0AC\uBA74"
+      part: 2
+    - questionText: "\uAE30\uC218 \uBC29\uD5A5 \uC720\uC9C0\uC5D0 \uC0AC\uC6A9\uB418\uB294
+        \uBD80\uD488\uC774 \uC544\uB2CC \uAC83\uC740?"
+      selectedAnswerText: Gyroscope
+      selectedAnswerIndex: 1
+      isCorrect: 0
+      correctAnswerText: ESC
+      part: 2
+    - questionText: "\uC9C1\uC6D0\uB4E4\uC758 \uC2A4\uD2B8\uB808\uC2A4 \uD574\uC18C
+        \uBC29\uC548\uC73C\uB85C \uC633\uC9C0 \uC54A\uC740 \uAC83\uC740?"
+      selectedAnswerText: "\uC801\uC131\uC5D0 \uB9DE\uB294 \uC9C1\uBB34 \uC7AC\uBC30\uCE58"
+      selectedAnswerIndex: 2
+      isCorrect: 0
+      correctAnswerText: "\uC9C1\uBB34\uD3C9\uAC00 \uB3C4\uC785"
+      part: 2
+    - questionText: "\uB2E4\uC74C \uC911 \uBCA1\uD130(Vector)\uC758 \uBB3C\uB9AC\uB7C9\uACFC
+        \uAC00\uC7A5 \uAC70\uB9AC\uAC00 \uBA3C \uAC83\uC740?"
+      selectedAnswerText: "\uC9C8\uB7C9"
+      selectedAnswerIndex: 3
+      isCorrect: 1
+      correctAnswerText: 
+      part: 2
+    - questionText: "\uBB34\uC778\uBA40\uD2F0\uCF65\uD130\uC758 \uBAA8\uD130 \uBC1C\uC5F4\uACFC
+        \uAD00\uACC4\uC5C6\uB294 \uAC83\uC740?"
+      selectedAnswerText: "\uC870\uC885\uAE30 \uC870\uC885\uBA74 \uD2B8\uB9BC \uC124\uC815
+        \uC2DC"
+      selectedAnswerIndex: 3
+      isCorrect: 1
+      correctAnswerText: 
+      part: 2
+    - questionText: "\uB2E4\uC74C \uC911 \uCD08\uACBD\uB7C9\uBE44\uD589\uC7A5\uCE58
+        \uBE44\uD589 \uC804 \uC1A1\uC2E0\uAC70\uB9AC \uD14C\uC2A4\uD2B8\uB85C \uC633\uC740
+        \uAC83\uC740?"
+      selectedAnswerText: "\uAE30\uCCB4\uB97C \uC774\uB959\uD574\uC11C \uC870\uC815\uAE30\uB97C
+        \uD14C\uC2A4\uD2B8\uD55C\uB2E4"
+      selectedAnswerIndex: 3
+      isCorrect: 0
+      correctAnswerText: "\uAE30\uCCB4\uC640 30m \uB5A8\uC5B4\uC838\uC11C \uB808\uC778\uC9C0
+        \uBAA8\uB4DC\uB85C \uD14C\uC2A4\uD2B8\uD55C\uB2E4."
+      part: 2
+    - questionText: "\uBE44\uD589 \uC804\uD6C4 \uC810\uAC80 \uBC29\uBC95\uC73C\uB85C
+        \uBC14\uB974\uC9C0 \uC54A\uC740 \uAC83\uC740?"
+      selectedAnswerText: "\uC5D4\uC9C4 \uB4F1 \uC5F4\uC774 \uB0A8\uC544\uC788\uC744
+        \uC218 \uC788\uB294 \uBD80\uC704\uB294 \uBC14\uB85C \uC810\uAC80\uD558\uC9C0
+        \uC54A\uB294\uB2E4."
+      selectedAnswerIndex: 3
+      isCorrect: 0
+      correctAnswerText: "1\uC77C 1\uD68C \uC810\uAC80\uC774\uBA74 \uCDA9\uBD84\uD558\uB2E4."
+      part: 2
+    - questionText: "\uB0A0\uAC1C\uB098 \uAE30\uCCB4\uD45C\uBA74\uC744 \uD1B5\uACFC\uD558\uB294
+        \uACF5\uAE30\uC758 \uD750\uB984\uC744 \uAC00\uB2A5\uD55C \uD55C \uC21C\uC870\uB86D\uAC8C
+        \uD750\uB974\uAC8C \uD558\uB294 \uC774\uC720\uB294?"
+      selectedAnswerText: "\uC870\uD30C\uD56D\uB825\uC744 \uC904\uC774\uAE30 \uC704\uD558\uC5EC"
+      selectedAnswerIndex: 3
+      isCorrect: 0
+      correctAnswerText: "\uB9C8\uCC30\uD56D\uB825\uC744 \uC904\uC774\uAE30 \uC704\uD558\uC5EC"
+      part: 2
+    - questionText: "\uBA40\uD2F0\uCF65\uD130\uC758 \uD558\uAC15 \uBE44\uD589 \uC2DC
+        \uC870\uC885\uAE30\uC758 \uC870\uC791\uBC29\uBC95\uC73C\uB85C \uB9DE\uB294
+        \uAC83\uC740?"
+      selectedAnswerText: "\uC5D0\uC77C\uB7EC\uB860\uC744 \uC88C\uCE21\uC73C\uB85C
+        \uD55C\uB2E4."
+      selectedAnswerIndex: 3
+      isCorrect: 0
+      correctAnswerText: "\uC2A4\uB85C\uD2C0\uC744 \uB0B4\uB9B0\uB2E4."
+      part: 2
+    - questionText: "\uD504\uB85C\uD3A0\uB7EC\uC758 \uBC38\uB7F0\uC2A4\uAC00 \uB9DE\uC9C0
+        \uC54A\uC744 \uB54C \uAC00\uC7A5 \uBA3C\uC800 \uC77C\uC5B4\uB098\uB294 \uD604\uC0C1\uC740?"
+      selectedAnswerText: "\uD504\uB85C\uD3A0\uB7EC\uC758 \uD68C\uC804\uC218\uAC00
+        \uC0C1\uC2B9\uD55C\uB2E4."
+      selectedAnswerIndex: 3
+      isCorrect: 0
+      correctAnswerText: "\uAE30\uCCB4\uAC00 \uC804\uD6C4\uC88C\uC6B0\uB85C \uD754\uB4E4\uB9B0\uB2E4."
+      part: 2
+  - quizTitle: "\uC5F0\uC2B5 \uBAA8\uB4DC (\uD56D\uACF5 \uBC95\uADDC) 09-10 [30\uC810]"
+    totalTime: 15.59183
+    totalScore: 3
+    results:
+    - questionText: "\uACF5\uC5ED\uC9C0\uC815\uC758 \uACF5\uACE0 \uC218\uB2E8\uC73C\uB85C
+        \uC633\uC740 \uAC83\uC744 \uACE0\uB974\uC2DC\uC624."
+      selectedAnswerText: "\uAD00\uBCF4"
+      selectedAnswerIndex: 0
+      isCorrect: 0
+      correctAnswerText: AIC
+      part: 0
+    - questionText: "\uB2E4\uC74C \uC911 \uCD08\uACBD\uB7C9\uBE44\uD589\uC7A5\uCE58\uC758
+        \uB9D0\uC18C\uC2E0\uACE0\uB97C \uD558\uC9C0 \uC544\uB2C8\uD55C \uCD08\uACBD\uB7C9\uBE44\uD589\uC7A5\uCE58
+        \uC18C\uC720\uC790\uC5D0\uAC8C \uBD80\uACFC\uB418\uB294 \uACFC\uD0DC\uB8CC\uB294
+        \uC5BC\uB9C8\uC778\uAC00?"
+      selectedAnswerText: "30\uB9CC \uC6D0"
+      selectedAnswerIndex: 1
+      isCorrect: 1
+      correctAnswerText: 
+      part: 0
+    - questionText: "\uD56D\uACF5\uC548\uC804\uBC95\uC0C1 \uACF5\uC5ED\uC744 \uC0AC\uC6A9\uBAA9\uC801\uC5D0
+        \uB530\uB77C \uBD84\uB958\uD588\uC744 \uB54C \uC8FC\uC758\uACF5\uC5ED\uC5D0
+        \uD574\uB2F9\uD558\uC9C0 \uC54A\uB294 \uAC83\uC740?"
+      selectedAnswerText: "\uC704\uD5D8\uAD6C\uC5ED"
+      selectedAnswerIndex: 2
+      isCorrect: 0
+      correctAnswerText: "\uC870\uC5B8\uAD6C\uC5ED"
+      part: 0
+    - questionText: "\uD589\uAE00\uB77C\uC774\uB354\uAC00 \uCD08\uACBD\uB7C9\uBE44\uD589\uC7A5\uCE58\uAC00
+        \uB418\uAE30 \uC704\uD574\uC11C\uB294 \uBA87 kg \uC774\uD558\uC774\uC5B4\uC57C
+        \uD558\uB294\uAC00?"
+      selectedAnswerText: 180kg
+      selectedAnswerIndex: 3
+      isCorrect: 0
+      correctAnswerText: 70kg
+      part: 0
+    - questionText: "\uAD6D\uD1A0\uAD50\uD1B5\uBD80\uB839\uC73C\uB85C \uC815\uD558\uB294
+        \uC900\uC218\uC0AC\uD56D\uC744 \uB530\uB974\uC9C0 \uC54A\uACE0 \uCD08\uACBD\uB7C9\uBE44\uD589\uC7A5\uCE58\uB97C
+        \uC774\uC6A9\uD558\uC5EC \uBE44\uD589\uD560 \uACBD\uC6B0 1\uCC28 \uACFC\uD0DC\uB8CC
+        \uAE08\uC561\uC744 \uACE0\uB974\uC2DC\uC624."
+      selectedAnswerText: "150\uB9CC \uC6D0"
+      selectedAnswerIndex: 3
+      isCorrect: 0
+      correctAnswerText: "100\uB9CC \uC6D0"
+      part: 0
+    - questionText: "\uCD08\uACBD\uB7C9 \uBE44\uD589\uC7A5\uCE58 \uC870\uC885\uC790
+        \uC2DC\uD5D8\uC744 \uBCF4\uAE30 \uC704\uD55C \uB098\uC774\uB85C \uC633\uC740
+        \uAC83\uC740?"
+      selectedAnswerText: "\uB9CC 14\uC138"
+      selectedAnswerIndex: 3
+      isCorrect: 1
+      correctAnswerText: 
+      part: 0
+    - questionText: "\uB2E4\uC74C \uC911 \uCD08\uACBD\uB7C9\uBE44\uD589\uC7A5\uCE58
+        \uC870\uC885\uC790 \uC804\uBB38\uAD50\uC721\uAE30\uAD00\uC758 \uC2DC\uC124
+        \uBC0F \uC7A5\uBE44\uAE30\uC900\uC5D0 \uD574\uB2F9\uD558\uC9C0 \uC54A\uB294
+        \uAC83\uC740?"
+      selectedAnswerText: "\uD6C8\uB828\uC6A9 \uBE44\uD589\uC7A5\uCE58 1\uB300 \uC774\uC0C1"
+      selectedAnswerIndex: 3
+      isCorrect: 0
+      correctAnswerText: "\uB4DC\uB860 \uC218\uB9AC\uC6A9 \uC2DC\uC124"
+      part: 0
+    - questionText: "\uB2E4\uC74C \uC911 \uD56D\uACF5\uC548\uC804\uBC95\uC0C1 \uCD08\uACBD\uB7C9\uBE44\uD589\uC7A5\uCE58\uC758
+        \uC885\uB958\uAC00 \uC544\uB2CC \uAC83\uC740?"
+      selectedAnswerText: "\uD68C\uC804\uC775\uBE44\uD589\uC7A5\uCE58"
+      selectedAnswerIndex: 3
+      isCorrect: 0
+      correctAnswerText: "\uB3D9\uB825\uD328\uB7EC\uC288\uD2B8"
+      part: 0
+    - questionText: "\uCD08\uACBD\uB7C9\uBE44\uD589\uC7A5\uCE58\uC758 \uB9D0\uC18C\uC2E0\uACE0\uB294
+        \uC0AC\uC720\uBC1C\uC0DD\uC77C\uB85C\uBD80\uD130 \uBA70\uCE60 \uC774\uB0B4\uC5D0
+        \uC2E0\uACE0\uD558\uC5EC\uC57C \uD558\uB294\uAC00?"
+      selectedAnswerText: "45\uC77C"
+      selectedAnswerIndex: 3
+      isCorrect: 0
+      correctAnswerText: "15\uC77C"
+      part: 0
+    - questionText: "\uCD08\uACBD\uB7C9\uBE44\uD589\uC7A5\uCE58 \uC2E0\uACE0\uB294
+        \uB204\uAD6C\uC5D0\uAC8C \uC2E0\uCCAD\uD558\uB294\uAC00?"
+      selectedAnswerText: "\uC9C0\uBC29\uACBD\uCC30\uCCAD\uC7A5"
+      selectedAnswerIndex: 3
+      isCorrect: 0
+      correctAnswerText: "\uD55C\uAD6D\uAD50\uD1B5\uC548\uC804\uACF5\uB2E8 \uC774\uC0AC\uC7A5"
+      part: 0
+  - quizTitle: "\uC5F0\uC2B5 \uBAA8\uB4DC (\uD56D\uACF5 \uAE30\uC0C1) 09-10 [30\uC810]"
+    totalTime: 21.102146
+    totalScore: 3
+    results:
+    - questionText: "\uB2E4\uC74C \uC911 \uC548\uAC1C\uAC00 \uB07C\uB294 \uC870\uAC74\uC73C\uB85C
+        \uC633\uC9C0 \uC54A\uC740 \uAC83\uC740?"
+      selectedAnswerText: "\uB300\uAE30\uAC00 \uC548\uC815\uC801\uC774\uC5B4\uC57C
+        \uD55C\uB2E4."
+      selectedAnswerIndex: 0
+      isCorrect: 0
+      correctAnswerText: "\uB09C\uB958\uAC00 \uD615\uC131\uB418\uC5B4\uC57C \uD55C\uB2E4."
+      part: 1
+    - questionText: "\uBC14\uB78C\uC774 \uBC1C\uC0DD\uD558\uB294 \uADFC\uBCF8\uC801\uC778
+        \uC6D0\uC778\uC740 \uBB34\uC5C7\uC778\uAC00?"
+      selectedAnswerText: "\uACF5\uAE30\uC555\uC758 \uBCC0\uD654"
+      selectedAnswerIndex: 1
+      isCorrect: 0
+      correctAnswerText: "\uAE30\uC555\uACBD\uB3C4\uB825\uC758 \uCC28\uC774"
+      part: 1
+    - questionText: "\uB2E4\uC74C \uC911 \uAC15\uD55C \uBE44\uAC00 \uACC4\uC18D \uC62C
+        \uC218\uB3C4 \uC788\uB294 \uAD6C\uB984\uC758 \uC57D\uC5B4\uB294 \uBB34\uC5C7\uC778\uAC00?"
+      selectedAnswerText: St
+      selectedAnswerIndex: 2
+      isCorrect: 0
+      correctAnswerText: Cb
+      part: 1
+    - questionText: "\uD604\uC7AC\uC758 \uC9C0\uC0C1\uAE30\uC628\uC774 31\xB0C \uC77C
+        \uB54C 3,000\uD53C\uD2B8 \uC0C1\uACF5\uC758 \uAE30\uC628\uC740? (\uB2E8,
+        \uC870\uAC74\uC740 ISA\uC870\uAC74\uC774\uB2E4)"
+      selectedAnswerText: "34\xB0C"
+      selectedAnswerIndex: 3
+      isCorrect: 0
+      correctAnswerText: "25\xB0C"
+      part: 1
+    - questionText: "\uC6B0\uB9AC\uB098\uB77C\uC5D0 \uC8FC\uB85C \uBD04\xB7\uAC00\uC744\uC5D0
+        \uC601\uD5A5\uC744 \uC8FC\uBA70, \uC628\uB09C \uAC74\uC870\uD55C \uC131\uC9C8\uC744
+        \uAC00\uC9C0\uB294 \uAE30\uB2E8\uC740?"
+      selectedAnswerText: "\uC2DC\uBCA0\uB9AC\uC544 \uAE30\uB2E8"
+      selectedAnswerIndex: 3
+      isCorrect: 0
+      correctAnswerText: "\uC591\uCBD4\uAC15 \uAE30\uB2E8"
+      part: 1
+    - questionText: "\uD1B5\uC0C1 \uD558\uB8E8 \uC911 \uCD5C\uC800\uAE30\uC628\uC758
+        \uC2DC\uAC04\uC740?"
+      selectedAnswerText: "\uC77C\uBAB0\uBD80\uD130 \uC77C\uBAB0 \uD6C4 1\uC2DC\uAC04
+        \uC0AC\uC774"
+      selectedAnswerIndex: 3
+      isCorrect: 0
+      correctAnswerText: "\uC77C\uCD9C\uBD80\uD130 \uC77C\uCD9C \uD6C4 1\uC2DC\uAC04
+        \uC0AC\uC774"
+      part: 1
+    - questionText: "\uB1CC\uC6B0\uAC00 \uB3D9\uBC18\uD558\uB294 \uAE30\uC0C1\uD604\uC0C1\uC774
+        \uC544\uB2CC \uAC83\uC740?"
+      selectedAnswerText: "\uC6B0\uBC15"
+      selectedAnswerIndex: 3
+      isCorrect: 0
+      correctAnswerText: "\uC548\uAC1C"
+      part: 1
+    - questionText: "\uAE30\uC555\uC5D0 \uB300\uD55C \uC124\uBA85 \uC911 \uD2C0\uB9B0
+        \uAC83\uC740?"
+      selectedAnswerText: 1.013mbar = 1.013bar
+      selectedAnswerIndex: 3
+      isCorrect: 0
+      correctAnswerText: "\uB2E8\uBA74\uC801 1cm\xB2, \uB192\uC774 1,000mm \uACF5\uAE30
+        \uAE30\uB465"
+      part: 1
+    - questionText: "\uB2E4\uC74C \uC911 \uAE30\uC555\uC758 \uB2E8\uC704\uC5D0 \uD574\uB2F9\uD558\uC9C0
+        \uC54A\uC740 \uAC83\uC740?"
+      selectedAnswerText: mm mercury (mmHg)
+      selectedAnswerIndex: 3
+      isCorrect: 0
+      correctAnswerText: lbs
+      part: 1
+    - questionText: "\uD654\uC528\uC628\uB3C4\uC5D0\uC11C \uBB3C\uC774 \uC5B4\uB294
+        \uC628\uB3C4\uC640 \uB053\uB294 \uC628\uB3C4\uB294 \uAC01\uAC01 \uBA87 \xB0F\uC778\uAC00?"
+      selectedAnswerText: "\uC5B4\uB294 \uC628\uB3C4: 32, \uB053\uB294 \uC628\uB3C4:
+        212"
+      selectedAnswerIndex: 3
+      isCorrect: 1
+      correctAnswerText: 
+      part: 1
+  - quizTitle: "\uC5F0\uC2B5 \uBAA8\uB4DC (\uD56D\uACF5 \uAE30\uC0C1) 09-10 [20\uC810]"
+    totalTime: 3.7790039
+    totalScore: 2
+    results:
+    - questionText: "\uC9C1\uC811\uC801\uC778 \uC2DC\uC815 \uBC29\uD574 \uC694\uC778\uC774
+        \uC544\uB2CC \uAC83\uC740?"
+      selectedAnswerText: "\uD669\uC0AC"
+      selectedAnswerIndex: 0
+      isCorrect: 0
+      correctAnswerText: "\uBC14\uB78C"
+      part: 1
+    - questionText: "\uC218\uC9C1\uC73C\uB85C \uBC1C\uB2EC\uD558\uACE0 \uB9CE\uC740
+        \uAC15\uC6B0\uB97C \uD3EC\uD568\uD558\uACE0 \uC788\uB294 \uC801\uB780\uC6B4\uC758
+        \uBD80\uD638\uB85C \uB9DE\uB294 \uAC83\uC740?"
+      selectedAnswerText: Ns
+      selectedAnswerIndex: 1
+      isCorrect: 0
+      correctAnswerText: Cb
+      part: 1
+    - questionText: "\uAE30\uC555\uC5D0 \uB300\uD55C \uC124\uBA85 \uC911 \uD2C0\uB9B0
+        \uAC83\uC740?"
+      selectedAnswerText: 3.760mmHg = 29.92inHg
+      selectedAnswerIndex: 2
+      isCorrect: 0
+      correctAnswerText: "\uB2E8\uBA74\uC801 1cm\xB2, \uB192\uC774 1,000mm \uACF5\uAE30
+        \uAE30\uB465"
+      part: 1
+    - questionText: "\uB1CC\uC6B0\uAC00 \uB3D9\uBC18\uD558\uB294 \uAE30\uC0C1\uD604\uC0C1\uC774
+        \uC544\uB2CC \uAC83\uC740?"
+      selectedAnswerText: "\uC6B0\uBC15"
+      selectedAnswerIndex: 3
+      isCorrect: 0
+      correctAnswerText: "\uC548\uAC1C"
+      part: 1
+    - questionText: "\uD654\uC528\uC628\uB3C4\uC5D0\uC11C \uBB3C\uC774 \uC5B4\uB294
+        \uC628\uB3C4\uC640 \uB053\uB294 \uC628\uB3C4\uB294 \uAC01\uAC01 \uBA87 \xB0F\uC778\uAC00?"
+      selectedAnswerText: "\uC5B4\uB294 \uC628\uB3C4: 32, \uB053\uB294 \uC628\uB3C4:
+        212"
+      selectedAnswerIndex: 3
+      isCorrect: 1
+      correctAnswerText: 
+      part: 1
+    - questionText: "\uC6B0\uB9AC\uB098\uB77C\uC5D0 \uC8FC\uB85C \uBD04\xB7\uAC00\uC744\uC5D0
+        \uC601\uD5A5\uC744 \uC8FC\uBA70, \uC628\uB09C \uAC74\uC870\uD55C \uC131\uC9C8\uC744
+        \uAC00\uC9C0\uB294 \uAE30\uB2E8\uC740?"
+      selectedAnswerText: "\uC2DC\uBCA0\uB9AC\uC544 \uAE30\uB2E8"
+      selectedAnswerIndex: 3
+      isCorrect: 0
+      correctAnswerText: "\uC591\uCBD4\uAC15 \uAE30\uB2E8"
+      part: 1
+    - questionText: "\uB2E4\uC74C \uC911 \uAC15\uD55C \uBE44\uAC00 \uACC4\uC18D \uC62C
+        \uC218\uB3C4 \uC788\uB294 \uAD6C\uB984\uC758 \uC57D\uC5B4\uB294 \uBB34\uC5C7\uC778\uAC00?"
+      selectedAnswerText: Cb
+      selectedAnswerIndex: 3
+      isCorrect: 1
+      correctAnswerText: 
+      part: 1
+    - questionText: "\uB2E4\uC74C \uC911 \uB1CC\uC6B0\uC758 \uC0DD\uC131 \uC870\uAC74\uC73C\uB85C
+        \uAC70\uB9AC\uAC00 \uBA3C \uAC83\uC740?"
+      selectedAnswerText: "\uB0AE\uC740 \uB300\uAE30 \uC628\uB3C4"
+      selectedAnswerIndex: 3
+      isCorrect: 1
+      correctAnswerText: 
+      part: 1
+    - questionText: "\uB2E4\uC74C \uC911 \uC548\uAC1C\uAC00 \uB07C\uB294 \uC870\uAC74\uC73C\uB85C
+        \uC633\uC9C0 \uC54A\uC740 \uAC83\uC740?"
+      selectedAnswerText: "\uB09C\uB958\uAC00 \uD615\uC131\uB418\uC5B4\uC57C \uD55C\uB2E4."
+      selectedAnswerIndex: 3
+      isCorrect: 1
+      correctAnswerText: 
+      part: 1
+    - questionText: "\uB2E4\uC74C \uC911 \uC548\uC815\uB41C \uB300\uAE30\uC5D0\uC11C\uC758
+        \uAE30\uC0C1 \uD2B9\uC131\uC774 \uC544\uB2CC \uAC83\uC740?"
+      selectedAnswerText: "\uC794\uC794\uD55C \uAE30\uB958"
+      selectedAnswerIndex: 3
+      isCorrect: 0
+      correctAnswerText: "\uC801\uC6B4\uD615 \uAD6C\uB984"
+      part: 1
+  - quizTitle: "\uC5F0\uC2B5 \uBAA8\uB4DC (\uBE44\uD589 \uC774\uB860 \uBC0F \uC751\uC6A9)
+      09-10 [20\uC810]"
+    totalTime: 3.940362
+    totalScore: 2
+    results:
+    - questionText: "\uC720\uAD00\uC744 \uD1B5\uACFC\uD558\uB294 \uC644\uC804\uC720\uCCB4\uC758
+        \uC720\uC785\uB7C9\uACFC \uC720\uCD9C\uB7C9\uC740 \uD56D\uC0C1 \uC77C\uC815\uD558\uB2E4\uB294
+        \uBC95\uCE59\uC740 \uBB34\uC2A8 \uBC95\uCE59\uC778\uAC00?"
+      selectedAnswerText: "\uAC00\uC18D\uB3C4\uC758 \uBC95\uCE59"
+      selectedAnswerIndex: 0
+      isCorrect: 0
+      correctAnswerText: "\uC5F0\uC18D\uC758 \uBC95\uCE59"
+      part: 2
+    - questionText: "\uBB34\uC778\uBA40\uD2F0\uCF65\uD130\uC758 \uC6B4\uC6A9 \uBAA9\uC801\uC73C\uB85C
+        \uC633\uC9C0 \uC54A\uC740 \uAC83\uC740?"
+      selectedAnswerText: "\uB18D\uC57D\uC0B4\uD3EC"
+      selectedAnswerIndex: 1
+      isCorrect: 0
+      correctAnswerText: "\uD654\uC7AC\uAC10\uC2DC"
+      part: 2
+    - questionText: "\uBB34\uC778\uBE44\uD589\uC7A5\uCE58 \uD0D1\uC7AC\uC784\uBB34\uC7A5\uBE44(Payload)\uB85C
+        \uBCFC \uC218 \uC5C6\uB294 \uAC83\uC740?"
+      selectedAnswerText: "\uC801\uC678\uC120(FLIR) \uAC10\uC2DC\uCE74\uBA54\uB77C"
+      selectedAnswerIndex: 2
+      isCorrect: 0
+      correctAnswerText: "\uB370\uC774\uD130\uB9C1\uD06C \uC7A5\uBE44"
+      part: 2
+    - questionText: "\uB2E4\uC74C \uC911 \uBA40\uD2F0\uCF65\uD130\uC5D0 \uC791\uC6A9\uD558\uB294
+        4\uAC00\uC9C0 \uD798\uC758 \uC885\uB958\uAC00 \uC544\uB2CC \uAC83\uC740?"
+      selectedAnswerText: "\uC911\uB825"
+      selectedAnswerIndex: 3
+      isCorrect: 0
+      correctAnswerText: "\uC804\uB2E8\uB825"
+      part: 2
+    - questionText: "\uBE44\uD589 \uD6C4 \uCC29\uB959 \uC7A5\uC18C\uB85C \uC633\uC9C0
+        \uC54A\uC740 \uAC83\uC740?"
+      selectedAnswerText: "\uC7A5\uC560\uBB3C\uC774 \uC5C6\uB294 \uACBD\uC0AC\uBA74"
+      selectedAnswerIndex: 3
+      isCorrect: 1
+      correctAnswerText: 
+      part: 2
+    - questionText: "\uB2E4\uC74C \uC911 \uBC30\uD130\uB9AC \uBCF4\uAD00 \uBC29\uBC95\uC73C\uB85C
+        \uBC14\uB974\uC9C0 \uC54A\uC740 \uAC83\uC740?"
+      selectedAnswerText: "\uC57D 15~28\xB0C\uC758 \uC0C1\uC628\uC5D0\uC11C \uBCF4\uAD00\uD55C\uB2E4."
+      selectedAnswerIndex: 3
+      isCorrect: 0
+      correctAnswerText: "\uC644\uC804 \uCDA9\uC804\uD574\uC11C \uBCF4\uAD00\uD55C\uB2E4."
+      part: 2
+    - questionText: "\uBAA8\uD130\uC758 \uBC1C\uC5F4\uD604\uC0C1\uC73C\uB85C \uC633\uC9C0
+        \uC54A\uC740 \uAC83\uC740?"
+      selectedAnswerText: "\uC870\uC885\uAE30 \uC870\uC885\uBA74 \uD2B8\uB9BC \uAC12
+        \uC124\uC815 \uC2DC"
+      selectedAnswerIndex: 3
+      isCorrect: 1
+      correctAnswerText: 
+      part: 2
+    - questionText: "\uB2E4\uC74C \uBE44\uD589\uC808\uCC28\uC5D0 \uB300\uD55C \uC124\uBA85\uC73C\uB85C
+        \uC633\uC9C0 \uC54A\uC740 \uAC83\uC740?"
+      selectedAnswerText: "\uC9C0\uBA74\uC73C\uB85C\uBD80\uD130 \uACE0\uB3C4 150m
+        \uC774\uB0B4\uB97C \uC720\uC9C0\uD55C\uB2E4."
+      selectedAnswerIndex: 3
+      isCorrect: 0
+      correctAnswerText: "\uAE30\uCCB4\uB85C\uBD80\uD130\uC758 \uC548\uC804\uAC70\uB9AC\uB294
+        5m \uC774\uC0C1\uC744 \uD655\uBCF4\uD55C\uB2E4."
+      part: 2
+    - questionText: "\uC218\uD3C9 \uC9C1\uC9C4\uBE44\uD589\uC744 \uD558\uB2E4\uAC00
+        \uC0C1\uC2B9\uBE44\uD589\uC73C\uB85C \uC804\uD658 \uC2DC \uBC1B\uC74C\uAC01(\uC601\uAC01)\uC774
+        \uC99D\uAC00\uD558\uBA74 \uC591\uB825\uC740 \uC5B4\uB5BB\uAC8C \uBCC0\uD558\uB294\uAC00?"
+      selectedAnswerText: "\uC9C0\uC18D\uC801\uC73C\uB85C \uAC10\uC18C\uD55C\uB2E4"
+      selectedAnswerIndex: 3
+      isCorrect: 0
+      correctAnswerText: "\uC21C\uAC01\uC801\uC73C\uB85C \uC99D\uAC00\uD55C\uB2E4"
+      part: 2
+    - questionText: "\uBB34\uC778\uBA40\uD2F0\uCF65\uD130\uC758 \uBAA8\uD130 \uBC1C\uC5F4\uACFC
+        \uAD00\uACC4\uC5C6\uB294 \uAC83\uC740?"
+      selectedAnswerText: "\uC870\uC885\uAE30 \uC870\uC885\uBA74 \uD2B8\uB9BC \uC124\uC815
+        \uC2DC"
+      selectedAnswerIndex: 3
+      isCorrect: 1
+      correctAnswerText: 
+      part: 2
+  - quizTitle: "\uC5F0\uC2B5 \uBAA8\uB4DC (\uBE44\uD589 \uC774\uB860 \uBC0F \uC751\uC6A9)
+      09-10 [0\uC810]"
+    totalTime: 11.873435
+    totalScore: 0
+    results:
+    - questionText: "\uBB34\uC778\uBE44\uD589\uC7A5\uCE58 \uD0D1\uC7AC\uC784\uBB34\uC7A5\uBE44(Payload)\uB85C
+        \uBCFC \uC218 \uC5C6\uB294 \uAC83\uC740?"
+      selectedAnswerText: "\uC8FC\uAC04(EO)\uCE74\uBA54\uB77C"
+      selectedAnswerIndex: 0
+      isCorrect: 0
+      correctAnswerText: "\uB370\uC774\uD130\uB9C1\uD06C \uC7A5\uBE44"
+      part: 2
+    - questionText: "\uC5D4\uC9C4\uC758 1\uB9C8\uB825\uC740 \uC5BC\uB9C8\uC778\uAC00?"
+      selectedAnswerText: "30kg\xB7m/s"
+      selectedAnswerIndex: 1
+      isCorrect: 0
+      correctAnswerText: "75kg\xB7m/s"
+      part: 2
+    - questionText: "\uB0A0\uAC1C\uB098 \uAE30\uCCB4\uD45C\uBA74\uC744 \uD1B5\uACFC\uD558\uB294
+        \uACF5\uAE30\uC758 \uD750\uB984\uC744 \uAC00\uB2A5\uD55C \uD55C \uC21C\uC870\uB86D\uAC8C
+        \uD750\uB974\uAC8C \uD558\uB294 \uC774\uC720\uB294?"
+      selectedAnswerText: "\uC591\uB825\uD56D\uB825\uC744 \uC904\uC774\uAE30 \uC704\uD558\uC5EC"
+      selectedAnswerIndex: 2
+      isCorrect: 0
+      correctAnswerText: "\uB9C8\uCC30\uD56D\uB825\uC744 \uC904\uC774\uAE30 \uC704\uD558\uC5EC"
+      part: 2
+    - questionText: "\uBE44\uD589\uC7A5\uCE58\uC5D0 \uC791\uC6A9\uD558\uB294 4\uAC00\uC9C0\uC758
+        \uD798\uC774 \uADE0\uD615\uC744 \uC774\uB8F0 \uB54C\uB294 \uC5B8\uC81C\uC778\uAC00?"
+      selectedAnswerText: "\uC0C1\uC2B9\uC744 \uC2DC\uC791\uD560 \uB54C"
+      selectedAnswerIndex: 3
+      isCorrect: 0
+      correctAnswerText: "\uB4F1\uAC00\uC18D\uB3C4 \uBE44\uD589 \uC2DC"
+      part: 2
+    - questionText: "\uB2E4\uC74C \uC911 \uBCA1\uD130(Vector)\uC758 \uBB3C\uB9AC\uB7C9\uACFC
+        \uAC00\uC7A5 \uAC70\uB9AC\uAC00 \uBA3C \uAC83\uC740?"
+      selectedAnswerText: "\uC9C8\uB7C9"
+      selectedAnswerIndex: 3
+      isCorrect: 1
+      correctAnswerText: 
+      part: 2
+    - questionText: "\uBE44\uD589 \uC804\uD6C4 \uC810\uAC80 \uBC29\uBC95\uC73C\uB85C
+        \uBC14\uB974\uC9C0 \uC54A\uC740 \uAC83\uC740?"
+      selectedAnswerText: "\uC5D4\uC9C4 \uB4F1 \uC5F4\uC774 \uB0A8\uC544\uC788\uC744
+        \uC218 \uC788\uB294 \uBD80\uC704\uB294 \uBC14\uB85C \uC810\uAC80\uD558\uC9C0
+        \uC54A\uB294\uB2E4."
+      selectedAnswerIndex: 3
+      isCorrect: 0
+      correctAnswerText: "1\uC77C 1\uD68C \uC810\uAC80\uC774\uBA74 \uCDA9\uBD84\uD558\uB2E4."
+      part: 2
+    - questionText: "\uAE30\uC218 \uBC29\uD5A5 \uC720\uC9C0\uC5D0 \uC0AC\uC6A9\uB418\uB294
+        \uBD80\uD488\uC774 \uC544\uB2CC \uAC83\uC740?"
+      selectedAnswerText: ESC
+      selectedAnswerIndex: 3
+      isCorrect: 1
+      correctAnswerText: 
+      part: 2
+    - questionText: "\uC218\uD3C9 \uC9C1\uC9C4\uBE44\uD589\uC744 \uD558\uB2E4\uAC00
+        \uC0C1\uC2B9\uBE44\uD589\uC73C\uB85C \uC804\uD658 \uC2DC \uBC1B\uC74C\uAC01(\uC601\uAC01)\uC774
+        \uC99D\uAC00\uD558\uBA74 \uC591\uB825\uC740 \uC5B4\uB5BB\uAC8C \uBCC0\uD558\uB294\uAC00?"
+      selectedAnswerText: "\uC9C0\uC18D\uC801\uC73C\uB85C \uAC10\uC18C\uD55C\uB2E4"
+      selectedAnswerIndex: 3
+      isCorrect: 0
+      correctAnswerText: "\uC21C\uAC01\uC801\uC73C\uB85C \uC99D\uAC00\uD55C\uB2E4"
+      part: 2
+    - questionText: "\uB2E4\uC74C \uC911 \uCD08\uACBD\uB7C9\uBE44\uD589\uC7A5\uCE58
+        \uC870\uC885\uC790\uC758 \uAE30\uBCF8\uC801 \uD2B9\uC131\uC744 \uC694\uC18C\uBCC4\uB85C
+        \uBD84\uB958\uD588\uC744 \uB54C \uBC94\uC704\uAC00 \uB2E4\uB978 \uD558\uB098\uB294?"
+      selectedAnswerText: "\uC601\uC591"
+      selectedAnswerIndex: 3
+      isCorrect: 1
+      correctAnswerText: 
+      part: 2
+    - questionText: "\uC720\uAD00\uC744 \uD1B5\uACFC\uD558\uB294 \uC644\uC804\uC720\uCCB4\uC758
+        \uC720\uC785\uB7C9\uACFC \uC720\uCD9C\uB7C9\uC740 \uD56D\uC0C1 \uC77C\uC815\uD558\uB2E4\uB294
+        \uBC95\uCE59\uC740 \uBB34\uC2A8 \uBC95\uCE59\uC778\uAC00?"
+      selectedAnswerText: "\uC5F0\uC18D\uC758 \uBC95\uCE59"
+      selectedAnswerIndex: 3
+      isCorrect: 1
+      correctAnswerText: 
+      part: 2
+  - quizTitle: "\uC2E4\uC804 \uBAA8\uB4DC 09-10 [10\uC810]"
+    totalTime: 18.063179
+    totalScore: 1
+    results:
+    - questionText: "\uB2E4\uC74C \uC911 \uBC30\uD130\uB9AC \uBCF4\uAD00 \uBC29\uBC95\uC73C\uB85C
+        \uBC14\uB974\uC9C0 \uC54A\uC740 \uAC83\uC740?"
+      selectedAnswerText: "\uC57D 15~28\xB0C\uC758 \uC0C1\uC628\uC5D0\uC11C \uBCF4\uAD00\uD55C\uB2E4."
+      selectedAnswerIndex: 3
+      isCorrect: 0
+      correctAnswerText: "\uC644\uC804 \uCDA9\uC804\uD574\uC11C \uBCF4\uAD00\uD55C\uB2E4."
+      part: 2
+    - questionText: "\uAD6D\uD1A0\uAD50\uD1B5\uBD80\uB839\uC73C\uB85C \uC815\uD558\uB294
+        \uC900\uC218\uC0AC\uD56D\uC744 \uB530\uB974\uC9C0 \uC54A\uACE0 \uCD08\uACBD\uB7C9\uBE44\uD589\uC7A5\uCE58\uB97C
+        \uC774\uC6A9\uD558\uC5EC \uBE44\uD589\uD560 \uACBD\uC6B0 1\uCC28 \uACFC\uD0DC\uB8CC
+        \uAE08\uC561\uC744 \uACE0\uB974\uC2DC\uC624."
+      selectedAnswerText: "5\uB9CC \uC6D0"
+      selectedAnswerIndex: 0
+      isCorrect: 0
+      correctAnswerText: "100\uB9CC \uC6D0"
+      part: 0
+    - questionText: "\uBE44\uD589\uC7A5\uCE58\uC5D0 \uC791\uC6A9\uD558\uB294 4\uAC00\uC9C0\uC758
+        \uD798\uC774 \uADE0\uD615\uC744 \uC774\uB8F0 \uB54C\uB294 \uC5B8\uC81C\uC778\uAC00?"
+      selectedAnswerText: "\uC9C0\uC0C1\uC5D0 \uC815\uC9C0 \uC0C1\uD0DC\uC5D0 \uC788\uC744
+        \uB54C"
+      selectedAnswerIndex: 1
+      isCorrect: 0
+      correctAnswerText: "\uB4F1\uAC00\uC18D\uB3C4 \uBE44\uD589 \uC2DC"
+      part: 2
+    - questionText: "\uCD08\uACBD\uB7C9\uBE44\uD589\uC7A5\uCE58\uC758 \uB9D0\uC18C\uC2E0\uACE0\uB294
+        \uC0AC\uC720\uBC1C\uC0DD\uC77C\uB85C\uBD80\uD130 \uBA70\uCE60 \uC774\uB0B4\uC5D0
+        \uC2E0\uACE0\uD558\uC5EC\uC57C \uD558\uB294\uAC00?"
+      selectedAnswerText: "30\uC77C"
+      selectedAnswerIndex: 2
+      isCorrect: 0
+      correctAnswerText: "15\uC77C"
+      part: 0
+    - questionText: "\uD56D\uACF5\uC2DC\uC124 \uC5C5\uBB34, \uC808\uCC28 \uB610\uB294
+        \uC704\uD5D8\uC694\uC18C\uC758 \uC2DC\uC124, \uC6B4\uC601\uC0C1\uD0DC \uBC0F
+        \uADF8 \uBCC0\uACBD\uC5D0 \uAD00\uD55C \uC815\uBCF4\uB97C \uC218\uB85D\uD558\uC5EC
+        \uC804\uAE30\uD1B5\uC2E0\uC218\uB2E8\uC73C\uB85C \uD56D\uACF5\uC885\uC0AC\uC790\uB4E4\uC5D0\uAC8C
+        \uBC30\uD3EC\uD558\uB294 \uACF5\uBB38\uC740?"
+      selectedAnswerText: AIRAC
+      selectedAnswerIndex: 2
+      isCorrect: 0
+      correctAnswerText: NOTAM
+      part: 0
+    - questionText: "\uB2E4\uC74C \uC911 \uC548\uAC1C\uAC00 \uB07C\uB294 \uC870\uAC74\uC73C\uB85C
+        \uC633\uC9C0 \uC54A\uC740 \uAC83\uC740?"
+      selectedAnswerText: "\uACF5\uAE30 \uC911\uC5D0 \uC751\uACB0\uD575\uC758 \uC5ED\uD560\uC744
+        \uD558\uB294 \uBB3C\uC9C8\uC774 \uCDA9\uBD84\uD788 \uC788\uC5B4\uC57C \uD55C\uB2E4."
+      selectedAnswerIndex: 2
+      isCorrect: 0
+      correctAnswerText: "\uB09C\uB958\uAC00 \uD615\uC131\uB418\uC5B4\uC57C \uD55C\uB2E4."
+      part: 1
+    - questionText: "\uB4DC\uB860\uC774 \uC77C\uC815\uACE0\uB3C4\uC5D0\uC11C \uB4F1\uC18D\uBE44\uD589\uC744
+        \uD558\uACE0 \uC788\uC744 \uB54C\uC758 \uC870\uAC74\uC73C\uB85C \uB9DE\uB294
+        \uAC83\uC740?"
+      selectedAnswerText: "\uCD94\uB825 = \uD56D\uB825, \uC591\uB825 \uFF1C\uC911\uB825"
+      selectedAnswerIndex: 1
+      isCorrect: 0
+      correctAnswerText: "\uC591\uB825 = \uC911\uB825, \uCD94\uB825 = \uD56D\uB825"
+      part: 2
+    - questionText: "\uD654\uC528\uC628\uB3C4\uC5D0\uC11C \uBB3C\uC774 \uC5B4\uB294
+        \uC628\uB3C4\uC640 \uB053\uB294 \uC628\uB3C4\uB294 \uAC01\uAC01 \uBA87 \xB0F\uC778\uAC00?"
+      selectedAnswerText: "\uC5B4\uB294 \uC628\uB3C4: 12, \uB053\uB294 \uC628\uB3C4:
+        192"
+      selectedAnswerIndex: 1
+      isCorrect: 0
+      correctAnswerText: "\uC5B4\uB294 \uC628\uB3C4: 32, \uB053\uB294 \uC628\uB3C4:
+        212"
+      part: 1
+    - questionText: "\uB2E4\uC74C \uC911 \uB1CC\uC6B0\uC758 \uC0DD\uC131 \uC870\uAC74\uC73C\uB85C
+        \uAC70\uB9AC\uAC00 \uBA3C \uAC83\uC740?"
+      selectedAnswerText: "\uBD88\uC548\uC815 \uB300\uAE30"
+      selectedAnswerIndex: 0
+      isCorrect: 0
+      correctAnswerText: "\uB0AE\uC740 \uB300\uAE30 \uC628\uB3C4"
+      part: 1
+    - questionText: "\uB2E4\uC74C \uC911 \uCD08\uACBD\uB7C9\uBE44\uD589\uC7A5\uCE58
+        \uBE44\uD589 \uC804 \uC1A1\uC2E0\uAC70\uB9AC \uD14C\uC2A4\uD2B8\uB85C \uC633\uC740
+        \uAC83\uC740?"
+      selectedAnswerText: "\uAE30\uCCB4\uC640 30m \uB5A8\uC5B4\uC838\uC11C \uB808\uC778\uC9C0
+        \uBAA8\uB4DC\uB85C \uD14C\uC2A4\uD2B8\uD55C\uB2E4."
+      selectedAnswerIndex: 1
+      isCorrect: 1
+      correctAnswerText: 
+      part: 2
+  - quizTitle: "\uC2E4\uC804 \uBAA8\uB4DC 09-10 [20\uC810]"
+    totalTime: 8.84632
+    totalScore: 2
+    results:
+    - questionText: "\uAE30\uC218 \uBC29\uD5A5 \uC720\uC9C0\uC5D0 \uC0AC\uC6A9\uB418\uB294
+        \uBD80\uD488\uC774 \uC544\uB2CC \uAC83\uC740?"
+      selectedAnswerText: FC
+      selectedAnswerIndex: 0
+      isCorrect: 0
+      correctAnswerText: ESC
+      part: 2
+    - questionText: "\uB2E4\uC74C \uC911 \uCD08\uACBD\uB7C9\uBE44\uD589\uC7A5\uCE58\uC758
+        \uB9D0\uC18C\uC2E0\uACE0\uB97C \uD558\uC9C0 \uC544\uB2C8\uD55C \uCD08\uACBD\uB7C9\uBE44\uD589\uC7A5\uCE58
+        \uC18C\uC720\uC790\uC5D0\uAC8C \uBD80\uACFC\uB418\uB294 \uACFC\uD0DC\uB8CC\uB294
+        \uC5BC\uB9C8\uC778\uAC00?"
+      selectedAnswerText: "30\uB9CC \uC6D0"
+      selectedAnswerIndex: 1
+      isCorrect: 1
+      correctAnswerText: 
+      part: 0
+    - questionText: "\uBB34\uC778\uBA40\uD2F0\uCF65\uD130\uC758 \uC6B4\uC6A9 \uBAA9\uC801\uC73C\uB85C
+        \uC633\uC9C0 \uC54A\uC740 \uAC83\uC740?"
+      selectedAnswerText: "\uD654\uC7AC\uAC10\uC2DC"
+      selectedAnswerIndex: 2
+      isCorrect: 1
+      correctAnswerText: 
+      part: 2
+    - questionText: "\uB4DC\uB860\uC774 \uC77C\uC815\uACE0\uB3C4\uC5D0\uC11C \uB4F1\uC18D\uBE44\uD589\uC744
+        \uD558\uACE0 \uC788\uC744 \uB54C\uC758 \uC870\uAC74\uC73C\uB85C \uB9DE\uB294
+        \uAC83\uC740?"
+      selectedAnswerText: "\uCD94\uB825 = \uD56D\uB825, \uC591\uB825 \uFF1C\uC911\uB825"
+      selectedAnswerIndex: 1
+      isCorrect: 0
+      correctAnswerText: "\uC591\uB825 = \uC911\uB825, \uCD94\uB825 = \uD56D\uB825"
+      part: 2
+    - questionText: "\uB0A0\uAC1C\uB098 \uAE30\uCCB4\uD45C\uBA74\uC744 \uD1B5\uACFC\uD558\uB294
+        \uACF5\uAE30\uC758 \uD750\uB984\uC744 \uAC00\uB2A5\uD55C \uD55C \uC21C\uC870\uB86D\uAC8C
+        \uD750\uB974\uAC8C \uD558\uB294 \uC774\uC720\uB294?"
+      selectedAnswerText: "\uC591\uB825\uD56D\uB825\uC744 \uC904\uC774\uAE30 \uC704\uD558\uC5EC"
+      selectedAnswerIndex: 2
+      isCorrect: 0
+      correctAnswerText: "\uB9C8\uCC30\uD56D\uB825\uC744 \uC904\uC774\uAE30 \uC704\uD558\uC5EC"
+      part: 2
+    - questionText: "\uD56D\uACF5\uC2DC\uC124 \uC5C5\uBB34, \uC808\uCC28 \uB610\uB294
+        \uC704\uD5D8\uC694\uC18C\uC758 \uC2DC\uC124, \uC6B4\uC601\uC0C1\uD0DC \uBC0F
+        \uADF8 \uBCC0\uACBD\uC5D0 \uAD00\uD55C \uC815\uBCF4\uB97C \uC218\uB85D\uD558\uC5EC
+        \uC804\uAE30\uD1B5\uC2E0\uC218\uB2E8\uC73C\uB85C \uD56D\uACF5\uC885\uC0AC\uC790\uB4E4\uC5D0\uAC8C
+        \uBC30\uD3EC\uD558\uB294 \uACF5\uBB38\uC740?"
+      selectedAnswerText: AIP
+      selectedAnswerIndex: 1
+      isCorrect: 0
+      correctAnswerText: NOTAM
+      part: 0
+    - questionText: "\uCD08\uACBD\uB7C9\uBE44\uD589\uC7A5\uCE58\uC758 \uB9D0\uC18C\uC2E0\uACE0\uB294
+        \uC0AC\uC720\uBC1C\uC0DD\uC77C\uB85C\uBD80\uD130 \uBA70\uCE60 \uC774\uB0B4\uC5D0
+        \uC2E0\uACE0\uD558\uC5EC\uC57C \uD558\uB294\uAC00?"
+      selectedAnswerText: "10\uC77C"
+      selectedAnswerIndex: 0
+      isCorrect: 0
+      correctAnswerText: "15\uC77C"
+      part: 0
+    - questionText: "\uD1B5\uC0C1 \uD558\uB8E8 \uC911 \uCD5C\uC800\uAE30\uC628\uC758
+        \uC2DC\uAC04\uC740?"
+      selectedAnswerText: "\uC790\uC815 1\uC2DC\uAC04 \uD6C4"
+      selectedAnswerIndex: 1
+      isCorrect: 0
+      correctAnswerText: "\uC77C\uCD9C\uBD80\uD130 \uC77C\uCD9C \uD6C4 1\uC2DC\uAC04
+        \uC0AC\uC774"
+      part: 1
+    - questionText: "\uD654\uC528\uC628\uB3C4\uC5D0\uC11C \uBB3C\uC774 \uC5B4\uB294
+        \uC628\uB3C4\uC640 \uB053\uB294 \uC628\uB3C4\uB294 \uAC01\uAC01 \uBA87 \xB0F\uC778\uAC00?"
+      selectedAnswerText: "\uC5B4\uB294 \uC628\uB3C4: 0, \uB053\uB294 \uC628\uB3C4:
+        100"
+      selectedAnswerIndex: 0
+      isCorrect: 0
+      correctAnswerText: "\uC5B4\uB294 \uC628\uB3C4: 32, \uB053\uB294 \uC628\uB3C4:
+        212"
+      part: 1
+    - questionText: "\uB2E4\uC74C \uC911 \uAC15\uD55C \uBE44\uAC00 \uACC4\uC18D \uC62C
+        \uC218\uB3C4 \uC788\uB294 \uAD6C\uB984\uC758 \uC57D\uC5B4\uB294 \uBB34\uC5C7\uC778\uAC00?"
+      selectedAnswerText: As
+      selectedAnswerIndex: 1
+      isCorrect: 0
+      correctAnswerText: Cb
+      part: 1
