@@ -1,7 +1,7 @@
 using System;
+using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
@@ -24,6 +24,8 @@ public class QuizManager_Part : MonoBehaviour
     public ButtonPartMapping[] buttonPartMappings;
     public GameObject ResultPanel;
 
+    public GameObject failureSoundObject; // 실패 소리 오브젝트 추가
+
     public QuizResultData quizResultData;  // 퀴즈 결과를 저장할 ScriptableObject 추가
 
     private int currentQuestionIndex = 0;
@@ -35,6 +37,12 @@ public class QuizManager_Part : MonoBehaviour
 
     void Start()
     {
+        // 실패 소리 오브젝트가 설정되어 있지 않으면 자동으로 할당
+        if (failureSoundObject == null)
+        {
+            failureSoundObject = GameObject.Find("FailureSoundObject");
+        }
+
         quizStartTime = DateTime.Now; // 퀴즈 시작 시간 기록
 
         AssignButtonParts();
@@ -156,6 +164,16 @@ public class QuizManager_Part : MonoBehaviour
         foreach (var button in optionsButtons)
         {
             button.gameObject.SetActive(false);
+        }
+
+        // 점수가 6점 이하이면 불합격 메시지와 실패 소리 오브젝트 활성화
+        if (score <= 6)
+        {
+            resultText.text += "\n불합격입니다."; // 불합격 메시지 추가
+            if (failureSoundObject != null)
+            {
+                failureSoundObject.SetActive(true); // 실패 소리 오브젝트 활성화
+            }
         }
 
         // 퀴즈 결과 저장

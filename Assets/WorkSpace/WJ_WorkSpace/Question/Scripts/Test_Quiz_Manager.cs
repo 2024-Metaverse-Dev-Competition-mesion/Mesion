@@ -33,6 +33,8 @@ public class Test_Quiz_Manager : MonoBehaviour
     private int currentQuestionIndex = 0; // 현재 문제 인덱스
     private bool isQuizEnded = false; // 퀴즈 종료 여부
     private DateTime quizStartTime; // 퀴즈 시작 시간 기록
+    public GameObject passSoundObject;
+    public GameObject failSoundObject;
 
     void Start()
     {
@@ -334,13 +336,17 @@ public class Test_Quiz_Manager : MonoBehaviour
         resultPanel.SetActive(true);
 
         string resultMessage = $"당신의 점수는 {score * 10}점\n";
+
+        // Activate appropriate sound based on result
         if (score >= 7)
         {
             resultMessage += "합격입니다!";
+            passSoundObject.SetActive(true); // Play pass sound
         }
         else
         {
             resultMessage += "불합격입니다.";
+            failSoundObject.SetActive(true); // Play fail sound
         }
 
         scoreText.text = resultMessage;
