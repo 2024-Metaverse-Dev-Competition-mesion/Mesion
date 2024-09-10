@@ -40,6 +40,10 @@ public class Similar_Quiz_Maker_Manager : MonoBehaviour
     public Button backButton;
     public GameObject result_panel;
 
+    // 정답과 오답 소리를 위한 GameObject (소리 관련 오브젝트)
+    public GameObject correctSoundObject;  // 정답일 때 활성화할 오브젝트
+    public GameObject incorrectSoundObject;  // 오답일 때 활성화할 오브젝트
+
     // Start에서 버튼 클릭 이벤트 연결
     void Start()
     {
@@ -54,6 +58,8 @@ public class Similar_Quiz_Maker_Manager : MonoBehaviour
         choiceButton4.onClick.AddListener(() => CheckAnswer(choiceText4.text));
         
         Similar_Quiz_Panel.SetActive(false);  // 결과 패널은 처음에 비활성화
+        correctSoundObject.SetActive(false);  // 처음에 정답 소리 비활성화
+        incorrectSoundObject.SetActive(false);  // 처음에 오답 소리 비활성화
     }
 
     // 문제 생성 버튼 클릭 시 실행되는 함수
@@ -70,6 +76,27 @@ public class Similar_Quiz_Maker_Manager : MonoBehaviour
         StartCoroutine(SendProblemGenerationRequest(originalProblem));
     }
 
+    // 선택지가 눌렸을 때 정답 여부를 확인하는 함수
+    private void CheckAnswer(string selectedAnswer)
+    {
+        Debug.Log($"선택한 답변: {selectedAnswer}, 실제 정답: {correctAnswer}");
+        result_panel.SetActive(true);
+
+        // 선택한 답변과 실제 정답을 비교
+        if (selectedAnswer.Trim() == correctAnswer.Trim())  // 선택한 답변과 정답의 공백을 제거하고 비교
+        {
+            resultText.text = "정답입니다!";
+            correctSoundObject.SetActive(true);  // 정답 소리 오브젝트 활성화
+            incorrectSoundObject.SetActive(false);  // 오답 소리 오브젝트 비활성화
+        }
+        else
+        {
+            resultText.text = $"오답입니다. 정답은 {correctAnswer}";
+            incorrectSoundObject.SetActive(true);  // 오답 소리 오브젝트 활성화
+            correctSoundObject.SetActive(false);  // 정답 소리 오브젝트 비활성화
+        }
+    }
+
     void Back()
     {
         // Reactivate the Detail Panel and deactivate the Similar Quiz Panel
@@ -77,21 +104,18 @@ public class Similar_Quiz_Maker_Manager : MonoBehaviour
         Similar_Quiz_Panel.SetActive(false);
         result_panel.SetActive(false);
 
-        // Reset the problem text and result text
+        // 문제, 선택지, 정답 초기화
         problemText.text = "";
         resultText.text = "";
-
-        // Reset the choice buttons' text
         choiceText1.text = "";
         choiceText2.text = "";
         choiceText3.text = "";
         choiceText4.text = "";
-
-        // Optionally, reset the correct answer
         correctAnswer = "";
 
-        // Reset any other variables or states that should be initialized
-        // For example, if you have some state flags or counters, reset them here
+        // 소리 관련 오브젝트 비활성화
+        correctSoundObject.SetActive(false);
+        incorrectSoundObject.SetActive(false);
     }
 
     // GPT API로 요청을 보내는 Coroutine 함수
@@ -161,70 +185,55 @@ public class Similar_Quiz_Maker_Manager : MonoBehaviour
         }
     }
 
-// GPT의 응답을 파싱하고 문제와 선택지를 설정하는 함수
-private void ParseAndDisplayProblem(string problemMessage)
-{
-    // 문제와 선택지 및 정답을 파싱 (각 줄을 기준으로 분리)
-    string[] lines = problemMessage.Split('\n');
-    
-    // 첫 번째 줄이 "문제 설명:"일 수 있으므로 해당 부분을 제거하고 문제만 표시
-    if (lines[0].StartsWith("문제 설명:"))
+    // GPT의 응답을 파싱하고 문제와 선택지를 설정하는 함수
+    private void ParseAndDisplayProblem(string problemMessage)
     {
-        problemText.text = lines[0].Substring(6).Trim();  // "문제 설명:" 제거 후 텍스트만 표시
-    }
-    else
-    {
-        problemText.text = lines[0];  // 다른 경우는 그냥 첫 번째 줄을 문제로 설정
-    }
-
-    // 선택지 번호에 따라 텍스트를 설정
-    foreach (string line in lines)
-    {
-        if (line.StartsWith("1. "))
-            choiceText1.text = line.Substring(3);  // "1. " 이후의 텍스트
-        else if (line.StartsWith("2. "))
-            choiceText2.text = line.Substring(3);  // "2. " 이후의 텍스트
-        else if (line.StartsWith("3. "))
-            choiceText3.text = line.Substring(3);  // "3. " 이후의 텍스트
-        else if (line.StartsWith("4. "))
-            choiceText4.text = line.Substring(3);  // "4. " 이후의 텍스트
-    }
-
-    // 정답 저장 (정답은 "정답: "으로 시작하는 줄에서 선택지 번호를 제거하고 텍스트만 저장)
-    foreach (string line in lines)
-    {
-        if (line.StartsWith("정답: "))
+        // 문제와 선택지 및 정답을 파싱 (각 줄을 기준으로 분리)
+        string[] lines = problemMessage.Split('\n');
+        
+        // 첫 번째 줄이 "문제 설명:"일 수 있으므로 해당 부분을 제거하고 문제만 표시
+        if (lines[0].StartsWith("문제 설명:"))
         {
-            string correctLine = line.Substring(4).Trim();  // "정답: " 이후의 텍스트 (Trim으로 공백 제거)
-            
-            // 선택지 번호(예: "2. ")를 제거하고, 정답 텍스트만 저장
-            if (correctLine.Length > 3 && (correctLine.StartsWith("1. ") || correctLine.StartsWith("2. ") ||
-                                           correctLine.StartsWith("3. ") || correctLine.StartsWith("4. ")))
-            {
-                correctAnswer = correctLine.Substring(3).Trim();  // "2. " 이후의 텍스트를 정답으로 저장
-                Debug.Log("정답: " + correctAnswer);  // 정답 확인용 디버그 로그
-            }
-            else
-            {
-                correctAnswer = correctLine;  // 선택지 번호 없이 바로 정답 텍스트 저장
-                Debug.Log("정답: " + correctAnswer);  // 정답 확인용 디버그 로그
-            }
-        }
-    }
-}
-
-    // 선택지가 눌렸을 때 정답 여부를 확인하는 함수
-    private void CheckAnswer(string selectedAnswer)
-    {
-        Debug.Log(selectedAnswer);
-        result_panel.SetActive(true);
-        if (selectedAnswer == correctAnswer)
-        {
-            resultText.text = "정답입니다!";
+            problemText.text = lines[0].Substring(6).Trim();  // "문제 설명:" 제거 후 텍스트만 표시
         }
         else
         {
-            resultText.text = "오답입니다. 정답은 " + correctAnswer;
+            problemText.text = lines[0];  // 다른 경우는 그냥 첫 번째 줄을 문제로 설정
+        }
+
+        // 선택지 번호에 따라 텍스트를 설정
+        foreach (string line in lines)
+        {
+            if (line.StartsWith("1. "))
+                choiceText1.text = line.Substring(3);  // "1. " 이후의 텍스트
+            else if (line.StartsWith("2. "))
+                choiceText2.text = line.Substring(3);  // "2. " 이후의 텍스트
+            else if (line.StartsWith("3. "))
+                choiceText3.text = line.Substring(3);  // "3. " 이후의 텍스트
+            else if (line.StartsWith("4. "))
+                choiceText4.text = line.Substring(3);  // "4. " 이후의 텍스트
+        }
+
+        // 정답 저장 (정답은 "정답: "으로 시작하는 줄에서 선택지 번호를 제거하고 텍스트만 저장)
+        foreach (string line in lines)
+        {
+            if (line.StartsWith("정답: "))
+            {
+                string correctLine = line.Substring(4).Trim();  // "정답: " 이후의 텍스트 (Trim으로 공백 제거)
+                
+                // 선택지 번호(예: "2. ")를 제거하고, 정답 텍스트만 저장
+                if (correctLine.Length > 3 && (correctLine.StartsWith("1. ") || correctLine.StartsWith("2. ") ||
+                                               correctLine.StartsWith("3. ") || correctLine.StartsWith("4. ")))
+                {
+                    correctAnswer = correctLine.Substring(3).Trim();  // "2. " 이후의 텍스트를 정답으로 저장
+                    Debug.Log("정답: " + correctAnswer);  // 정답 확인용 디버그 로그
+                }
+                else
+                {
+                    correctAnswer = correctLine;  // 선택지 번호 없이 바로 정답 텍스트 저장
+                    Debug.Log("정답: " + correctAnswer);  // 정답 확인용 디버그 로그
+                }
+            }
         }
     }
 }

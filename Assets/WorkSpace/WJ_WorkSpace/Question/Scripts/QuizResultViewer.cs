@@ -21,7 +21,6 @@ public class QuizResultViewer : MonoBehaviour
     public GameObject Quiz_Commentary_Panel;
     public GameObject Similar_Quiz_Panel;
 
-
     public Button previousQuestionButton; // 이전 문제로 넘어가는 버튼
     public Button nextQuestionButton; // 다음 문제로 넘어가는 버튼
 
@@ -64,9 +63,23 @@ public class QuizResultViewer : MonoBehaviour
         nextQuestionButton.onClick.AddListener(ActivateNewButtons);
     }
 
+    // 이 메서드는 오브젝트가 다시 활성화될 때 호출됩니다.
+    void OnEnable()
+    {
+        // listPanel을 활성화하고, 다른 패널들을 비활성화
+        listPanel.SetActive(true);
+        detailsPanel.SetActive(false);
+        Quiz_Commentary_Panel.SetActive(false);
+        Similar_Quiz_Panel.SetActive(false);
+
+        // 첫 페이지로 설정
+        currentPage = 1;
+        UpdatePage();
+    }
+
     void OnDisable()
     {
-        // When this GameObject gets disabled, activate listPanel and deactivate others
+        // 이 GameObject가 비활성화될 때 listPanel 활성화
         listPanel.SetActive(true);
         detailsPanel.SetActive(false);
         Quiz_Commentary_Panel.SetActive(false);
@@ -101,7 +114,7 @@ public class QuizResultViewer : MonoBehaviour
         // 페이지 번호 업데이트
         pageNumberText.text = $"{currentPage}/{Mathf.Max(1, Mathf.CeilToInt((float)quizCount / itemsPerPage))}";
 
-        // 버튼 보이기/숨기기 로직
+        // 이전/다음 페이지 버튼 보이기/숨기기
         previousPageButton.gameObject.SetActive(currentPage > 1);
         nextPageButton.gameObject.SetActive(currentPage < Mathf.CeilToInt((float)quizCount / itemsPerPage));
     }
