@@ -527,6 +527,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2796498065688387501, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 42.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2796498065688387501, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -547,6 +551,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2796498066032488282, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 158
+      objectReference: {fileID: 0}
+    - target: {fileID: 2796498066032488282, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -569,6 +577,22 @@ PrefabInstance:
     - target: {fileID: 2796498066613091054, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6490757911934186184, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6490757911934186184, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921418696829821117, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921418696829821117, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -849,6 +873,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2796498065688387501, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 42.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2796498065688387501, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -869,6 +897,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2796498066032488282, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 158
+      objectReference: {fileID: 0}
+    - target: {fileID: 2796498066032488282, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -892,9 +924,25 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6490757911934186184, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6490757911934186184, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 6921418696829821117, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
       propertyPath: m_Text
       value: "\uAC00\uACA9 : 500\n\uBBF8\uD655\uC778 \uBE44\uD589 \uBB3C\uCCB42"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921418696829821117, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921418696829821117, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1246,6 +1294,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2796498065688387501, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 42.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2796498065688387501, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -1266,6 +1318,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2796498066032488282, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 158
+      objectReference: {fileID: 0}
+    - target: {fileID: 2796498066032488282, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -1289,10 +1345,26 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6490757911934186184, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6490757911934186184, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 6921418696829821117, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
       propertyPath: m_Text
       value: "\uAC00\uACA9 : 500\n\uB0A0\uC774 \uC548\uC804\uD55C \uC5F0\uC2B5\uC6A9
         \uB4DC\uB860"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921418696829821117, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921418696829821117, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2445,6 +2517,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2796498065688387501, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 42.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2796498065688387501, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -2465,6 +2541,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2796498066032488282, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 158
+      objectReference: {fileID: 0}
+    - target: {fileID: 2796498066032488282, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -2488,9 +2568,25 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6490757911934186184, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6490757911934186184, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 6921418696829821117, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
       propertyPath: m_Text
       value: "\uAC00\uACA9 : 500\n\uC774\uAC74 \uC5F4\uAE30\uAD6C?\uC778\uAC00?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921418696829821117, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921418696829821117, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3331,6 +3427,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2796498065688387501, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 42.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2796498065688387501, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -3351,6 +3451,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2796498066032488282, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 158
+      objectReference: {fileID: 0}
+    - target: {fileID: 2796498066032488282, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -3374,9 +3478,25 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6490757911934186184, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6490757911934186184, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 6921418696829821117, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
       propertyPath: m_Text
       value: "\uAC00\uACA9 : 500\n\uBE60\uB978 \uACBD\uC8FC\uC6A9 \uB4DC\uB860"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921418696829821117, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921418696829821117, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5150,6 +5270,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2796498065688387501, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 42.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2796498065688387501, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -5170,6 +5294,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2796498066032488282, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 158
+      objectReference: {fileID: 0}
+    - target: {fileID: 2796498066032488282, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -5193,9 +5321,25 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6490757911934186184, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6490757911934186184, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 6921418696829821117, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
       propertyPath: m_Text
       value: "\uAC00\uACA9 : 500\n\uC774\uAC74 \uB0A0\uC544\uB2E4\uB2C8\uB294 \uD3AB\uC774\uB2E4."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921418696829821117, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921418696829821117, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5358,13 +5502,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door_Left_01
       objectReference: {fileID: 0}
+    - target: {fileID: 192030, guid: 088b5f04d52a542ec975e88d7d9934f5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 421664, guid: 088b5f04d52a542ec975e88d7d9934f5, type: 3}
       propertyPath: m_RootOrder
       value: 102
       objectReference: {fileID: 0}
     - target: {fileID: 421664, guid: 088b5f04d52a542ec975e88d7d9934f5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -35
+      value: -34.997
       objectReference: {fileID: 0}
     - target: {fileID: 421664, guid: 088b5f04d52a542ec975e88d7d9934f5, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6909,6 +7057,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2796498065688387501, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 42.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2796498065688387501, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -6929,6 +7081,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2796498066032488282, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 158
+      objectReference: {fileID: 0}
+    - target: {fileID: 2796498066032488282, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -6952,9 +7108,25 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6490757911934186184, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6490757911934186184, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 6921418696829821117, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
       propertyPath: m_Text
       value: "\uAC00\uACA9 : 500\n\uC774\uAC74 \uB0A0\uC544\uB2E4\uB2C8\uB294 \uD56B\uB3C4\uADF8\uB2E4."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921418696829821117, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921418696829821117, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7532,6 +7704,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2796498065688387501, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 42.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2796498065688387501, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -7552,6 +7728,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2796498066032488282, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 158
+      objectReference: {fileID: 0}
+    - target: {fileID: 2796498066032488282, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -7575,9 +7755,25 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6490757911934186184, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6490757911934186184, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 6921418696829821117, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
       propertyPath: m_Text
       value: "\uAC00\uACA9 : 500\n\uC774\uAC74 \uB0A0\uC544\uB2E4\uB2C8\uB294 \uC804\uB4F1\uC774\uB2E4."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921418696829821117, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921418696829821117, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8599,6 +8795,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2796498065688387501, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 42.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2796498065688387501, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -8619,6 +8819,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2796498066032488282, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 158
+      objectReference: {fileID: 0}
+    - target: {fileID: 2796498066032488282, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -8642,9 +8846,25 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6490757911934186184, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6490757911934186184, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 6921418696829821117, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
       propertyPath: m_Text
       value: "\uAC00\uACA9 : 500\n\uD5EC\uB9AC\uCF65\uD130 \uD5EC\uB9AC\uCF65\uD130"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921418696829821117, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921418696829821117, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9227,6 +9447,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2796498065688387501, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 42.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2796498065688387501, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -9247,6 +9471,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2796498066032488282, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 158
+      objectReference: {fileID: 0}
+    - target: {fileID: 2796498066032488282, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -9270,9 +9498,25 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6490757911934186184, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6490757911934186184, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 6921418696829821117, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
       propertyPath: m_Text
       value: "\uAC00\uACA9 : 500\n\uC624\uB80C\uC9C0 \uB4DC\uB860\uC774\uB2E4."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921418696829821117, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921418696829821117, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10179,6 +10423,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2796498065688387501, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 42.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2796498065688387501, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -10199,6 +10447,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2796498066032488282, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 158
+      objectReference: {fileID: 0}
+    - target: {fileID: 2796498066032488282, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -10222,9 +10474,25 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6490757911934186184, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6490757911934186184, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 6921418696829821117, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
       propertyPath: m_Text
       value: "\uAC00\uACA9 : 500\n\uD29C\uD1A0\uB9AC\uC5BC \uB4DC\uB860!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921418696829821117, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921418696829821117, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14845,6 +15113,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2796498065688387501, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 42.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2796498065688387501, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -14865,6 +15137,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2796498066032488282, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 158
+      objectReference: {fileID: 0}
+    - target: {fileID: 2796498066032488282, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -14888,9 +15164,25 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6490757911934186184, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6490757911934186184, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 6921418696829821117, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
       propertyPath: m_Text
       value: "\uAC00\uACA9 : 500\n\uBBF8\uD655\uC778 \uBE44\uD589 \uBB3C\uCCB41"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921418696829821117, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921418696829821117, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16268,6 +16560,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2796498065688387501, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 42.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2796498065688387501, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -16288,6 +16584,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2796498066032488282, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 158
+      objectReference: {fileID: 0}
+    - target: {fileID: 2796498066032488282, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -16311,9 +16611,25 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6490757911934186184, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6490757911934186184, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 6921418696829821117, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
       propertyPath: m_Text
       value: "\uAC00\uACA9 : 500\n\uC0B0\uC5C5\uC6A9 \uB4DC\uB860\uAC19\uC544!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921418696829821117, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921418696829821117, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17688,6 +18004,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2796498065688387501, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 42.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2796498065688387501, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -17708,6 +18028,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2796498066032488282, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 158
+      objectReference: {fileID: 0}
+    - target: {fileID: 2796498066032488282, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -17731,9 +18055,25 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6490757911934186184, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6490757911934186184, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 6921418696829821117, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
       propertyPath: m_Text
       value: "\uAC00\uACA9 : 500\n\uC774\uAC74 \uB0A0\uC544\uB2E4\uB2C8\uB294 \uCC38\uCE58\uB2E4."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921418696829821117, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921418696829821117, guid: e6800b4445c0d074cb1b1425d3740ed8, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

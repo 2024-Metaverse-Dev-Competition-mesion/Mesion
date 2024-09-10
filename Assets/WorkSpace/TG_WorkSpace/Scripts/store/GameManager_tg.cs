@@ -103,10 +103,10 @@ public class GameManager_tg : MonoBehaviour
     private void FindUIElements()
     {
         // 씬 안의 "CurrencyText"라는 이름을 가진 오브젝트를 찾아 연결
-        if (currencyText == null)
-        {
+        //if (currencyText == null)
+        //{
             currencyText = GameObject.Find("Currency_Text_")?.GetComponent<Text>();
-        }
+        //}
 
         // 씬 안의 "UpdateCurrencyButton"라는 이름을 가진 버튼을 찾아 연결
         if (updateCurrencyButton == null)

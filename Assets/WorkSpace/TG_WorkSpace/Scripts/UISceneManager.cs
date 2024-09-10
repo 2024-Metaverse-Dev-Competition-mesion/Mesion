@@ -4,6 +4,7 @@ public class UISceneManager : MonoBehaviour
 {
     public GameObject uiPanel; // 처음에 표시될 UI 패널
     private bool isUIPanelShown = false; // flag 변수로 UI 패널 표시 여부 관리
+    public GameObject tmp; // 처음에 표시될 UI 패널
 
     void Start()
     {
