@@ -11,6 +11,31 @@ TagManager:
   - Ground
   - Fence
   - Drone
+  - badge
+  - pro3
+  - pro2
+  - dronebody
+  - pro4
+  - pro6
+  - pro1
+  - pro5
+  - arm1
+  - arm2
+  - arm3
+  - arm4
+  - arm5
+  - arm6
+  - m1
+  - m2
+  - m3
+  - m4
+  - m5
+  - m6
+  - mf
+  - s1
+  - s2
+  - gps1
+  - gps2
   layers:
   - Default
   - TransparentFX
