@@ -6,6 +6,7 @@ using TMPro; // TextMeshPro 관련 네임스페이스 추가
 public class ToDoListManager : MonoBehaviour
 {
     public List<HighlightPart> droneParts; // 드론 부품 리스트
+    public GameObject panel;
     public List<GameObject> toDoItems; // ToDo 리스트 항목들 (TextMeshProUGUI가 포함된 UI 오브젝트)
     public QuizManager quizManager; // 퀴즈 매니저 연결
     public Button quizStartButton; // 퀴즈 시작 버튼
@@ -60,6 +61,7 @@ public class ToDoListManager : MonoBehaviour
     {
         quizManager.StartQuiz(); // 퀴즈 시작
         quizStartButton.gameObject.SetActive(false); // 퀴즈 시작 후 버튼 숨기기
+        panel.SetActive(false);
         interactionManager.enabled = false;
     }
 
