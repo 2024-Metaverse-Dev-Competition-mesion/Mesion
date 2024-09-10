@@ -10,7 +10,6 @@ public class QuizManager : MonoBehaviour
     public TextMeshProUGUI questionText; // 문제 텍스트
     public Button[] answerButtons; // 4지선다 버튼들 (TextMeshProUGUI 사용)
     private HighlightPart correctPart; // 정답 부품
-    public TextMeshProUGUI resultText; // 정답/오답 메시지 텍스트
 
     private List<int> randomOrder = new List<int>(); // 무작위 부품 순서
     private int quizIndex = 0; // 현재 퀴즈의 인덱스
@@ -18,7 +17,6 @@ public class QuizManager : MonoBehaviour
     void Start()
     {
         quizPanel.SetActive(false); // 처음에 패널을 숨기기
-        resultText.gameObject.SetActive(false); // 처음에 결과 텍스트 숨기기
     }
 
     // 퀴즈 시작 버튼을 누르면 호출되는 함수
@@ -90,7 +88,6 @@ public class QuizManager : MonoBehaviour
         if (answerButtons[selectedIndex].GetComponentInChildren<TextMeshProUGUI>().text == correctPart.gameObject.name)
         {
             Debug.Log("정답!");
-            resultText.text = "정답!";
             // 정답 처리 후 다음 문제로 넘어가기
             correctPart.RemoveHighlight();
             DisplayNextQuestion();
@@ -98,7 +95,6 @@ public class QuizManager : MonoBehaviour
         else
         {
             Debug.Log("오답! 정답은 " + correctPart.gameObject.name);
-            resultText.text = "오답! 정답은 " + correctPart.gameObject.name;
             correctPart.RemoveHighlight();
             DisplayNextQuestion(); // 오답 시에도 다음 문제로 넘어가기
         }
