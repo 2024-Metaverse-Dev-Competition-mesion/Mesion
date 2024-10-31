@@ -9,22 +9,22 @@ using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
 using TMPro;
 using LazyFollow = UnityEngine.XR.Interaction.Toolkit.UI.LazyFollow;
 
-// Goal ±¸Á¶Ã¼ Á¤ÀÇ
+// Goal êµ¬ì¡°ì²´ ì •ì˜
 public struct Goal
 {
-    public GoalManager.OnboardingGoals CurrentGoal; // ÇöÀç ¸ñÇ¥
-    public bool Completed; // ¿Ï·á ¿©ºÎ
+    public GoalManager.OnboardingGoals CurrentGoal; // í˜„ì¬ ëª©í‘œ
+    public bool Completed; // ì™„ë£Œ ì—¬ë¶€
 
     public Goal(GoalManager.OnboardingGoals goal)
     {
         CurrentGoal = goal;
-        Completed = false; // ÃÊ±â »óÅÂ´Â ¿Ï·áµÇÁö ¾ÊÀ½
+        Completed = false; // ì´ˆê¸° ìƒíƒœëŠ” ì™„ë£Œë˜ì§€ ì•ŠìŒ
     }
 }
 
 public class GoalManager : MonoBehaviour
 {
-    // ¿Âº¸µù ¸ñÇ¥¸¦ Á¤ÀÇÇÏ´Â ¿­°ÅÇü
+    // ì˜¨ë³´ë”© ëª©í‘œë¥¼ ì •ì˜í•˜ëŠ” ì—´ê±°í˜•
     public enum OnboardingGoals
     {
         Empty,
@@ -34,100 +34,103 @@ public class GoalManager : MonoBehaviour
         //TapSurface,
     }
 
-    Queue<Goal> m_OnboardingGoals; // ¿Âº¸µù ¸ñÇ¥¸¦ ´ã´Â Å¥
-    Goal m_CurrentGoal; // ÇöÀç ¸ñÇ¥
-    bool m_AllGoalsFinished; // ¸ğµç ¸ñÇ¥°¡ ¿Ï·áµÇ¾ú´ÂÁö ¿©ºÎ
-    int m_SurfacesTapped; // ÅÇµÈ Ç¥¸éÀÇ ¼ö
-    int m_CurrentGoalIndex = 0; // ÇöÀç ¸ñÇ¥ ÀÎµ¦½º
+    Queue<Goal> m_OnboardingGoals; // ì˜¨ë³´ë”© ëª©í‘œë¥¼ ë‹´ëŠ” í
+    Goal m_CurrentGoal; // í˜„ì¬ ëª©í‘œ
+    bool m_AllGoalsFinished; // ëª¨ë“  ëª©í‘œê°€ ì™„ë£Œë˜ì—ˆëŠ”ì§€ ì—¬ë¶€
+    int m_SurfacesTapped; // íƒ­ëœ í‘œë©´ì˜ ìˆ˜
+    int m_CurrentGoalIndex = 0; // í˜„ì¬ ëª©í‘œ ì¸ë±ìŠ¤
 
     [Serializable]
     class Step
     {
         [SerializeField]
-        public GameObject stepObject; // ´Ü°è °´Ã¼
+        public GameObject stepObject; // ë‹¨ê³„ ê°ì²´
 
         //[SerializeField]
-        //public string buttonText; // ¹öÆ° ÅØ½ºÆ®
+        //public string buttonText; // ë²„íŠ¼ í…ìŠ¤íŠ¸
 
-        //public bool includeSkipButton; // °Ç³Ê¶Ù±â ¹öÆ° Æ÷ÇÔ ¿©ºÎ
+        //public bool includeSkipButton; // ê±´ë„ˆë›°ê¸° ë²„íŠ¼ í¬í•¨ ì—¬ë¶€
     }
 
     [SerializeField]
-    List<Step> m_StepList = new List<Step>(); // ´Ü°è ¸®½ºÆ®
+    List<Step> m_StepList = new List<Step>(); // ë‹¨ê³„ ë¦¬ìŠ¤íŠ¸
 
     [SerializeField]
-    public TextMeshProUGUI m_StepButtonTextField; // ´Ü°è ¹öÆ° ÅØ½ºÆ® ÇÊµå
+    public TextMeshProUGUI m_StepButtonTextField; // ë‹¨ê³„ ë²„íŠ¼ í…ìŠ¤íŠ¸ í•„ë“œ
 
     [SerializeField]
-    public GameObject m_SkipButton; // °Ç³Ê¶Ù±â ¹öÆ°
+    public GameObject m_StartNewButton; // ìƒˆì¶œë°œ ë²„íŠ¼
 
     [SerializeField]
-    public GameObject m_StartNewButton; // »õÃâ¹ß ¹öÆ°
+    public GameObject m_ExitButton; // ì¢…ë£Œ ë²„íŠ¼
 
     [SerializeField]
-    public GameObject m_LoadButton; // ºÒ·¯¿À±â ¹öÆ°
+    public GameObject m_ContinueButton; // ê³„ì†í•˜ê¸° ë²„íŠ¼
 
     [SerializeField]
-    public GameObject m_ExitButton; // Á¾·á ¹öÆ°
+    public GameObject m_SkipButton; // ê±´ë„ˆë›°ê¸° ë²„íŠ¼
 
     [SerializeField]
-    GameObject m_LearnButton; // ÇĞ½À ¹öÆ°
+    public GameObject m_QuitButton; // ê°•ì œì¢…ë£Œ
 
     [SerializeField]
-    GameObject m_LearnModal; // ÇĞ½À ¸ğ´Ş
+    GameObject m_LearnButton; // í•™ìŠµ ë²„íŠ¼
 
     [SerializeField]
-    Button m_LearnModalButton; // ÇĞ½À ¸ğ´Ş ¹öÆ°
+    GameObject m_LearnModal; // í•™ìŠµ ëª¨ë‹¬
 
     [SerializeField]
-    GameObject m_CoachingUIParent; // ÄÚÄª UI ºÎ¸ğ °´Ã¼
+    Button m_LearnModalButton; // í•™ìŠµ ëª¨ë‹¬ ë²„íŠ¼
 
     [SerializeField]
-    FadeMaterial m_FadeMaterial; // ÆäÀÌµå ¼ÒÀç
+    GameObject m_CoachingUIParent; // ì½”ì¹­ UI ë¶€ëª¨ ê°ì²´
 
     [SerializeField]
-    Toggle m_PassthroughToggle; // ÆĞ½º½º·ç Åä±Û
+    FadeMaterial m_FadeMaterial; // í˜ì´ë“œ ì†Œì¬
 
     [SerializeField]
-    LazyFollow m_GoalPanelLazyFollow; // ¸ñÇ¥ ÆĞ³Î LazyFollow
+    Toggle m_PassthroughToggle; // íŒ¨ìŠ¤ìŠ¤ë£¨ í† ê¸€
+
+    [SerializeField]
+    LazyFollow m_GoalPanelLazyFollow; // ëª©í‘œ íŒ¨ë„ LazyFollow
 
     //[SerializeField]
-    //GameObject m_TapTooltip; // ÅÇ ÅøÆÁ
+    //GameObject m_TapTooltip; // íƒ­ íˆ´íŒ
 
     //[SerializeField]
-    //GameObject m_VideoPlayer; // ºñµğ¿À ÇÃ·¹ÀÌ¾î
+    //GameObject m_VideoPlayer; // ë¹„ë””ì˜¤ í”Œë ˆì´ì–´
 
     //[SerializeField]
-    //Toggle m_VideoPlayerToggle; // ºñµğ¿À ÇÃ·¹ÀÌ¾î Åä±Û
+    //Toggle m_VideoPlayerToggle; // ë¹„ë””ì˜¤ í”Œë ˆì´ì–´ í† ê¸€
 
     [SerializeField]
-    ARPlaneManager m_ARPlaneManager; // AR Æò¸é °ü¸®ÀÚ
+    ARPlaneManager m_ARPlaneManager; // AR í‰ë©´ ê´€ë¦¬ì
 
     //[SerializeField]
-    //ObjectSpawner m_ObjectSpawner; // °´Ã¼ »ı¼º±â
+    //ObjectSpawner m_ObjectSpawner; // ê°ì²´ ìƒì„±ê¸°
 
-    //const int k_NumberOfSurfacesTappedToCompleteGoal = 1; // ¸ñÇ¥ ¿Ï·á¸¦ À§ÇÑ ÅÇ È½¼ö
-    Vector3 m_TargetOffset = new Vector3(-.5f, -.25f, 1.5f); // ¸ñÇ¥ ¿ÀÇÁ¼Â
+    //const int k_NumberOfSurfacesTappedToCompleteGoal = 1; // ëª©í‘œ ì™„ë£Œë¥¼ ìœ„í•œ íƒ­ íšŸìˆ˜
+    Vector3 m_TargetOffset = new Vector3(-.5f, -.25f, 1.5f); // ëª©í‘œ ì˜¤í”„ì…‹
 
     void Start()
     {
-        // ¿Âº¸µù ¸ñÇ¥ ÃÊ±âÈ­
+        // ì˜¨ë³´ë”© ëª©í‘œ ì´ˆê¸°í™”
         m_OnboardingGoals = new Queue<Goal>();
         var welcomeGoal = new Goal(OnboardingGoals.Empty);
         var findSurfaceGoal = new Goal(OnboardingGoals.FindSurfaces);
-        var SelectWorldGoal = new Goal(OnboardingGoals.SelectWorld);
+        var selectWorldGoal = new Goal(OnboardingGoals.SelectWorld);
         //var tapSurfaceGoal = new Goal(OnboardingGoals.TapSurface);
-        var EnterWorldGoal = new Goal(OnboardingGoals.EnterWorld);
+        var enterWorldGoal = new Goal(OnboardingGoals.EnterWorld);
 
         m_OnboardingGoals.Enqueue(welcomeGoal);
         m_OnboardingGoals.Enqueue(findSurfaceGoal);
         //m_OnboardingGoals.Enqueue(tapSurfaceGoal);
-        m_OnboardingGoals.Enqueue(SelectWorldGoal);
-        m_OnboardingGoals.Enqueue(EnterWorldGoal);
+        m_OnboardingGoals.Enqueue(selectWorldGoal);
+        m_OnboardingGoals.Enqueue(enterWorldGoal);
 
-        //¸ñÇ¥ ÇÏ³ª »©±â
+        //ëª©í‘œ í•˜ë‚˜ ë¹¼ê¸°
         m_CurrentGoal = m_OnboardingGoals.Dequeue();
-        //ÃÊ±âÈ­
+        //ì´ˆê¸°í™”
         //if (m_TapTooltip != null)
         //    m_TapTooltip.SetActive(false);
 
@@ -162,18 +165,18 @@ public class GoalManager : MonoBehaviour
         {
             m_LearnModalButton.onClick.AddListener(CloseModal);
         }
-
-//        if (m_ObjectSpawner == null)
-//        {
-//#if UNITY_2023_1_OR_NEWER
-//            m_ObjectSpawner = FindAnyObjectByType<ObjectSpawner>();
-//#else
-//            m_ObjectSpawner = FindObjectOfType<ObjectSpawner>();
-//#endif
-//        }
+    
+        //        if (m_ObjectSpawner == null)
+        //        {
+        //#if UNITY_2023_1_OR_NEWER
+        //            m_ObjectSpawner = FindAnyObjectByType<ObjectSpawner>();
+        //#else
+        //            m_ObjectSpawner = FindObjectOfType<ObjectSpawner>();
+        //#endif
+        //        }
     }
 
-    // ¸ğ´Ş ¿­±â
+    // ëª¨ë‹¬ ì—´ê¸°
     void OpenModal()
     {
         if (m_LearnModal != null)
@@ -182,7 +185,7 @@ public class GoalManager : MonoBehaviour
         }
     }
 
-    // ¸ğ´Ş ´İ±â
+    // ëª¨ë‹¬ ë‹«ê¸°
     void CloseModal()
     {
         if (m_LearnModal != null)
@@ -190,7 +193,6 @@ public class GoalManager : MonoBehaviour
             m_LearnModal.transform.localScale = Vector3.zero;
         }
     }
-
     void Update()
     {
         if (!m_AllGoalsFinished)
@@ -198,7 +200,7 @@ public class GoalManager : MonoBehaviour
             ProcessGoals();
         }
 
-        // µğ¹ö±× ÀÔ·Â (À¯´ÏÆ¼ ¿¡µğÅÍ)
+        // ë””ë²„ê·¸ ì…ë ¥ (ìœ ë‹ˆí‹° ì—ë””í„°)
 #if UNITY_EDITOR
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
@@ -207,7 +209,7 @@ public class GoalManager : MonoBehaviour
 #endif
     }
 
-    // ¸ñÇ¥ Ã³¸®
+    // ëª©í‘œ ì²˜ë¦¬
     void ProcessGoals()
     {
         if (!m_CurrentGoal.Completed)
@@ -234,42 +236,42 @@ public class GoalManager : MonoBehaviour
         }
     }
 
-    // ¸ñÇ¥ ¿Ï·á
+    // ëª©í‘œ ì™„ë£Œ
     void CompleteGoal()
     {
         if (m_CurrentGoal.CurrentGoal == OnboardingGoals.EnterWorld)
             //m_ObjectSpawner.objectSpawned -= OnObjectSpawned;
 
-        // ´ÙÀ½ ¸ñÇ¥ ¼³Á¤ Àü¿¡ ÅøÆÁ ºñÈ°¼ºÈ­
+        // ë‹¤ìŒ ëª©í‘œ ì„¤ì • ì „ì— íˆ´íŒ ë¹„í™œì„±í™”
         //DisableTooltips();
 
         m_CurrentGoal.Completed = true;
         m_CurrentGoalIndex++;
         if (m_OnboardingGoals.Count > 0)
         {
-            // Å¥¿¡¼­ ´ÙÀ½ ¸ñÇ¥¸¦ °¡Á®¿È
+            // íì—ì„œ ë‹¤ìŒ ëª©í‘œë¥¼ ê°€ì ¸ì˜´
             m_CurrentGoal = m_OnboardingGoals.Dequeue();
 
-            // ÀÌÀü ´Ü°èÀÇ °´Ã¼¸¦ ºñÈ°¼ºÈ­
+            // ì´ì „ ë‹¨ê³„ì˜ ê°ì²´ë¥¼ ë¹„í™œì„±í™”
             m_StepList[m_CurrentGoalIndex - 1].stepObject.SetActive(false);
 
-            // ÇöÀç ´Ü°èÀÇ °´Ã¼¸¦ È°¼ºÈ­
+            // í˜„ì¬ ë‹¨ê³„ì˜ ê°ì²´ë¥¼ í™œì„±í™”
             m_StepList[m_CurrentGoalIndex].stepObject.SetActive(true);
 
-            // ¹öÆ° ÅØ½ºÆ®¸¦ ÇöÀç ´Ü°èÀÇ ¹öÆ° ÅØ½ºÆ®·Î ¼³Á¤
+            // ë²„íŠ¼ í…ìŠ¤íŠ¸ë¥¼ í˜„ì¬ ë‹¨ê³„ì˜ ë²„íŠ¼ í…ìŠ¤íŠ¸ë¡œ ì„¤ì •
             //m_StepButtonTextField.text = m_StepList[m_CurrentGoalIndex].buttonText;
 
-            // ÇöÀç ´Ü°è¿¡ ½ºÅµ ¹öÆ°À» Æ÷ÇÔÇÏ´ÂÁö ¿©ºÎ¿¡ µû¶ó ½ºÅµ ¹öÆ°À» È°¼ºÈ­ ¶Ç´Â ºñÈ°¼ºÈ­
+            // í˜„ì¬ ë‹¨ê³„ì— ìŠ¤í‚µ ë²„íŠ¼ì„ í¬í•¨í•˜ëŠ”ì§€ ì—¬ë¶€ì— ë”°ë¼ ìŠ¤í‚µ ë²„íŠ¼ì„ í™œì„±í™” ë˜ëŠ” ë¹„í™œì„±í™”
             //m_SkipButton.SetActive(m_StepList[m_CurrentGoalIndex].includeSkipButton);
         }
         else
         {
-            // ¸ğµç ¸ñÇ¥°¡ ¿Ï·áµÈ °æ¿ì
+            // ëª¨ë“  ëª©í‘œê°€ ì™„ë£Œëœ ê²½ìš°
             m_AllGoalsFinished = true;
             ForceEndAllGoals();
         }
 
-        // ÇöÀç ¸ñÇ¥°¡ OnboardingGoals.FindSurfacesÀÎ °æ¿ì
+        // í˜„ì¬ ëª©í‘œê°€ OnboardingGoals.FindSurfacesì¸ ê²½ìš°
         if (m_CurrentGoal.CurrentGoal == OnboardingGoals.FindSurfaces)
         {
             if (m_FadeMaterial != null)
@@ -296,14 +298,14 @@ public class GoalManager : MonoBehaviour
         //}
     }
 
-    // Æò¸é È°¼ºÈ­ ÄÚ·çÆ¾
+    // í‰ë©´ í™œì„±í™” ì½”ë£¨í‹´
     public IEnumerator TurnOnPlanes()
     {
         yield return new WaitForSeconds(1f);
         m_ARPlaneManager.enabled = true;
     }
 
-    //// ÅøÆÁ ºñÈ°¼ºÈ­
+    //// íˆ´íŒ ë¹„í™œì„±í™”
     //void DisableTooltips()
     //{
     //    if (m_CurrentGoal.CurrentGoal == OnboardingGoals.TapSurface)
@@ -315,13 +317,13 @@ public class GoalManager : MonoBehaviour
     //    }
     //}
 
-    // ¸ñÇ¥ °­Á¦ ¿Ï·á
+    // ëª©í‘œ ê°•ì œ ì™„ë£Œ
     public void ForceCompleteGoal()
     {
         CompleteGoal();
     }
 
-    // ¸ğµç ¸ñÇ¥ °­Á¦ Á¾·á
+    // ëª¨ë“  ëª©í‘œ ê°•ì œ ì¢…ë£Œ
     public void ForceEndAllGoals()
     {
         m_CoachingUIParent.transform.localScale = Vector3.zero;
@@ -352,7 +354,7 @@ public class GoalManager : MonoBehaviour
         StartCoroutine(TurnOnPlanes());
     }
 
-    // ÄÚÄª ¸®¼Â
+    // ì½”ì¹­ ë¦¬ì…‹
     public void ResetCoaching()
     {
         m_CoachingUIParent.transform.localScale = Vector3.one;
@@ -361,14 +363,14 @@ public class GoalManager : MonoBehaviour
         m_OnboardingGoals = new Queue<Goal>();
         var welcomeGoal = new Goal(OnboardingGoals.Empty);
         var findSurfaceGoal = new Goal(OnboardingGoals.FindSurfaces);
-        var SelectWorldGoal = new Goal(OnboardingGoals.SelectWorld);
+        var selectWorldGoal = new Goal(OnboardingGoals.SelectWorld);
         //var tapSurfaceGoal = new Goal(OnboardingGoals.TapSurface);
-        var EnterWorldGoal = new Goal(OnboardingGoals.EnterWorld);
+        var enterWorldGoal = new Goal(OnboardingGoals.EnterWorld);
 
         m_OnboardingGoals.Enqueue(welcomeGoal);
         m_OnboardingGoals.Enqueue(findSurfaceGoal);
-        m_OnboardingGoals.Enqueue(SelectWorldGoal);
-        m_OnboardingGoals.Enqueue(EnterWorldGoal);
+        m_OnboardingGoals.Enqueue(selectWorldGoal);
+        m_OnboardingGoals.Enqueue(enterWorldGoal);
 
         //for (int i = 0; i < m_StepList.Count; i++)
         //{
@@ -402,8 +404,18 @@ public class GoalManager : MonoBehaviour
 
         m_CurrentGoalIndex = 0;
     }
+    // í”„ë¡œê·¸ë¨ ì¢…ë£Œ
+    public void ForceQuitApplication()
+    {
+        // ì• í”Œë¦¬ì¼€ì´ì…˜ ì¢…ë£Œ ë¡œì§
+        Application.Quit();
 
-    // °´Ã¼ »ı¼º ½Ã È£ÃâµÇ´Â ÀÌº¥Æ® ÇÚµé·¯
+#if UNITY_EDITOR
+        // Unity ì—ë””í„°ì—ì„œ ì‹¤í–‰ ì¤‘ì¸ ê²½ìš° í”Œë ˆì´ ëª¨ë“œë¥¼ ì¢…ë£Œ
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
+    }
+    // ê°ì²´ ìƒì„± ì‹œ í˜¸ì¶œë˜ëŠ” ì´ë²¤íŠ¸ í•¸ë“¤ëŸ¬
     //void OnObjectSpawned(GameObject spawnedObject)
     //{
     //    m_SurfacesTapped++;
@@ -414,7 +426,7 @@ public class GoalManager : MonoBehaviour
     //    }
     //}
 
-    // ºñµğ¿À ÇÃ·¹ÀÌ¾î Åä±Û
+    // ë¹„ë””ì˜¤ í”Œë ˆì´ì–´ í† ê¸€
     //public void TooglePlayer(bool visibility)
     //{
     //    if (visibility)
@@ -432,7 +444,7 @@ public class GoalManager : MonoBehaviour
     //    }
     //}
 
-    // ºñµğ¿À ÇÃ·¹ÀÌ¾î È°¼ºÈ­
+    // ë¹„ë””ì˜¤ í”Œë ˆì´ì–´ í™œì„±í™”
     //void TurnOnVideoPlayer()
     //{
     //    if (m_VideoPlayer.activeSelf)

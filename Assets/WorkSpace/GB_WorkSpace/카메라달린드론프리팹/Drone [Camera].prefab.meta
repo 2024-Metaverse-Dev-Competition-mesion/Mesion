@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: ee95767069489af47a71348f2f1f9daf
+timeCreated: 1504811732
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 100970
+  packageName: Professional Drone Pack + Drone Controller (VR, PC, Mobile, Gamepad)
+  packageVersion: 2.3
+  assetPath: Assets/ProfessionalAssets/DronePack/Prefabs/Drone [Camera].prefab
+  uploadId: 437219

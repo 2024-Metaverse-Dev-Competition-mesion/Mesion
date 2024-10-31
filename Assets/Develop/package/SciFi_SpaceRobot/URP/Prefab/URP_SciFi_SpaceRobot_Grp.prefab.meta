@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d58f866e870f6864cbb8cca5f8351285
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 246524
+  packageName: Sci-Fi Space Robot
+  packageVersion: 1.0.1
+  assetPath: Assets/SciFi_SpaceRobot/URP/Prefab/URP_SciFi_SpaceRobot_Grp.prefab
+  uploadId: 619614

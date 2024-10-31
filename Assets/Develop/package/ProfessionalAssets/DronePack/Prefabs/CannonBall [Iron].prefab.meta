@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 108061f637b47a242a8b67dec62cd75d
+timeCreated: 1513563328
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 100970
+  packageName: Professional Drone Pack + Drone Controller (VR, PC, Mobile, Gamepad)
+  packageVersion: 2.3
+  assetPath: Assets/ProfessionalAssets/DronePack/Prefabs/CannonBall [Iron].prefab
+  uploadId: 437219

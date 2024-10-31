@@ -3,7 +3,39 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Point
+  - Fire
+  - Map
+  - WaterParticle
+  - Ground
+  - Fence
+  - Drone
+  - badge
+  - pro3
+  - pro2
+  - dronebody
+  - pro4
+  - pro6
+  - pro1
+  - pro5
+  - arm1
+  - arm2
+  - arm3
+  - arm4
+  - arm5
+  - arm6
+  - m1
+  - m2
+  - m3
+  - m4
+  - m5
+  - m6
+  - mf
+  - s1
+  - s2
+  - gps1
+  - gps2
   layers:
   - Default
   - TransparentFX
@@ -13,7 +45,7 @@ TagManager:
   - UI
   - Spawner Contact
   - Placeable Surface
-  - 
+  - Fire
   - 
   - 
   - 
@@ -40,4 +72,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Forground
+    uniqueID: 3708831919
+    locked: 0
+  - name: Background
+    uniqueID: 3364014577
     locked: 0

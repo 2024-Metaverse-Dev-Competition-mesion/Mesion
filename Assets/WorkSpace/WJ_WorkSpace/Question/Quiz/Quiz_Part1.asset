@@ -1,0 +1,164 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c39feadb44b34d23b3aea63cbcb10e4, type: 3}
+  m_Name: Quiz_Part1
+  m_EditorClassIdentifier: 
+  questions:
+  - questionText: "\uB2E4\uC74C \uC911 \uAE30\uC555\uC758 \uB2E8\uC704\uC5D0 \uD574\uB2F9\uD558\uC9C0
+      \uC54A\uC740 \uAC83\uC740?"
+    options:
+    - lbs
+    - hPa
+    - millibar (mb)
+    - mm mercury (mmHg)
+    correctAnswerIndex: 0
+    part: 1
+  - questionText: "\uC6B0\uB9AC\uB098\uB77C\uC5D0 \uC8FC\uB85C \uBD04\xB7\uAC00\uC744\uC5D0
+      \uC601\uD5A5\uC744 \uC8FC\uBA70, \uC628\uB09C \uAC74\uC870\uD55C \uC131\uC9C8\uC744
+      \uAC00\uC9C0\uB294 \uAE30\uB2E8\uC740?"
+    options:
+    - "\uC624\uD638\uCE20\uD06C\uD574 \uAE30\uB2E8"
+    - "\uC591\uCBD4\uAC15 \uAE30\uB2E8"
+    - "\uBD81\uD0DC\uD3C9\uC591 \uAE30\uB2E8"
+    - "\uC2DC\uBCA0\uB9AC\uC544 \uAE30\uB2E8"
+    correctAnswerIndex: 1
+    part: 1
+  - questionText: "\uD1B5\uC0C1 \uD558\uB8E8 \uC911 \uCD5C\uC800\uAE30\uC628\uC758
+      \uC2DC\uAC04\uC740?"
+    options:
+    - "\uC790\uC815"
+    - "\uC790\uC815 1\uC2DC\uAC04 \uD6C4"
+    - "\uC77C\uCD9C\uBD80\uD130 \uC77C\uCD9C \uD6C4 1\uC2DC\uAC04 \uC0AC\uC774"
+    - "\uC77C\uBAB0\uBD80\uD130 \uC77C\uBAB0 \uD6C4 1\uC2DC\uAC04 \uC0AC\uC774"
+    correctAnswerIndex: 2
+    part: 1
+  - questionText: "\uC8FC\uC704\uAC00 \uB0AE\uC740 \uAE30\uC555\uC73C\uB85C \uB458\uB7EC\uC2F8\uC778
+      \uAE30\uC555\uC758 \uC911\uC2EC\uC744 \uBB34\uC5C7\uC774\uB77C \uD558\uB294\uAC00?"
+    options:
+    - "\uC800\uAE30\uC555"
+    - "\uACE0\uAE30\uC555"
+    - "\uAE30\uC555\uACE8"
+    - "\uAE30\uC555\uB2A5"
+    correctAnswerIndex: 1
+    part: 1
+  - questionText: "\uC9C1\uC811\uC801\uC778 \uC2DC\uC815 \uBC29\uD574 \uC694\uC778\uC774
+      \uC544\uB2CC \uAC83\uC740?"
+    options:
+    - "\uD669\uC0AC"
+    - "\uB208"
+    - "\uC548\uAC1C"
+    - "\uBC14\uB78C"
+    correctAnswerIndex: 3
+    part: 1
+  - questionText: "\uACF5\uAE30 \uC911 \uAC00\uC7A5 \uB9CE\uC740 \uBD80\uBD84\uC744
+      \uCC28\uC9C0\uD558\uB294 \uAE30\uCCB4 \uC131\uBD84\uC740?"
+    options:
+    - "\uC0B0\uC18C"
+    - "\uC9C8\uC18C"
+    - "\uC774\uC0B0\uD654\uD0C4\uC18C"
+    - "\uC218\uC18C"
+    correctAnswerIndex: 1
+    part: 1
+  - questionText: "\uD654\uC528\uC628\uB3C4\uC5D0\uC11C \uBB3C\uC774 \uC5B4\uB294
+      \uC628\uB3C4\uC640 \uB053\uB294 \uC628\uB3C4\uB294 \uAC01\uAC01 \uBA87 \xB0F\uC778\uAC00?"
+    options:
+    - "\uC5B4\uB294 \uC628\uB3C4: 0, \uB053\uB294 \uC628\uB3C4: 100"
+    - "\uC5B4\uB294 \uC628\uB3C4: 12, \uB053\uB294 \uC628\uB3C4: 192"
+    - "\uC5B4\uB294 \uC628\uB3C4: 22, \uB053\uB294 \uC628\uB3C4: 202"
+    - "\uC5B4\uB294 \uC628\uB3C4: 32, \uB053\uB294 \uC628\uB3C4: 212"
+    correctAnswerIndex: 3
+    part: 1
+  - questionText: "\uB2E4\uC74C \uC911 \uC548\uC815\uB41C \uB300\uAE30\uC5D0\uC11C\uC758
+      \uAE30\uC0C1 \uD2B9\uC131\uC774 \uC544\uB2CC \uAC83\uC740?"
+    options:
+    - "\uC801\uC6B4\uD615 \uAD6C\uB984"
+    - "\uCE35\uC6B4\uD615 \uAD6C\uB984"
+    - "\uC9C0\uC18D\uC131 \uAC15\uC6B0"
+    - "\uC794\uC794\uD55C \uAE30\uB958"
+    correctAnswerIndex: 0
+    part: 1
+  - questionText: "\uB2E4\uC74C \uC911 \uC548\uAC1C\uAC00 \uB07C\uB294 \uC870\uAC74\uC73C\uB85C
+      \uC633\uC9C0 \uC54A\uC740 \uAC83\uC740?"
+    options:
+    - "\uB300\uAE30\uAC00 \uC548\uC815\uC801\uC774\uC5B4\uC57C \uD55C\uB2E4."
+    - "\uBB3C\uBC29\uC6B8\uC774 \uC0DD\uAE38 \uC218 \uC788\uB294 \uC628\uB3C4\uC774\uC5B4\uC57C
+      \uD55C\uB2E4."
+    - "\uACF5\uAE30 \uC911\uC5D0 \uC751\uACB0\uD575\uC758 \uC5ED\uD560\uC744 \uD558\uB294
+      \uBB3C\uC9C8\uC774 \uCDA9\uBD84\uD788 \uC788\uC5B4\uC57C \uD55C\uB2E4."
+    - "\uB09C\uB958\uAC00 \uD615\uC131\uB418\uC5B4\uC57C \uD55C\uB2E4."
+    correctAnswerIndex: 3
+    part: 1
+  - questionText: "\uB2E4\uC74C \uC911 \uB1CC\uC6B0\uC758 \uC0DD\uC131 \uC870\uAC74\uC73C\uB85C
+      \uAC70\uB9AC\uAC00 \uBA3C \uAC83\uC740?"
+    options:
+    - "\uBD88\uC548\uC815 \uB300\uAE30"
+    - "\uAC15\uD55C \uC0C1\uC2B9\uC791\uC6A9"
+    - "\uB192\uC740 \uC2B5\uB3C4"
+    - "\uB0AE\uC740 \uB300\uAE30 \uC628\uB3C4"
+    correctAnswerIndex: 3
+    part: 1
+  - questionText: "\uB2E4\uC74C \uC911 \uAC15\uD55C \uBE44\uAC00 \uACC4\uC18D \uC62C
+      \uC218\uB3C4 \uC788\uB294 \uAD6C\uB984\uC758 \uC57D\uC5B4\uB294 \uBB34\uC5C7\uC778\uAC00?"
+    options:
+    - Cc
+    - As
+    - St
+    - Cb
+    correctAnswerIndex: 3
+    part: 1
+  - questionText: "\uC218\uC9C1\uC73C\uB85C \uBC1C\uB2EC\uD558\uACE0 \uB9CE\uC740
+      \uAC15\uC6B0\uB97C \uD3EC\uD568\uD558\uACE0 \uC788\uB294 \uC801\uB780\uC6B4\uC758
+      \uBD80\uD638\uB85C \uB9DE\uB294 \uAC83\uC740?"
+    options:
+    - As
+    - Ns
+    - Cb
+    - Cs
+    correctAnswerIndex: 2
+    part: 1
+  - questionText: "\uD604\uC7AC\uC758 \uC9C0\uC0C1\uAE30\uC628\uC774 31\xB0C \uC77C
+      \uB54C 3,000\uD53C\uD2B8 \uC0C1\uACF5\uC758 \uAE30\uC628\uC740? (\uB2E8, \uC870\uAC74\uC740
+      ISA\uC870\uAC74\uC774\uB2E4)"
+    options:
+    - "25\xB0C"
+    - "37\xB0C"
+    - "29\xB0C"
+    - "34\xB0C"
+    correctAnswerIndex: 0
+    part: 1
+  - questionText: "\uBC14\uB78C\uC774 \uBC1C\uC0DD\uD558\uB294 \uADFC\uBCF8\uC801\uC778
+      \uC6D0\uC778\uC740 \uBB34\uC5C7\uC778\uAC00?"
+    options:
+    - "\uC9C0\uAD6C\uC758 \uD68C\uC804"
+    - "\uACF5\uAE30\uC555\uC758 \uBCC0\uD654"
+    - "\uACF5\uAE30 \uC911\uC758 \uC2B5\uB3C4"
+    - "\uAE30\uC555\uACBD\uB3C4\uB825\uC758 \uCC28\uC774"
+    correctAnswerIndex: 3
+    part: 1
+  - questionText: "\uAE30\uC555\uC5D0 \uB300\uD55C \uC124\uBA85 \uC911 \uD2C0\uB9B0
+      \uAC83\uC740?"
+    options:
+    - "\uB2E8\uBA74\uC801 1cm\xB2, \uB192\uC774 76cm\uC758 \uC218\uC740\uC8FC \uAE30\uB465"
+    - "\uB2E8\uBA74\uC801 1cm\xB2, \uB192\uC774 1,000mm \uACF5\uAE30 \uAE30\uB465"
+    - 3.760mmHg = 29.92inHg
+    - 1.013mbar = 1.013bar
+    correctAnswerIndex: 1
+    part: 1
+  - questionText: "\uB1CC\uC6B0\uAC00 \uB3D9\uBC18\uD558\uB294 \uAE30\uC0C1\uD604\uC0C1\uC774
+      \uC544\uB2CC \uAC83\uC740?"
+    options:
+    - "\uC548\uAC1C"
+    - "\uD558\uAC15\uB3CC\uD48D"
+    - "\uCC9C\uB465"
+    - "\uC6B0\uBC15"
+    correctAnswerIndex: 0
+    part: 1

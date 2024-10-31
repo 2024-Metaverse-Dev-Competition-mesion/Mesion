@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 4e119ebdaca221345ab7f4407a29de1d
+timeCreated: 1505862797
+licenseType: Store
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 100970
+  packageName: Professional Drone Pack + Drone Controller (VR, PC, Mobile, Gamepad)
+  packageVersion: 2.3
+  assetPath: Assets/ProfessionalAssets/DronePack/Scenes/DronePlayground [Mobile].unity
+  uploadId: 437219

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 485fb716683144f4d95cccf149c09407
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 246524
+  packageName: Sci-Fi Space Robot
+  packageVersion: 1.0.1
+  assetPath: Assets/SciFi_SpaceRobot/URP/Animation/Expressions/PowerUp.anim
+  uploadId: 619614

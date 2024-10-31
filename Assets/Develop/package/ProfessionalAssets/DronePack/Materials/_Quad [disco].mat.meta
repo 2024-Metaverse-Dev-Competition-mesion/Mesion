@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 962cb10569406a84e8e4f6ee4ae11c93
+timeCreated: 1505753996
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 100970
+  packageName: Professional Drone Pack + Drone Controller (VR, PC, Mobile, Gamepad)
+  packageVersion: 2.3
+  assetPath: Assets/ProfessionalAssets/DronePack/Materials/_Quad [disco].mat
+  uploadId: 437219

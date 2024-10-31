@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 0a2a0a002f4bb654db63b95c1a9b4c2a
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 112000000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 246524
+  packageName: Sci-Fi Space Robot
+  packageVersion: 1.0.1
+  assetPath: Assets/SciFi_SpaceRobot/URP/Scene/LightingData.asset
+  uploadId: 619614

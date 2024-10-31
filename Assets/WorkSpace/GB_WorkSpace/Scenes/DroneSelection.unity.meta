@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 0c14d60d4c32e9c45a5121e64f8762b4
+timeCreated: 1505862797
+licenseType: Store
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 100970
+  packageName: Professional Drone Pack + Drone Controller (VR, PC, Mobile, Gamepad)
+  packageVersion: 2.3
+  assetPath: Assets/ProfessionalAssets/DronePack/Scenes/DroneSelection.unity
+  uploadId: 437219
