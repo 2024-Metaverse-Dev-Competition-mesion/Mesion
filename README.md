@@ -1,6 +1,5 @@
 # 📖 Mesion
-
-![readme_mockup2](https://github.com/user-attachments/assets/70942bb7-5d40-4255-8cb3-214b94f77291)
+![image](https://github.com/user-attachments/assets/2edb4a38-d987-4568-9643-cc9003212a9f)
 
 <br>
 
