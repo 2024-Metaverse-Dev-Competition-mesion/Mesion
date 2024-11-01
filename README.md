@@ -63,7 +63,7 @@
 <br>
 
 ## 경진대회 제출 영상
-
+[시연 영상 보기](https://drive.google.com/file/d/1MSvkOxRyA1Y1OWhpdMjxKYXuCrXZOm0A/view?usp=drive_link)
 
 ## 1. 개발 환경
 
