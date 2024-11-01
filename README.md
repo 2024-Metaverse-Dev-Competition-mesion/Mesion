@@ -14,7 +14,7 @@
 <br>
 
 ## 팀원 구성 및 역할 분담
-### 🍊고지연
+### 김태경 (팀장)
 
 - **UI**
     - 페이지 : 홈, 검색, 게시글 작성, 게시글 수정, 게시글 상세, 채팅방
@@ -24,7 +24,7 @@
 
 <br>
     
-### 👻김민제
+### 김경보
 
 - **UI**
     - 페이지 : 프로필 설정, 프로필 수정, 팔로잉&팔로워 리스트, 상품 등록, 상품 수정, 채팅 목록, 404 페이지
@@ -34,7 +34,7 @@
 
 <br>
 
-### 😎양희지
+### 이우진
 
 - **UI**
     - 페이지 : splash 페이지, sns 로그인 페이지, 로그인, 회원가입
@@ -44,27 +44,28 @@
 
 <br>
 
-### 🐬지창언
+### 최시은
 
 - **UI**
     - 페이지 : 사용자 프로필 페이지
     - 공통 컴포넌트 : 탑배너, 하단 모달창
 - **기능**
     - 팔로우 & 언팔로우, 로그아웃, 하단 모달창, 댓글 삭제, 게시글 삭제, 상품 삭제, 사용자 게시글 앨범형 이미지, 탑 배너 뒤로가기 버튼, Alert 모달
-    
+
+### 한승희
+
+- **UI**
+    - 페이지 : 사용자 프로필 페이지
+    - 공통 컴포넌트 : 탑배너, 하단 모달창
+- **기능**
+    - 팔로우 & 언팔로우, 로그아웃, 하단 모달창, 댓글 삭제, 게시글 삭제, 상품 삭제, 사용자 게시글 앨범형 이미지, 탑 배너 뒤로가기 버튼, Alert 모달
 <br>
 
 ## 1. 개발 환경
 
-- Front : HTML, React, styled-components, Recoil
-- Back-end : 제공된 API 활용
-- 버전 및 이슈관리 : Github, Github Issues, Github Project
-- 협업 툴 : Discord, Notion, Github Wiki
-- 서비스 배포 환경 : Netlify
-- 디자인 : [Figma](https://www.figma.com/file/fAisC2pEKzxTOzet9CfqML/README(oh-my-code)?node-id=39%3A1814)
-- [커밋 컨벤션](https://github.com/likelion-project-README/README/wiki/%EC%BB%A4%EB%B0%8B-%EC%BB%A8%EB%B2%A4%EC%85%98)
-- [코드 컨벤션](https://github.com/likelion-project-README/README/wiki/%EC%BD%94%EB%93%9C-%EC%BB%A8%EB%B2%A4%EC%85%98)
-- [스프라이트](https://github.com/likelion-project-README/README/wiki/%EC%8A%A4%ED%94%84%EB%9D%BC%EC%9D%B4%ED%8A%B8)
+- Engine : Unity 5 (LTS 22.03.33f1)
+- 버전 및 이슈관리 : Github
+- 협업 툴 : Discord, Notion, Github
 <br>
 
 ## 2. 채택한 개발 기술과 브랜치 전략
