@@ -1,4 +1,3 @@
-<!--
 # 📖 Mesion
 ![image](https://github.com/user-attachments/assets/2edb4a38-d987-4568-9643-cc9003212a9f)
 
@@ -164,12 +163,27 @@
 4. 직업 체험을 할 수 있는 캐주얼 모드
 5. 드론자격증의 필기와 실기 시험을 준비 할 수 있는 리얼리티 모드
 <br>
--->
+
 ## 6. 프로젝트 주요 기능
 ### 개인 공간
 | 진입화면 | XR 환경 내 드론 조종 | 핸드 메뉴 | 상점 |
 |----------|----------|----------|----------|
 |![진입 화면](https://github.com/user-attachments/assets/d5837fa2-dac8-42da-8911-758573f816d2)|![2 xr환경 내 드론 조종](https://github.com/user-attachments/assets/8a1a6e8e-e676-44eb-b1c2-0743023b9dcc)|![3 핸드메뉴](https://github.com/user-attachments/assets/2f85e2bf-baad-48ce-a0a4-4648134d27ce)|![4 상점](https://github.com/user-attachments/assets/4cdd4af7-5215-4527-9f3a-3f116850c4c5)|
+
+- ##### 진입화면 : 패스스루 기능을 통해 현재 위치의 공간을 스캔한 후 프로그램에 진입합니다.
+- ##### XR 환경 내 드론 조종 : XR 환경에서 자유롭게 드론을 조종할 수 있습니다.
+- ##### 핸드 메뉴 : 자격증 및 인벤토리 확인이 가능하며, 드론의 캐주얼 모드(직업 체험)와 필기/실기 모드로 진입할 수 있습니다.
+- ##### 상점 : 드론과 다양한 아이템을 구매할 수 있습니다.
+
+<br>
+
+### 드론 캐주얼 모드(직업 체험)
+| 드론 화재 진압 | 드론 농업 |
+|----------|----------|
+|![드론 화재 진압](https://github.com/user-attachments/assets/7ed8f825-1b8f-440c-89f3-894f56131830)|![드론 농업](https://github.com/user-attachments/assets/b396c0cb-078e-40f1-85d0-45ac0c735978)|
+
+- ##### 드론 화재 진압 : 드론을 조종해 건물 화재를 진압하는 미래 직업을 체험할 수 있습니다.
+- ##### 드론 농업 : 드론을 조종해 씨앗을 뿌리고 물을 주는 농업 활동을 체험할 수 있습니다.
 
 <br>
 
@@ -178,10 +192,22 @@
 |----------|----------|----------|----------|
 |![5 필기모드 진입 화면](https://github.com/user-attachments/assets/8e106f6f-213d-4244-9760-2d2a549fb0f9)|![6 시험 모드 진입](https://github.com/user-attachments/assets/31afd023-eea8-4bcd-a086-cf8ba59ad1e0)|![7 시험 모드](https://github.com/user-attachments/assets/b3c1e96d-ad9b-4c5e-abdb-7589a3993aa0)|![8 문제 기록](https://github.com/user-attachments/assets/d6f06de7-91ba-4d57-a5cd-1bdc6c7ff084)|
 
+- ##### 필기 모드 진입 화면 : 필기 모드로 진입하며, 간단한 설명을 제공합니다.
+- ##### 시험 모드 진입 : 시험 모드로 진입하며, 실제 CBT 환경을 기반으로 시작됩니다.
+- ##### 시험 모드 : 실제 CBT 환경에서 문제를 풀고, 제출 후 합격 여부를 확인할 수 있습니다.
+- ##### 문제 기록 : 연습 및 시험 모드에서 문제를 풀고 제출하면 풀이 내역이 자동으로 기록됩니다.
+
 | 연습 모드 진입 | 연습 모드 | 문제 해설 | 유사 문제 |
 |----------|----------|----------|----------|
 |![11 연습 모드 진입](https://github.com/user-attachments/assets/9d962b4c-3bb6-4616-9314-a3d53ea7eb07)|![12 연습 모드](https://github.com/user-attachments/assets/086f9b56-8855-48a9-bd82-48c38a6ba0e6)|![9 문제 해설](https://github.com/user-attachments/assets/a9556463-f3d4-4dbc-9d1e-bf7b76848957)|![10 유사 문제](https://github.com/user-attachments/assets/d2c43287-76fa-4822-bb4d-1f7585e694e7)|
 
+- ##### 연습 모드 진입 : 연습 모드로 진입하며, '랜덤 1문제 풀기', '항공 법규', '항공 기상', '비행 이론 및 응용' 중 하나를 선택할 수 있습니다.
+- ##### 연습 모드 : 선택한 모드에 따라 문제를 풀이할 수 있습니다.
+    - 랜덤 1문제 풀기: 3개 파트 중 무작위로 문제가 출제되며, 각 문제 풀이 후 바로 정답 여부를 확인할 수 있습니다.
+    - 파트별 선택: 선택한 파트의 문제 10개가 출제됩니다.
+- ##### 문제 해설 : 생성형 AI를 통해 자신이 푼 문제에 대한 상세 해설을 제공합니다.
+- ##### 유사 문제 : 생성형 AI를 활용해 유사한 문제를 추가로 풀 수 있으며, 풀이 후 즉시 정답 여부를 확인할 수 있습니다.
+  
 <br>
 
 ### 실기 모드
@@ -189,14 +215,29 @@
 |----------|----------|----------|----------|
 |![13 비행 준비](https://github.com/user-attachments/assets/87e6abf5-05d2-4d44-9b69-51efd17a3d70)|![14 배터리 장착](https://github.com/user-attachments/assets/89d6c544-1e53-4eb3-b112-ea0b7ffc343e)|![15 기체 점검](https://github.com/user-attachments/assets/a45d2421-7071-40f0-8dab-21758ef5b731)|![16 조종기 전원 키기](https://github.com/user-attachments/assets/85b0ce54-da32-4a14-afd4-08204899ef0d)|
 
+- ##### 비행 준비 : 드론 위치로 이동하여 비행 준비를 시작합니다.
+- ##### 배터리 장착 : 드론에 배터리를 장착합니다.
+- ##### 기체 점검 : UI의 체크리스트를 통해 드론의 전반적인 상태를 점검하고 학습합니다.
+- ##### 조종기 전원 켜기 : 컨트롤러를 사용하여 조종기의 전원을 켭니다.
+
 | 이륙 비행 실시 | 정지 호버링 실시 | 전진 및 후진 비행 실시 | 삼각비행 실시 |
 |----------|----------|----------|----------|
 |![17 이륙 비행 실시](https://github.com/user-attachments/assets/56569250-ac2b-454d-b885-1ab0893b797a)|![18 정지 호버링 실시](https://github.com/user-attachments/assets/80770d7f-2e9f-473b-8437-e319712c6b30)|![19 전진 및 후진 비행 실시](https://github.com/user-attachments/assets/33b4e2dc-ebd6-4c2e-a55a-cffc1fa94bfb)|![20 삼각비행 실시](https://github.com/user-attachments/assets/6e4293b1-477e-4023-82bb-d2debffc1b48)|
 
+- ##### 이륙 비행 실시 : 이륙 비행 과정을 진행하며, UI를 통해 전반적인 이륙 비행 과정을 학습니다.
+- ##### 정지 호버링 실시 : 정지 호버링 과정을 진행하며, UI를 통해 전반적인 정지 호버링 과정을 학습니다.
+- ##### 전진 및 후진 비행 실시 : 전진 및 후진 비행 과정을 진행하며, UI를 통해 전반적인 전진 및 후진 비행 과정을 학습니다.
+- ##### 삼각비행 실시 : 삼각비행 과정을 진행하며, UI를 통해 전반적인 삼각비행 과정을 학습니다.
+  
 | 원주비행 실시 | 비상조작 실시 | 정상접근 및 착륙실시 | 추풍접근 및 착륙실시 |
 |----------|----------|----------|----------|
 |![21 원주비행 실시](https://github.com/user-attachments/assets/88f28abd-51b4-4091-be40-ba6c34a25ad9)|![22 비상조작 실시](https://github.com/user-attachments/assets/85902f3b-8a14-45e4-92b2-4d49f7123f81)|![23 정상접근 및 착률실시](https://github.com/user-attachments/assets/0cf77267-efa7-4d0c-8220-2627dfd153f3)|![24 축풍접근 및 착륙실시](https://github.com/user-attachments/assets/a590e91f-cc01-4b7b-8b15-efe410218360)|
 
+- ##### 원주비행 실시 : 직접 원주 비행을 수행하며, UI 가이드를 통해 전체 비행 절차를 익힙니다.
+- ##### 비상조작 실시 : 비상 상황을 가정하고 드론을 조종하여 비상 조작을 경험하며, UI 안내에 따라 각 절차를 학습합니다.
+- ##### 정상접근 및 착륙실시 : 정상 접근과 착륙을 실습하며, UI 가이드와 함께 안전한 착륙 절차를 익힙니다.
+- ##### 추풍접근 및 착륙실시 : 바람이 있는 상황에서 접근 및 착륙을 체험하며, UI를 통해 실전 같은 절차를 학습합니다.
+  
 <br>
 
 ## 7. 기대 효과 및 활용 분야
